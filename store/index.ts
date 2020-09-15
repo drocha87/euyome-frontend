@@ -20,7 +20,6 @@ export const actions: ActionTree<RootState, RootState> = {
   async fetchShowcasesUsers({ commit }): Promise<void> {
     try {
       const users = await this.$axios.$get('/profiles/showcases');
-      console.log(users);
       commit('SET_SHOWCASES', users);
     } catch (error) {
       commit('SET_SHOWCASES', []);
