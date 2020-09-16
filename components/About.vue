@@ -5,12 +5,25 @@
         <span class="normal_text"> Quer saber</span><br />
         <span class="highlight_text">como funciona?</span>
       </div>
-      <div class="about_content">
-        É simples, você faz seu cadastro totalmente gratuito, adiciona os links
-        de suas redes sociais (Instagram, Facebook, WhatsApp, etc), site,
-        telefone, e-mail e muito mais, personaliza como quiser e se você gostar
-        você assina o plano PRO!
-      </div>
+      <v-row align="center" no-gutters>
+        <v-col cols="12" md="5">
+          <v-img
+            class="ma-auto"
+            contain
+            width="250px"
+            :src="require('~/assets/images/about_image.jpg')"
+          ></v-img>
+        </v-col>
+        <v-col cols="12" md="7">
+          <div class="about_content">
+            É simples, você faz seu cadastro totalmente gratuito, adiciona os
+            links de suas redes sociais (Instagram, Facebook, WhatsApp, etc),
+            site, telefone, e-mail e muito mais, personaliza como quiser,
+            divulga nas suas redes, acompanha a intereação do seu público e se
+            você gostar você assina o plano PRO!
+          </div>
+        </v-col>
+      </v-row>
     </section>
   </v-container>
 </template>

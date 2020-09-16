@@ -66,9 +66,9 @@ export default Vue.extend({
     },
   },
 
-  created() {
-    this.$store.dispatch('fetchShowcasesUsers');
-  },
+  // created() {
+  //   this.$store.dispatch('fetchShowcasesUsers');
+  // },
 });
 </script>
 

@@ -1,8 +1,6 @@
 <template>
   <section class="hero">
-    <div class="hero_smartphone">
-      <img :src="require('~/assets/images/cover.png')" />
-    </div>
+    <CoverPageAnimation class="cover_page_animation" :users="users" />
 
     <div class="hero_title">Você a um clique</div>
 
@@ -19,15 +17,33 @@
 <script lang="ts">
 import Vue from 'vue';
 
-export default Vue.extend({});
+export default Vue.extend({
+  data() {
+    return {
+      user: {},
+    };
+  },
+
+  computed: {
+    users() {
+      return this.$store.state.users;
+    },
+  },
+});
 </script>
+
 <style lang="scss" scoped>
 .highlight {
   background: #fff;
   color: #7ebc89;
   padding: 0.3rem 1rem;
   border-radius: 6px;
-  font-weight: 900;
+  font-weight: 700;
+}
+
+.cover_page_animation {
+  grid-area: image;
+  place-self: center;
 }
 
 .hero {
@@ -47,9 +63,10 @@ export default Vue.extend({});
     margin: 2rem 0;
     line-height: min(4.4rem, 15vw);
     font-size: min(4.4rem, 15vw);
-    font-weight: 900;
+    font-weight: 700;
     text-align: center;
     text-transform: uppercase;
+    color: #fe5d26;
   }
 
   .hero_action {
@@ -67,7 +84,7 @@ export default Vue.extend({});
 
     .hero_action_title {
       font-size: 2rem;
-      font-weight: 900;
+      font-weight: 700;
       color: #fff;
       text-transform: uppercase;
       text-align: center;
@@ -82,7 +99,7 @@ export default Vue.extend({});
       outline: none;
       font-size: min(2rem, 7vw);
 
-      font-weight: 900;
+      font-weight: 700;
       text-transform: uppercase;
       background: #fe5d26;
       color: #fff;
@@ -101,18 +118,9 @@ export default Vue.extend({});
 
     .hero_action_counter {
       font-size: 0.8rem;
-      font-weight: 600;
+      font-weight: 500;
       margin-top: 0.5rem;
       color: white;
-    }
-  }
-
-  .hero_smartphone {
-    grid-area: image;
-    place-self: center;
-    margin-top: 1rem;
-    img {
-      width: 180px;
     }
   }
 }
@@ -168,13 +176,6 @@ export default Vue.extend({});
         width: 70%;
         max-width: 70%;
       }
-    }
-  }
-  .hero_smartphone {
-    margin-right: -6rem;
-    z-index: 1;
-    img {
-      min-width: 220px;
     }
   }
 }
