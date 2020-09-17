@@ -1,29 +1,59 @@
 <template>
   <v-app>
+    <v-navigation-drawer v-model="drawer" right clipped app>
+      <v-list nav dense>
+        <v-list-item-group
+          class="px-8"
+          active-class="deep-purple--text text--accent-4"
+        >
+          <v-list-item>
+            <v-list-item-content class="drawer__link">
+              Home
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-content class="drawer__link">
+              Instagram
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-content class="drawer__link">
+              Preços
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-content class="drawer__link">
+              Contato
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-content class="drawer__link">
+              Login
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+
     <v-app-bar
       class="app__container"
-      style="background: none"
+      color="white"
       elevation="0"
-      hide-on-scroll
-      fixed
       clipped-right
+      app
     >
       <div class="logo" style="cursor: pointer" @click="$router.push('/')">
         euyo.me
       </div>
-
-      <v-btn class="topbar__link" text color="#c4c4c4">Instagram</v-btn>
-      <v-btn class="topbar__link" text color="#c4c4c4">Preços</v-btn>
-      <v-btn class="topbar__link" text color="#c4c4c4">Contato</v-btn>
       <v-spacer></v-spacer>
-      <button class="button_login" to="/login">Login</button>
+      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
     </v-app-bar>
 
     <v-main fill-height>
       <nuxt />
     </v-main>
 
-    <v-footer class="mt-12" color="primary">
+    <!-- <v-footer class="mt-12" color="primary" fixed>
       <div class="mx-auto text-center white--text">
         <span class="text-caption">
           <nuxt-link to="/" style="text-decoration: none; color: white">
@@ -32,7 +62,7 @@
         </span>
         <p class="text-caption">Todos os direitos reservados a euyo.me.</p>
       </div>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 
@@ -57,11 +87,6 @@ html {
 }
 
 .app__container {
-  margin-top: 1rem;
-  padding: 0 3rem;
-  @media screen and (max-width: 600px) {
-    padding: 0;
-  }
 }
 
 .logo {

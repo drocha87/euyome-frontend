@@ -1,8 +1,8 @@
 <template>
   <div>
     <Cover />
-    <About />
-    <Showcases />
+    <!-- <About />
+    <Showcases /> -->
   </div>
 </template>
 
@@ -11,8 +11,13 @@ import Vue from 'vue';
 import Cover from '@/components/Cover.vue';
 import About from '@/components/About.vue';
 import Showcases from '@/components/Showcases.vue';
+import { Context } from '@nuxt/types';
 
 export default Vue.extend({
+  layout(ctx: Context) {
+    return ctx.isMobileOrTablet ? 'mobile' : 'default';
+  },
+
   components: {
     Cover,
     About,

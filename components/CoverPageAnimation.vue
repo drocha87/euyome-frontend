@@ -1,6 +1,9 @@
 <template>
   <div class="hero_smartphone">
     <img :src="require('~/assets/images/cover.png')" />
+    <div class="cover__animation__username">
+      {{ user.name || user.username }}
+    </div>
     <div class="pictures_loop">
       <v-avatar v-if="user.avatar" size="80px">
         <v-img
@@ -36,11 +39,35 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.pictures_loop {
+.cover__animation__username {
   position: absolute;
-  top: 10%;
+  top: 32%;
   left: 50%;
   transform: translateX(-50%);
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 21px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+
+  @media screen and (max-width: 600px) {
+    top: 34%;
+    font-size: 0.6rem;
+    line-height: 0.65rem;
+  }
+}
+
+.pictures_loop {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  @media screen and (max-width: 600px) {
+    top: 10%;
+  }
 }
 
 .hero_smartphone {
@@ -56,7 +83,7 @@ export default Vue.extend({
     margin-right: -6rem;
     z-index: 1;
     img {
-      min-width: 200px;
+      min-width: 230px;
     }
   }
 }
