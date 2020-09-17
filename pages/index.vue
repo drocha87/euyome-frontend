@@ -1,8 +1,8 @@
 <template>
   <div>
     <Cover />
-    <!-- <About />
-    <Showcases /> -->
+    <About class="mt-8" />
+    <!-- <Showcases /> -->
   </div>
 </template>
 

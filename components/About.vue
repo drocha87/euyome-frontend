@@ -1,34 +1,62 @@
 <template>
   <v-container>
     <section id="about" class="about">
-      <div class="about_title">
-        <span class="normal_text"> Quer saber</span><br />
-        <span class="highlight_text">como funciona?</span>
+      <div class="d-flex flex-row justify-center">
+        <Header title="como funciona" subtitle="quer saber" />
       </div>
-      <v-row align="center" no-gutters>
-        <v-col cols="12" md="5">
-          <v-img
-            class="ma-auto"
-            contain
-            width="250px"
-            :src="require('~/assets/images/about_image.jpg')"
-          ></v-img>
-        </v-col>
-        <v-col cols="12" md="7">
-          <div class="about_content">
-            É simples, você faz seu cadastro totalmente gratuito, adiciona os
-            links de suas redes sociais (Instagram, Facebook, WhatsApp, etc),
-            site, telefone, e-mail e muito mais, personaliza como quiser,
-            divulga nas suas redes, acompanha a intereação do seu público e se
-            você gostar você assina o plano PRO!
-          </div>
-        </v-col>
-      </v-row>
+      <div class="d-flex flex-row justify-space-around mt-12">
+        <InfoCard
+          title="um"
+          subtitle="gratuito"
+          content="Faça seu cadastro gratuito e experimente o PRo por 14 dias"
+        />
+        <InfoCard
+          title="dois"
+          subtitle="links"
+          content="Adicione links das suas redes sociais e crie botões de ação"
+        />
+        <InfoCard
+          title="três"
+          subtitle="customize"
+          content="Use a criatividade e personalize sua conta, com cores, imagens e card"
+        />
+      </div>
+      <div class="about__info">
+        Pronto! Após isto, seu link já vai estar disponível e depois é só
+        compartilhar nas suas conversas e biografia.
+      </div>
     </section>
   </v-container>
 </template>
 
+<script lang="ts">
+import Vue from 'vue';
+import Header from '@/components/Header.vue';
+import InfoCard from '@/components/InfoCard.vue';
+
+export default Vue.extend({
+  components: {
+    Header,
+    InfoCard,
+  },
+});
+</script>
+
 <style lang="scss" scoped>
+.about__info {
+  padding: 0 12rem;
+  margin-top: 2rem;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #c4c4c4;
+}
+
 .normal_text {
   font-size: 1.3rem;
   font-weight: 700;
