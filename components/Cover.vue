@@ -29,7 +29,7 @@
       </v-container>
     </v-col>
     <v-col class="cover_right" cols="12" md="5">
-      <v-container class="fill-height px-12 justify-center">
+      <v-container class="fill-height center__animation">
         <CoverPageAnimation :users="users" />
       </v-container>
     </v-col>
@@ -88,6 +88,15 @@ export default Vue.extend({
     margin: 2.5rem auto 0 auto;
   }
 }
+
+.center__animation {
+  padding: 0 6rem;
+  @media screen and (max-width: 960px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .cover {
   height: 100vh;
 
