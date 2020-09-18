@@ -21,10 +21,10 @@
           content="Use a criatividade e personalize sua conta, com cores, imagens e card"
         />
       </div>
-      <div class="about__info">
+      <Paragraph class="about__info">
         Pronto! Após isto, seu link já vai estar disponível e depois é só
         compartilhar nas suas conversas e biografia.
-      </div>
+      </Paragraph>
     </section>
   </v-container>
 </template>
@@ -33,11 +33,13 @@
 import Vue from 'vue';
 import Header from '@/components/Header.vue';
 import InfoCard from '@/components/InfoCard.vue';
+import Paragraph from '@/components/Paragraph.vue';
 
 export default Vue.extend({
   components: {
     Header,
     InfoCard,
+    Paragraph,
   },
 });
 </script>
@@ -46,15 +48,6 @@ export default Vue.extend({
 .about__info {
   padding: 0 12rem;
   margin-top: 2rem;
-  font-family: Rubik;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  text-align: center;
-  text-transform: uppercase;
-
-  color: #c4c4c4;
 }
 
 .normal_text {

@@ -2,9 +2,9 @@
   <v-app>
     <v-app-bar
       class="app__container"
-      style="background: none"
+      :color="barBgColor"
       elevation="0"
-      hide-on-scroll
+      elevate-on-scroll
       fixed
       clipped-right
     >
@@ -43,10 +43,23 @@ export default Vue.extend({
   data() {
     return {
       drawer: false,
+      barBgColor: 'transparent',
     };
   },
   created() {
     this.$store.dispatch('fetchShowcasesUsers');
+  },
+  mounted() {
+    window.onscroll = () => {
+      if (
+        document.body.scrollTop > 100 ||
+        document.documentElement.scrollTop > 100
+      ) {
+        this.barBgColor = 'white';
+      } else {
+        this.barBgColor = 'transparent';
+      }
+    };
   },
 });
 </script>
@@ -59,6 +72,8 @@ html {
 .app__container {
   margin-top: 1rem;
   padding: 0 3rem;
+  transition: all 250ms ease;
+
   @media screen and (max-width: 600px) {
     padding: 0;
   }

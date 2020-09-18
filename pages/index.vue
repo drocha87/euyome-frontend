@@ -2,7 +2,8 @@
   <div>
     <Cover />
     <About class="mt-8" />
-    <!-- <Showcases /> -->
+    <Impressions class="mt-8" />
+    <Showcases />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Vue from 'vue';
 import Cover from '@/components/Cover.vue';
 import About from '@/components/About.vue';
+import Impressions from '@/components/Impressions.vue';
 import Showcases from '@/components/Showcases.vue';
 import { Context } from '@nuxt/types';
 
@@ -22,6 +24,7 @@ export default Vue.extend({
     Cover,
     About,
     Showcases,
+    Impressions,
   },
 });
 </script>
