@@ -1,18 +1,26 @@
 <template>
-  <v-app dark>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
+  <v-container>
+    <div v-if="error.statusCode === 404">
+      <NotFound />
+    </div>
+
     <h1 v-else>
-      {{ otherError }}
+      {{ error.statusCode + error.message }}
     </h1>
     <NuxtLink to="/"> Home page </NuxtLink>
-  </v-app>
+  </v-container>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+import NotFound from '@/components/Error/NotFound.vue';
+
+export default Vue.extend({
   layout: 'empty',
+
+  components: {
+    NotFound,
+  },
 
   props: {
     error: {
@@ -20,13 +28,14 @@ export default {
       default: null,
     },
   },
+
   data() {
-    console.log(error.statusCode);
     return {
       pageNotFound: '404 Not Found',
       otherError: 'An error occurred',
     };
   },
+
   head() {
     const title =
       this.error.statusCode === 404 ? this.pageNotFound : this.otherError;
@@ -34,7 +43,7 @@ export default {
       title,
     };
   },
-};
+});
 </script>
 
 <style scoped>

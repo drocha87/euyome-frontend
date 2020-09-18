@@ -116,7 +116,10 @@ export default Vue.extend({
         user,
       };
     } catch (error) {
-      context.error(error);
+      context.error({
+        statusCode: error.response.status,
+        message: error.response.data.message,
+      });
     }
   },
 
