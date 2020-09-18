@@ -1,17 +1,15 @@
 <template>
   <v-container>
-    <div class="d-flex flex-row justify-center">
-      <Header title="nossos euyome’s" subtitle="pra quem é, e quem são" />
-    </div>
+    <Header center title="nossos euyome’s" subtitle="pra quem é, e quem são" />
     <v-row class="mt-6" align="center">
-      <v-col>
-        <Paragraph class="showcases__content">
+      <v-col cols="12" md="6">
+        <Paragraph>
           Euyo.me é pra todo mundo, para todos os tipos de seguimento. Se seu
           negócio ou você precisa se apresentar, você precisa de um perfil
           virtual.
         </Paragraph>
       </v-col>
-      <v-col>
+      <v-col cols="12" md="6">
         <v-carousel
           class="mx-auto"
           style="max-width: 300px"
@@ -59,7 +57,7 @@
       dark
       rounded
       elevation="0"
-      color="primary"
+      color="#FE5D26"
       >cadastre-se grátis</v-btn
     >
   </v-container>
@@ -88,9 +86,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.showcases__content {
-}
-
 .showcases {
   margin-top: 2rem;
   font-family: 'Rubik', sans-serif;

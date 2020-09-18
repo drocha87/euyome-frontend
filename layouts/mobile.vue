@@ -6,12 +6,12 @@
           class="px-8"
           active-class="deep-purple--text text--accent-4"
         >
-          <v-list-item>
+          <v-list-item @click="$router.push('/')">
             <v-list-item-content class="drawer__link">
               Home
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
+          <v-list-item href="https://instagram.com/euyo.me">
             <v-list-item-content class="drawer__link">
               Instagram
             </v-list-item-content>
@@ -21,7 +21,7 @@
               Preços
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
+          <v-list-item href="https://euyo.me/euyome">
             <v-list-item-content class="drawer__link">
               Contato
             </v-list-item-content>
@@ -86,34 +86,10 @@ html {
   overflow-y: auto;
 }
 
-.app__container {
-}
-
 .logo {
   font-family: 'Patua One', cursive;
   font-size: 2.4rem;
   color: #7ebc89;
-}
-
-.button_login {
-  width: 130px;
-  height: 35px;
-  background-color: #fff;
-  color: #fe5d26;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  outline: none;
-  border-radius: 100vw;
-}
-
-.topbar__link {
-  margin: 0 1.5rem;
-  font-family: Rubik;
-  font-style: normal;
-  font-weight: 500;
-  text-transform: capitalize;
-  color: #c4c4c4;
 }
 
 .drawer__link {

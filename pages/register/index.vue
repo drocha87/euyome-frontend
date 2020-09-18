@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="main__container">
     <v-card width="100%" flat>
       <v-card-title class="text-h2 justify-center"> Olá </v-card-title>
       <v-card-subtitle class="mt-4 text-justify">
@@ -8,14 +8,17 @@
         brilhante de nome :P
       </v-card-subtitle>
       <v-card-text>
-        <v-text-field
+        <div class="link__preview">
+          {{ `https://euyo.me/${username}` }}
+        </div>
+        <!-- <v-text-field
           class="mt-4"
           disabled
           outlined
           dense
           :value="username"
           prefix="https://euyo.me/"
-        />
+        /> -->
 
         <v-form v-model="valid" @submit.prevent="next">
           <v-text-field
@@ -49,12 +52,16 @@ import Vue from 'vue';
 import rules from '~/rules';
 
 export default Vue.extend({
+  layout(ctx: Context) {
+    return ctx.isMobileOrTablet ? 'mobile' : 'default';
+  },
+
   components: {},
 
   data() {
     return {
       valid: false,
-      username: '',
+      username: this.$route.query?.username || '',
       loading: false,
       errorMessage: '',
       rules,
@@ -65,7 +72,7 @@ export default Vue.extend({
           return `${v} não está disponivel para uso`;
         }
 
-        if (!/^\w+$/.test(v)) {
+        if (!/^[\w.]+$/.test(v)) {
           return 'Use somente letras e digitos, remova espaços e acentos';
         }
 
@@ -100,3 +107,22 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.main__container {
+  max-width: 600px;
+  height: 100%;
+  margin-top: 3rem;
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+  }
+}
+.link__preview {
+  margin: 1.5rem 0;
+  font-family: Rubik, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  color: #7ebc89;
+}
+</style>

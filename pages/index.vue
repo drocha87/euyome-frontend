@@ -1,9 +1,11 @@
 <template>
   <div>
     <Cover />
-    <About class="mt-8" />
-    <Impressions class="mt-8" />
-    <Showcases />
+    <v-container>
+      <About class="top__margin" />
+      <Impressions class="top__margin" />
+      <Showcases class="top__margin" />
+    </v-container>
   </div>
 </template>
 
@@ -35,4 +37,11 @@ export default Vue.extend({
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
+
+.top__margin {
+  margin-top: 4rem;
+  @media screen and (max-width: 600px) {
+    margin-top: 3rem;
+  }
+}
 </style>

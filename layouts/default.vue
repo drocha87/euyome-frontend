@@ -3,8 +3,7 @@
     <v-app-bar
       class="app__container"
       :color="barBgColor"
-      elevation="0"
-      elevate-on-scroll
+      flat
       fixed
       clipped-right
     >
@@ -72,7 +71,7 @@ html {
 .app__container {
   margin-top: 1rem;
   padding: 0 3rem;
-  transition: all 250ms ease;
+  transition: background-color 150ms ease-in-out;
 
   @media screen and (max-width: 600px) {
     padding: 0;

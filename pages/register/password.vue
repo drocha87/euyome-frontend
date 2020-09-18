@@ -1,9 +1,10 @@
 <template>
-  <v-container>
+  <v-container class="main__container">
     <v-card width="100%" flat>
       <v-card-title class="text-h2 justify-center"> Senha </v-card-title>
       <v-card-subtitle class="mt-4 text-justify">
-        Agora escolha uma senha bem segura que só você saiba :)
+        Agora escolha uma senha bem segura, entre 5 e 30 caracteres, e lembre-se
+        de não compartilhar sua senha com ninguém ok :)
       </v-card-subtitle>
       <v-card-text>
         <v-form v-model="valid" @submit.prevent="next">
@@ -46,6 +47,10 @@ import Vue from 'vue';
 import rules from '~/rules';
 
 export default Vue.extend({
+  layout(ctx: Context) {
+    return ctx.isMobileOrTablet ? 'mobile' : 'default';
+  },
+
   components: {},
 
   data() {
@@ -90,4 +95,13 @@ export default Vue.extend({
 });
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.main__container {
+  max-width: 600px;
+  height: 100%;
+  margin-top: 3rem;
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+  }
+}
+</style>

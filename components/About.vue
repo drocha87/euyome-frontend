@@ -1,31 +1,30 @@
 <template>
   <v-container>
-    <section id="about" class="about">
-      <div class="d-flex flex-row justify-center">
-        <Header title="como funciona" subtitle="quer saber" />
-      </div>
-      <div class="d-flex flex-row justify-space-around mt-12">
-        <InfoCard
-          title="um"
-          subtitle="gratuito"
-          content="Faça seu cadastro gratuito e experimente o PRo por 14 dias"
-        />
-        <InfoCard
-          title="dois"
-          subtitle="links"
-          content="Adicione links das suas redes sociais e crie botões de ação"
-        />
-        <InfoCard
-          title="três"
-          subtitle="customize"
-          content="Use a criatividade e personalize sua conta, com cores, imagens e card"
-        />
-      </div>
-      <Paragraph class="about__info">
-        Pronto! Após isto, seu link já vai estar disponível e depois é só
-        compartilhar nas suas conversas e biografia.
-      </Paragraph>
-    </section>
+    <Header center title="como funciona" subtitle="quer saber" />
+    <div class="infocard__container">
+      <InfoCard
+        class="infocard"
+        title="um"
+        subtitle="gratuito"
+        content="Faça seu cadastro gratuito e experimente o PRo por 14 dias"
+      />
+      <InfoCard
+        class="infocard"
+        title="dois"
+        subtitle="links"
+        content="Adicione links das suas redes sociais e crie botões de ação"
+      />
+      <InfoCard
+        class="infocard"
+        title="três"
+        subtitle="customize"
+        content="Use a criatividade e personalize sua conta, com cores, imagens e card"
+      />
+    </div>
+    <Paragraph class="text-center about__info">
+      Pronto! Após isto, seu link já vai estar disponível e depois é só
+      compartilhar nas suas conversas e biografia.
+    </Paragraph>
   </v-container>
 </template>
 
@@ -46,8 +45,10 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .about__info {
-  padding: 0 12rem;
   margin-top: 2rem;
+  @media screen and (max-width: 768px) {
+    margin-top: 1.5rem;
+  }
 }
 
 .normal_text {
@@ -61,6 +62,24 @@ export default Vue.extend({
   color: #fb5607;
 }
 
+.infocard__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 4rem;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+}
+
+.infocard {
+  @media screen and (max-width: 600px) {
+    margin: 0.5rem 0;
+  }
+}
 .about {
   font-family: 'Rubik', sans-serif;
   margin-top: 2.8rem;

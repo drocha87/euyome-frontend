@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="main__container">
     <v-card width="100%" flat>
       <v-card-title class="text-h2 justify-center"> Email </v-card-title>
       <v-card-subtitle class="mt-4 text-justify">
@@ -40,6 +40,10 @@ import Vue from 'vue';
 import rules from '~/rules';
 
 export default Vue.extend({
+  layout(ctx: Context) {
+    return ctx.isMobileOrTablet ? 'mobile' : 'default';
+  },
+
   components: {},
 
   data() {
@@ -75,3 +79,14 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.main__container {
+  max-width: 600px;
+  height: 100%;
+  margin-top: 3rem;
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+  }
+}
+</style>

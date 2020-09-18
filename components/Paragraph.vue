@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 .paragraph {
-  font-family: Rubik;
+  font-family: Rubik, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 0.9rem;
