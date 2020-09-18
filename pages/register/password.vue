@@ -43,6 +43,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { Context } from '@nuxt/types';
 
 import rules from '~/rules';
 

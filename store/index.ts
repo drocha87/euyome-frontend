@@ -3,6 +3,77 @@ import { ActionTree } from 'vuex';
 function initialState() {
   return {
     users: [],
+
+    medias: [
+      {
+        media: 'website',
+        icon: ['fas', 'globe'],
+        site: 'https://',
+      },
+      {
+        media: 'instagram',
+        icon: ['fab', 'instagram'],
+        site: 'https://instagram.com/',
+      },
+      {
+        media: 'facebook',
+        icon: ['fab', 'facebook'],
+        site: 'https://facebook.com/',
+      },
+      {
+        media: 'linkedin',
+        icon: ['fab', 'linkedin'],
+        site: 'https://linkedin.com/in/',
+      },
+      {
+        media: 'tiktok',
+        icon: ['fab', 'tiktok'],
+        site: 'https://tiktok.com/@',
+      },
+      {
+        media: 'whatsapp',
+        icon: ['fab', 'whatsapp'],
+        site: 'https://api.whatsapp.com/send?phone=',
+      },
+      {
+        media: 'youtube',
+        icon: ['fab', 'youtube'],
+        site: 'https://youtube.com/',
+      },
+      {
+        media: 'telegram',
+        icon: ['fab', 'telegram'],
+        site: 'https://telegram.me/',
+      },
+      {
+        media: 'email',
+        icon: ['fas', 'at'],
+        site: 'mailto:',
+      },
+      {
+        media: 'phone',
+        icon: ['fas', 'phone'],
+        site: 'tel:',
+      },
+    ],
+
+    forbiddenNames: [
+      'dashboard',
+      'login',
+      'register',
+      'logout',
+      'faq',
+      'home',
+      'index',
+      'indexhtml',
+      'main',
+      'terms',
+      'conditions',
+      'undefined',
+      'help',
+      '404',
+      'pro',
+    ],
   };
 }
 
@@ -27,4 +98,12 @@ export const actions: ActionTree<RootState, RootState> = {
   },
 };
 
-export const getters = {};
+export const getters = {
+  getMedias(state: RootState) {
+    return state.medias;
+  },
+
+  getForbiddenNames(state: RootState) {
+    return state.forbiddenNames;
+  },
+};

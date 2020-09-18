@@ -35,6 +35,7 @@
 </template>
 
 <script lang="ts">
+import { Context } from '@nuxt/types';
 import Vue from 'vue';
 
 import rules from '~/rules';
