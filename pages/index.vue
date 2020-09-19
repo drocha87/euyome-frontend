@@ -5,6 +5,7 @@
       <About class="top__margin" />
       <Impressions class="top__margin" />
       <Showcases class="top__margin" />
+      <Prices class="top__margin" />
     </v-container>
   </div>
 </template>
@@ -15,6 +16,7 @@ import Cover from '@/components/Cover.vue';
 import About from '@/components/About.vue';
 import Impressions from '@/components/Impressions.vue';
 import Showcases from '@/components/Showcases.vue';
+import Prices from '@/components/Prices.vue';
 import { Context } from '@nuxt/types';
 
 export default Vue.extend({
@@ -27,6 +29,7 @@ export default Vue.extend({
     About,
     Showcases,
     Impressions,
+    Prices,
   },
 });
 </script>
@@ -35,8 +38,6 @@ export default Vue.extend({
 * {
   font-family: 'Rubik', sans-serif;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
 
 .top__margin {
   margin-top: 4rem;

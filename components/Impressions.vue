@@ -1,18 +1,19 @@
 <template>
   <v-container>
     <v-row class="impressions_container">
-      <v-col cols="12" md="5">
+      <v-col cols="12" sm="5">
         <v-img
           class="mx-auto"
           width="180px"
           :src="require('~/assets/images/impressions.png')"
         ></v-img>
       </v-col>
-      <v-col cols="12" md="7">
+      <v-col cols="12" sm="7">
         <Header title="uma impressão" subtitle="um clique" />
         <Paragraph class="mt-4">
-          Pronto! Após isto, seu link já vai estar disponível e depois é só
-          compartilhar nas suas conversas e biografia.
+          Tenha as estatísticas do acesso ao seu link, de uma forma fácil de
+          entender, até porque no final das contas o que importa é seu alcance e
+          sua conversão, simples assim.
         </Paragraph>
       </v-col>
     </v-row>

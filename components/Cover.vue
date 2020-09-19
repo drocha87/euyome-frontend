@@ -145,7 +145,7 @@ export default Vue.extend({
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 960px) {
     height: auto;
     margin-top: 0rem;
   }

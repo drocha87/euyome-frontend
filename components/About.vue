@@ -6,7 +6,7 @@
         class="infocard"
         title="um"
         subtitle="gratuito"
-        content="Faça seu cadastro gratuito e experimente o PRo por 14 dias"
+        content="Faça seu cadastro gratuito e experimente o PRO por 14 dias"
       />
       <InfoCard
         class="infocard"
@@ -68,7 +68,7 @@ export default Vue.extend({
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 4rem;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
     margin-top: 2rem;
@@ -76,7 +76,7 @@ export default Vue.extend({
 }
 
 .infocard {
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 768px) {
     margin: 0.5rem 0;
   }
 }
