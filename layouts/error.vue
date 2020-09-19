@@ -7,7 +7,10 @@
     <h1 v-else>
       {{ error.statusCode + error.message }}
     </h1>
-    <NuxtLink to="/"> Home page </NuxtLink>
+
+    <div class="d-flex flex-row justify-center">
+      <v-btn dark depressed color="#7ebc89" to="/">Página Principal</v-btn>
+    </div>
   </v-container>
 </template>
 
@@ -31,8 +34,8 @@ export default Vue.extend({
 
   data() {
     return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred',
+      pageNotFound: 'Página ou Usuário não existe',
+      otherError: 'Ops, erro interno.',
     };
   },
 
@@ -45,9 +48,3 @@ export default Vue.extend({
   },
 });
 </script>
-
-<style scoped>
-h1 {
-  font-size: 20px;
-}
-</style>
