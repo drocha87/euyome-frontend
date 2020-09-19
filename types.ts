@@ -29,6 +29,8 @@ export interface User {
   subtitle?: string;
   youtubeVideo?: string;
   card?: Card;
+  theme?: any;
+  links: [any];
   createdAt?: string;
   updatedAt?: string;
 }

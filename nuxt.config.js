@@ -35,7 +35,14 @@ export default {
           'Compartilhe suas redes sociais, crie salto para links e muito mais, tudo isso com temas exclusivos e uma central de estatísticas simples e fácil de entender.',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap',
+      },
+    ],
   },
   /*
    ** Global CSS

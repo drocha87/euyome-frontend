@@ -86,7 +86,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { mapGetters } from 'vuex';
 import UserCard from '@/components/Profile/UserCard.vue';
 import ButtonIcon from '@/components/Profile/ButtonIcon.vue';
 import { Card, User } from '~/types';
@@ -114,6 +113,9 @@ export default Vue.extend({
       );
       return {
         user,
+        theme: user.theme,
+        card: user.card,
+        links: user.links,
       };
     } catch (error) {
       context.error({
@@ -124,37 +126,26 @@ export default Vue.extend({
   },
 
   computed: {
-    avatar() {
-      const img = this.user.avatar || 'v1596315038/profile/euyome.jpg';
+    medias(): [any] {
+      return this.$store.getters.getMedias;
+    },
+
+    avatar(): string {
+      const img = (this as any).user.avatar || 'v1596315038/profile/euyome.jpg';
       return `https://res.cloudinary.com/euyome/image/upload/${img}`;
     },
 
-    theme() {
-      return this.user.theme;
-    },
-
-    card() {
-      return this.user.card;
-    },
-
-    links() {
-      return this.user.links;
-    },
-
-    backgroundImage() {
-      return this.theme.backgroundImage
-        ? `url(https://res.cloudinary.com/euyome/image/upload/${this.theme.backgroundImage})`
+    backgroundImage(): any {
+      const image = (this as any).theme.backgroundImage;
+      return image
+        ? `url(https://res.cloudinary.com/euyome/image/upload/${image})`
         : 'none';
     },
   },
 
   methods: {
-    ...mapGetters({
-      medias: 'getMedias',
-    }),
-
     followLink(link: any) {
-      const medias = this.medias();
+      const medias = (this as any).medias;
       const found = medias.find((el: any) => el.media === link.media);
 
       this.$axios.post(`/users/links/${link.id}/click`);
@@ -169,7 +160,7 @@ export default Vue.extend({
     async cardClick(url: string) {
       try {
         await this.$axios.$post(
-          `/users/cards/clicks/${(this.user.card as Card).id}`
+          `/users/cards/clicks/${((this as any).user.card as Card).id}`
         );
         window.location.href = url;
       } catch (error) {
@@ -178,8 +169,7 @@ export default Vue.extend({
     },
 
     findIcon(media: string) {
-      const medias = this.medias();
-      const found = medias.find((el: any) => el.media === media);
+      const found = (this as any).medias.find((el: any) => el.media === media);
       if (found) {
         return found.icon;
       }

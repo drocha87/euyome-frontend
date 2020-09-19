@@ -18,6 +18,14 @@
 import Vue from 'vue';
 import NotFound from '@/components/Error/NotFound.vue';
 
+// FIXME: we need to pass this class in head() function to avoid `this is not defined` problem
+// but I don't think this is the best aproach to fix this problem
+interface MyComponent {
+  pageNotFound: string;
+  otherError: string;
+  error: any;
+}
+
 export default Vue.extend({
   layout: 'empty',
 
@@ -39,7 +47,7 @@ export default Vue.extend({
     };
   },
 
-  head() {
+  head(this: MyComponent) {
     const title =
       this.error.statusCode === 404 ? this.pageNotFound : this.otherError;
     return {

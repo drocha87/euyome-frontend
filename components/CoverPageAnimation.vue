@@ -16,6 +16,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { User } from '~/types';
 
 export default Vue.extend({
   props: {
@@ -24,7 +25,7 @@ export default Vue.extend({
 
   data() {
     return {
-      user: {},
+      user: {} as User,
       index: 0,
     };
   },
@@ -32,7 +33,7 @@ export default Vue.extend({
   mounted() {
     setInterval(() => {
       if (this.users && ++this.index >= this.users.length) this.index = 0;
-      this.user = this.users[this.index];
+      this.user = this.users[this.index] as User;
     }, 1500);
   },
 });

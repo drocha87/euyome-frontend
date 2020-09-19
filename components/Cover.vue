@@ -9,7 +9,7 @@
             redes sociais e conversa com clientes. Tudo sobre você de uma forma
             super personalizada.
           </Paragraph>
-          <v-form @submit.prevent="registerUsername">
+          <v-form @submit.prevent="registerUsername(username)">
             <v-text-field
               v-model="username"
               class="cover__left__input"
@@ -89,11 +89,11 @@ export default Vue.extend({
   },
 
   methods: {
-    registerUsername() {
-      if (this.username.length > 0) {
+    registerUsername(username: string) {
+      if (username.length > 0) {
         this.$router.push({
           path: '/register',
-          query: { username: this.username },
+          query: { username },
         });
       } else {
         this.$router.push('/register');
