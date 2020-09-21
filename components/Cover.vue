@@ -9,7 +9,7 @@
             redes sociais e conversa com clientes. Tudo sobre você de uma forma
             super personalizada.
           </Paragraph>
-          <v-form @submit.prevent="registerUsername(username)">
+          <v-form class="mt-8" @submit.prevent="registerUsername(username)">
             <v-text-field
               v-model="username"
               class="cover__left__input"
@@ -119,9 +119,8 @@ export default Vue.extend({
 }
 
 .cover__left__input {
-  margin-top: 3rem;
   @media screen and (max-width: 768px) {
-    margin: 2.5rem auto 0 auto;
+    margin: 0 auto;
   }
 }
 

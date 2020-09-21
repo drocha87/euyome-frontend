@@ -109,7 +109,7 @@ export default Vue.extend({
   async asyncData(context) {
     try {
       const user: User = await context.$axios.$get(
-        `/profiles/${context.params.id}`
+        `/profiles/${context.params.id}/get`
       );
       return {
         user,
