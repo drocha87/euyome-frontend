@@ -40,7 +40,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap',
+          'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&family=Open+Sans:wght@400;600;700&display=swap',
       },
     ],
   },
@@ -99,12 +99,16 @@ export default {
       'Content-Type': 'application/json',
     },
   },
+
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    defaultAssets: {
+      icons: false,
+    },
     theme: {
       light: true,
       themes: {
