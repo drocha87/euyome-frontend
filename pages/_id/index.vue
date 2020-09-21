@@ -33,6 +33,15 @@
     </div>
 
     <v-container style="max-width: 600px; margin: 1rem auto">
+      <div v-if="loading" class="text-center">
+        <v-progress-circular
+          color="primary"
+          size="40"
+          width="2"
+          indeterminate
+        />
+      </div>
+
       <client-only>
         <div
           v-if="user.youtubeVideo"
@@ -109,13 +118,13 @@ export default Vue.extend({
   async asyncData(context) {
     try {
       const user: User = await context.$axios.$get(
-        `/profiles/${context.params.id}/get`
+        `/profiles/${context.params.id}`
       );
       return {
         user,
-        theme: user.theme,
-        card: user.card,
-        links: user.links,
+        // theme: user.theme,
+        // card: user.card,
+        // links: user.links,
       };
     } catch (error) {
       context.error({
@@ -123,6 +132,15 @@ export default Vue.extend({
         message: error.response.data.message,
       });
     }
+  },
+
+  data() {
+    return {
+      links: [],
+      card: {},
+      theme: {},
+      loading: true,
+    };
   },
 
   computed: {
@@ -143,12 +161,22 @@ export default Vue.extend({
           return `background-image: ${image}`;
         }
         return `
-        background-image: url(https://res.cloudinary.com/euyome/image/upload/${image}); 
+        background-image: url(https://res.cloudinary.com/euyome/image/upload/${image});
         background-color: ${background}
         `;
       }
       return `background-color: ${background}`;
     },
+  },
+
+  async mounted() {
+    const { theme, card, links } = await this.$axios.$get(
+      `/profiles/${this.$route.params.id}/data`
+    );
+    this.theme = theme;
+    this.card = card;
+    this.links = links;
+    this.loading = false;
   },
 
   methods: {
