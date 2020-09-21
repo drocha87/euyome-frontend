@@ -47,7 +47,7 @@ export default Vue.extend({
   transform: translateX(-50%);
   font-family: Rubik;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 0.8rem;
   line-height: 21px;
   // text-transform: uppercase;
