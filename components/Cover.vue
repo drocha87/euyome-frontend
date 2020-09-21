@@ -135,6 +135,8 @@ export default Vue.extend({
 
 .cover {
   height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
 
   .cover_right {
     background: linear-gradient(203.28deg, #85ffbd 0.06%, #fffb7d 139.96%);

@@ -41,13 +41,17 @@
       elevation="0"
       clipped-right
       app
+      max-width="100%"
     >
       <div class="logo" style="cursor: pointer" @click="$router.push('/')">
         euyo.me
       </div>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="drawer = true">
-        <font-awesome-icon :icon="['fas', 'bars']"></font-awesome-icon>
+        <font-awesome-icon
+          :icon="['fas', 'bars']"
+          style="font-size: 1.2rem; color: #fb5607"
+        ></font-awesome-icon>
       </v-app-bar-nav-icon>
     </v-app-bar>
 
