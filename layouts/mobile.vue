@@ -46,7 +46,9 @@
         euyo.me
       </div>
       <v-spacer></v-spacer>
-      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = true">
+        <font-awesome-icon :icon="['fas', 'bars']"></font-awesome-icon>
+      </v-app-bar-nav-icon>
     </v-app-bar>
 
     <v-main fill-height>

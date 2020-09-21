@@ -3,7 +3,7 @@
     v-if="user.id && theme && card && links"
     class="fill-height flex-column profile_background"
     fluid
-    :style="`background-image: ${backgroundImage}; background-color: ${theme.background}`"
+    :style="background"
   >
     <v-avatar
       :tile="theme.tileAvatar"
@@ -135,11 +135,19 @@ export default Vue.extend({
       return `https://res.cloudinary.com/euyome/image/upload/${img}`;
     },
 
-    backgroundImage(): any {
-      const image = (this as any).theme.backgroundImage;
-      return image
-        ? `url(https://res.cloudinary.com/euyome/image/upload/${image})`
-        : 'none';
+    background(): string {
+      const { backgroundImage: image, background } = (this as any).theme;
+
+      if (image) {
+        if (image.startsWith('linear-gradient')) {
+          return `background-image: ${image}`;
+        }
+        return `
+        background-image: url(https://res.cloudinary.com/euyome/image/upload/${image}); 
+        background-color: ${background}
+        `;
+      }
+      return `background-color: ${background}`;
     },
   },
 

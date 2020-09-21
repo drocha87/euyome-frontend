@@ -2,23 +2,15 @@
   <v-container class="main__container">
     <v-card width="100%" flat>
       <v-card-title class="text-h2 justify-center"> Olá </v-card-title>
-      <v-card-subtitle class="mt-4 text-justify">
-        Para criar seu perfil, a primeira coisa que temos que fazer é escolher
-        um nome bem bacana de usuário e ver se ninguém teve a mesma ideia
-        brilhante de nome :P
+      <v-card-subtitle class="mt-4 text-justify text-caption">
+        Para criar seu perfil, o primeiro passo é escolher seu nome de usuário,
+        dê preferência para um nome que descreva sua marca ou seu nome pessoal,
+        sem espaços e sem caracteres especiais tá
       </v-card-subtitle>
       <v-card-text>
         <div class="link__preview">
           {{ `https://euyo.me/${username}` }}
         </div>
-        <!-- <v-text-field
-          class="mt-4"
-          disabled
-          outlined
-          dense
-          :value="username"
-          prefix="https://euyo.me/"
-        /> -->
 
         <v-form v-model="valid" @submit.prevent="next">
           <v-text-field

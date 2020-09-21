@@ -42,7 +42,7 @@ export default Vue.extend({
 }
 
 .link__text {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   text-transform: none;
 }

@@ -5,7 +5,7 @@
       <About class="top__margin" />
       <Impressions class="top__margin" />
       <Showcases class="top__margin" />
-      <Prices class="top__margin" />
+      <Prices id="prices" class="top__margin" />
     </v-container>
   </div>
 </template>

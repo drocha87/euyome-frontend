@@ -2,7 +2,7 @@
   <v-container class="main__container">
     <v-card width="100%" flat>
       <v-card-title class="text-h2 justify-center"> Senha </v-card-title>
-      <v-card-subtitle class="mt-4 text-justify">
+      <v-card-subtitle class="mt-4 text-justify text-caption">
         Agora escolha uma senha bem segura, entre 5 e 30 caracteres, e lembre-se
         de não compartilhar sua senha com ninguém ok :)
       </v-card-subtitle>

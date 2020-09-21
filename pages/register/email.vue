@@ -2,7 +2,7 @@
   <v-container class="main__container">
     <v-card width="100%" flat>
       <v-card-title class="text-h2 justify-center"> Email </v-card-title>
-      <v-card-subtitle class="mt-4 text-justify">
+      <v-card-subtitle class="mt-4 text-justify text-caption">
         Agora que já escolhemos seu nome de usuário, vamos cadastrar seu email,
         e ahh não esqueça de depois verificar sua caixa de mensagem tá.
       </v-card-subtitle>

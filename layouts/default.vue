@@ -11,9 +11,25 @@
         euyo.me
       </div>
 
-      <v-btn class="topbar__link" text color="#c4c4c4">Instagram</v-btn>
-      <v-btn class="topbar__link" text color="#c4c4c4">Preços</v-btn>
-      <v-btn class="topbar__link" text color="#c4c4c4">Contato</v-btn>
+      <v-btn
+        class="topbar__link"
+        text
+        color="#c4c4c4"
+        href="https://instagram.com/euyo.me"
+      >
+        Instagram
+      </v-btn>
+      <v-btn
+        class="topbar__link"
+        text
+        color="#c4c4c4"
+        @click="$vuetify.goTo('#prices', scrollOptions)"
+      >
+        Preços
+      </v-btn>
+      <v-btn class="topbar__link" text color="#c4c4c4" to="/euyome">
+        Contato
+      </v-btn>
       <v-spacer></v-spacer>
       <button class="button_login" to="/login">Login</button>
     </v-app-bar>
@@ -43,6 +59,10 @@ export default Vue.extend({
     return {
       drawer: false,
       barBgColor: 'transparent',
+      scrollOptions: {
+        duration: 500,
+        offset: 0,
+      },
     };
   },
   created() {
