@@ -5,6 +5,9 @@ export default {
     port: process.env.PORT || 3000,
     host: '0.0.0.0',
   },
+
+  serverMiddleware: ['~/api/redirect-ssl'],
+
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
@@ -15,6 +18,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: 'server',
+
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
