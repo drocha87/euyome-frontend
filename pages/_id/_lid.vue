@@ -27,9 +27,10 @@ export default Vue.extend({
         this.followLink(response);
       })
       .catch((error) => {
-        if (error.response?.status === 404) {
-          this.$router.push('/404');
-        }
+        this.$nuxt.error({
+          statusCode: 404,
+          message: error.response.data.message,
+        });
       });
   },
 
@@ -49,18 +50,7 @@ export default Vue.extend({
       const medias = this.medias();
       const found = medias.find((el: any) => el.media === link.media);
 
-      // this.$axios.post(`/users/links/${link.id}/click`);
-
       if (found) {
-        // if (this.$device.isAndroid && found.android) {
-        //   console.log(found.android + link.url);
-        //   return found.android + link.url;
-        // }
-        // if (this.$device.isIos && found.ios) {
-        //   console.log(found.ios + link.url);
-
-        //   return found.ios + link.url;
-        // }
         window.location.href = found.site + link.url;
       } else {
         window.location.href = link.url;
