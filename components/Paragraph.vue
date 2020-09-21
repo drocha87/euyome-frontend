@@ -11,7 +11,7 @@
   font-weight: 500;
   font-size: 0.9rem;
   line-height: 1.2rem;
-  color: #c4c4c4;
+  color: $paragraph-color;
   text-align: left;
 
   @media screen and (max-width: 600px) {
