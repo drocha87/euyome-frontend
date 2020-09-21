@@ -47,17 +47,17 @@ export default Vue.extend({
   transform: translateX(-50%);
   font-family: Rubik;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 0.8rem;
   line-height: 21px;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   text-align: center;
-  color: #ffffff;
+  color: #000;
 
   @media screen and (max-width: 600px) {
-    top: 34%;
-    font-size: 0.6rem;
-    line-height: 0.65rem;
+    top: 35%;
+    font-size: 0.65rem;
+    line-height: 0.75rem;
   }
 }
 
