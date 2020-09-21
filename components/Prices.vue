@@ -42,7 +42,7 @@
         </v-card-text>
         <v-card-actions>
           <v-btn
-            class="mx-auto"
+            class="mx-auto px-8"
             height="52px"
             dark
             rounded

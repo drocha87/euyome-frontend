@@ -24,16 +24,19 @@
             />
             <div class="cover__left__button d-flex flex-column align-center">
               <v-btn
+                class="px-4"
                 type="submit"
                 dark
                 rounded
                 elevation="0"
                 color="#FE5D26"
-                height="50px"
+                height="52px"
               >
                 cadastre-se grátis
               </v-btn>
-              <a class="text__login">já tenho cadastro</a>
+              <a class="text__login" href="https://dashboard.euyo.me/login">
+                já tenho cadastro
+              </a>
             </div>
           </v-form>
         </div>
