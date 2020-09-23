@@ -48,6 +48,7 @@
             rounded
             elevation="0"
             color="#FE5D26"
+            to="/register"
           >
             experimente grátis
           </v-btn>

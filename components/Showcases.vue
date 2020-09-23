@@ -58,6 +58,7 @@
       rounded
       elevation="0"
       color="#FE5D26"
+      to="/register"
       >cadastre-se grátis</v-btn
     >
   </v-container>

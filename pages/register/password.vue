@@ -81,7 +81,8 @@ export default Vue.extend({
         /**
          * change tho window.redirect ou href
          */
-        this.$router.push('/dashboard');
+        window.location.href = 'https://app.euyo.me/login';
+        // this.$router.push('/dashboard');
       } catch (error) {
         if (error.response.status === 409) {
           this.errorMessage = 'Email já está em uso';

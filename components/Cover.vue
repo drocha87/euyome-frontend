@@ -34,7 +34,7 @@
               >
                 cadastre-se grátis
               </v-btn>
-              <a class="text__login" href="https://dashboard.euyo.me/login">
+              <a class="text__login" href="https://app.euyo.me/login">
                 já tenho cadastro
               </a>
             </div>
