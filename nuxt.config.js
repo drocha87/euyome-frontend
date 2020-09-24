@@ -44,7 +44,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&family=Open+Sans:wght@400;600;700&family=Patua+One:wght@400;600;700&display=swap',
+          'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;600;700&family=Patua+One:wght@400;600;700&display=swap',
       },
     ],
   },
