@@ -49,17 +49,19 @@
       </v-col>
     </v-row>
 
-    <v-btn
-      style="display: block"
-      width="250px"
-      class="mx-auto mt-7"
-      dark
-      rounded
-      elevation="0"
-      color="#FE5D26"
-      to="/register"
-      >cadastre-se grátis</v-btn
-    >
+    <div class="text-center">
+      <v-btn
+        width="250px"
+        class="mx-auto mt-7"
+        height="48px"
+        dark
+        rounded
+        elevation="0"
+        color="#FE5D26"
+        to="/register"
+        >cadastre-se grátis</v-btn
+      >
+    </div>
   </v-container>
 </template>
 
