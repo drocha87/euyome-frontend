@@ -42,7 +42,7 @@ export default Vue.extend({
 .header__subtitle {
   font-family: Rubik, sans-serif;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1rem;
   line-height: 1.5rem;
   text-transform: uppercase;
