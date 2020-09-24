@@ -16,7 +16,7 @@
               Instagram
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
+          <v-list-item to="#prices">
             <v-list-item-content class="drawer__link">
               Preços
             </v-list-item-content>
@@ -26,7 +26,7 @@
               Contato
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
+          <v-list-item href="https://app.euyo.me/login">
             <v-list-item-content class="drawer__link">
               Login
             </v-list-item-content>
