@@ -31,9 +31,7 @@
         Contato
       </v-btn>
       <v-spacer></v-spacer>
-      <button class="button_login" href="https://app.euyo.me/login">
-        Login
-      </button>
+      <button class="button_login" @click="login()">Login</button>
     </v-app-bar>
 
     <v-main fill-height>
@@ -81,6 +79,11 @@ export default Vue.extend({
         this.barBgColor = 'transparent';
       }
     };
+  },
+  methods: {
+    login() {
+      window.location.href = 'https://app.euyo.me/login';
+    },
   },
 });
 </script>
