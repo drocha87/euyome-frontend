@@ -31,7 +31,9 @@
         Contato
       </v-btn>
       <v-spacer></v-spacer>
-      <button class="button_login" to="/login">Login</button>
+      <button class="button_login" href="https://app.euyo.me/login">
+        Login
+      </button>
     </v-app-bar>
 
     <v-main fill-height>
