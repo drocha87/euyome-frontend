@@ -196,7 +196,7 @@ export default Vue.extend({
     async cardClick(url: string) {
       try {
         await this.$axios.$post(
-          `/users/cards/clicks/${((this as any).user.card as Card).id}`
+          `/users/cards/clicks/${((this as any).card as Card).id}`
         );
         window.location.href = url;
       } catch (error) {
