@@ -53,7 +53,6 @@
       style="display: block"
       width="250px"
       class="mx-auto mt-7"
-      height="52px"
       dark
       rounded
       elevation="0"
