@@ -50,7 +50,7 @@
             color="#FE5D26"
             to="/register"
           >
-            experimente grátis
+            faça seu cadastro grátis
           </v-btn>
         </v-card-actions>
       </v-card>
