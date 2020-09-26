@@ -11,7 +11,6 @@ export default (req, res, next) => {
       // req.headers
     );
   }
-  next();
   if ((req.headers['x-forwarded-proto'] || '').endsWith('http')) {
     res.writeHead(301, {
       Location: 'https://www.euyo.me' + req.url,
