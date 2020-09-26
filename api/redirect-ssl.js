@@ -8,16 +8,16 @@ export default (req, res, next) => {
       req.originalUrl,
       req.headers['x-forwarded-proto'],
       req.url,
-      req.hostname
+      req.host
     );
   }
 
-  if (!req.hostname.startsWith('www.'))
+  if (req.host && !req.host.startsWith('www.'))
     res.redirect(
       `${req.headers['x-forwarded-proto']}://www.${req.hostname}${req.url}`
     );
   else next();
-  next();
+  // next();
   // if ((req.headers['x-forwarded-proto'] || '').endsWith('http')) {
   //   res.writeHead(301, {
   //     Location: 'https://www.euyo.me' + req.url,
