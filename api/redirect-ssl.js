@@ -7,7 +7,8 @@ export default (req, _res, next) => {
       req.headers['user-agent'],
       req.originalUrl,
       req.headers['x-forwarded-proto'],
-      req.url
+      req.url,
+      req.headers
     );
   }
   next();
