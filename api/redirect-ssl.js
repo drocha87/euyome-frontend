@@ -3,7 +3,12 @@
  */
 export default (req, res, next) => {
   if (req.originalUrl !== '/_loading/sse') {
-    console.log(req.headers['user-agent'], req.originalUrl);
+    console.log(
+      req.headers['user-agent'],
+      req.originalUrl,
+      req.headers['x-forwarded-proto'],
+      req.url
+    );
   }
   if ((req.headers['x-forwarded-proto'] || '').endsWith('http')) {
     res.writeHead(301, {
