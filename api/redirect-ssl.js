@@ -1,16 +1,22 @@
 /* code as recommend in umbler help page
  * https://community.umbler.com/br/t/redirecionamento-https-em-aplicacoes-nodejs/676
  */
-export default (req, _res, next) => {
+export default (req, res, next) => {
   if (req.originalUrl !== '/_loading/sse') {
     console.log(
       req.headers['user-agent'],
       req.originalUrl,
       req.headers['x-forwarded-proto'],
       req.url,
-      req.headers
+      req.hostname
     );
   }
+
+  if (!req.hostname.startsWith('www.'))
+    res.redirect(
+      `${req.headers['x-forwarded-proto']}://www.${req.hostname}${req.url}`
+    );
+  else next();
   next();
   // if ((req.headers['x-forwarded-proto'] || '').endsWith('http')) {
   //   res.writeHead(301, {
