@@ -5,12 +5,12 @@ export default (req, res, next) => {
   if (req.originalUrl !== '/_loading/sse') {
     console.log(req.headers['user-agent'], req.originalUrl);
   }
-  if ((req.headers['x-forwarded-proto'] || '').endsWith('http')) {
-    res.writeHead(301, {
-      Location: 'https://www.euyo.me' + req.url,
-    });
-    res.end();
-  } else {
-    next();
-  }
+  // if ((req.headers['x-forwarded-proto'] || '').endsWith('http')) {
+  //   res.writeHead(301, {
+  //     Location: 'https://www.euyo.me' + req.url,
+  //   });
+  //   res.end();
+  // } else {
+  //   next();
+  // }
 };
