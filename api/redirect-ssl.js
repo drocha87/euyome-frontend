@@ -4,7 +4,6 @@
 export default (req, res, next) => {
   if (req.originalUrl !== '/_loading/sse') {
     console.log(
-      req.headers['user-agent'],
       req.originalUrl,
       req.headers['x-forwarded-proto'],
       req.url,
