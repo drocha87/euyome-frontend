@@ -18,8 +18,9 @@
           ></v-text-field>
           <div class="mt-6 text-caption">
             Ao clicar em próximo você aceita os
-            <nuxt-link to="/termos">termos e condições</nuxt-link>
-            de uso.
+            <nuxt-link class="font-weight-bold" to="/termos">
+              TERMOS E CONDIÇOES DE USO
+            </nuxt-link>
           </div>
           <div v-if="errorMessage" class="text-center red--text text-caption">
             {{ errorMessage }}

@@ -6,7 +6,7 @@ export default {
     host: '0.0.0.0',
   },
 
-  serverMiddleware: ['~/api/redirect-ssl'],
+  // serverMiddleware: ['~/api/redirect-ssl'],
 
   /*
    ** Nuxt rendering mode
