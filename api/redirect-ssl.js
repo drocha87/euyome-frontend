@@ -2,7 +2,9 @@
  * https://community.umbler.com/br/t/redirecionamento-https-em-aplicacoes-nodejs/676
  */
 export default (req, res, next) => {
-  console.log(req.headers['user-agent'], req.headers.host);
+  if (req.originalUrl !== '/_loading/sse') {
+    console.log(req.headers['user-agent'], req.originalUrl);
+  }
   if ((req.headers['x-forwarded-proto'] || '').endsWith('http')) {
     res.writeHead(301, {
       Location: 'https://www.euyo.me' + req.url,
