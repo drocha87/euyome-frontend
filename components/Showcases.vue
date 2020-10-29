@@ -59,8 +59,9 @@
         elevation="0"
         color="#FE5D26"
         to="/register"
-        >cadastre-se grátis</v-btn
       >
+        cadastre-se grátis
+      </v-btn>
     </div>
   </v-container>
 </template>
@@ -75,6 +76,7 @@ export default Vue.extend({
     Header,
     Paragraph,
   },
+
   computed: {
     users() {
       return this.$store.state.users;
