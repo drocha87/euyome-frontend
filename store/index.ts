@@ -3,8 +3,8 @@ import { ActionTree } from 'vuex';
 function initialState() {
   return {
     users: [],
-
     medias: [
+
       {
         media: 'website',
         icon: ['fas', 'globe'],
@@ -90,7 +90,7 @@ export const mutations = {
 export const actions: ActionTree<RootState, RootState> = {
   async fetchShowcasesUsers({ commit }): Promise<void> {
     try {
-      const users = await this.$axios.$get('/profiles/showcases');
+      const users = await this.$axios.$get('/showcases');
       commit('SET_SHOWCASES', users);
     } catch (error) {
       commit('SET_SHOWCASES', []);

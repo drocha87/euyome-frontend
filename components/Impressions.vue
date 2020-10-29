@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row class="impressions_container">
+    <v-row>
       <v-col cols="12" sm="5">
         <v-img
           class="mx-auto"
@@ -32,12 +32,3 @@ export default Vue.extend({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-// .impressions_container {
-//   padding: 0 4rem;
-//   @media screen and (max-width: 600px) {
-//     padding: 0 1rem;
-//   }
-// }
-</style>

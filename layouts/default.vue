@@ -6,6 +6,7 @@
       flat
       fixed
       clipped-right
+      :app="$vuetify.breakpoint.smAndDown"
     >
       <div class="logo" style="cursor: pointer" @click="$router.push('/')">
         euyo.me
@@ -46,6 +47,9 @@
           </nuxt-link>
         </span>
         <p class="text-caption">Todos os direitos reservados a euyo.me.</p>
+        <a class="text-caption terms_links" href="https://euyo.me/termos">
+          TERMOS E CONDIÇÕES
+        </a>
       </div>
     </v-footer>
   </v-app>
@@ -136,5 +140,11 @@ html {
   font-weight: 500;
   text-transform: capitalize;
   color: #7ebc89;
+}
+
+.terms_links {
+  color: white !important;
+  text-decoration: none;
+  font-size: 0.8rem;
 }
 </style>

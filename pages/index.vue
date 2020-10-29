@@ -21,6 +21,7 @@ import { Context } from '@nuxt/types';
 
 export default Vue.extend({
   layout(ctx: Context) {
+    // console.log(ctx.app.vuetify.framework.breakpoint.mdAndDown);
     return ctx.isMobileOrTablet ? 'mobile' : 'default';
   },
 
