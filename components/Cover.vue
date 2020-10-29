@@ -9,36 +9,23 @@
             redes sociais e conversa com clientes. Tudo sobre você de uma forma
             super personalizada.
           </Paragraph>
-          <v-form class="mt-8" @submit.prevent="registerUsername(username)">
-            <v-text-field
-              v-model="username"
-              class="cover__left__input"
-              outlined
+          <div class="cover__left__button d-flex flex-column align-center">
+            <v-btn
+              class="mt-4 px-4"
+              type="submit"
+              dark
               rounded
-              dense
-              color="primary"
-              prefix="euyo.me/"
-              placeholder="seu.nome"
-              style="max-width: 400px"
-              :rules="[rules.required, rules.minLength(3), allowedName]"
-            />
-            <div class="cover__left__button d-flex flex-column align-center">
-              <v-btn
-                class="px-4"
-                type="submit"
-                dark
-                rounded
-                elevation="0"
-                color="#FE5D26"
-                height="52px"
-              >
-                cadastre-se grátis
-              </v-btn>
-              <a class="text__login" href="https://app.euyo.me/login">
-                já tenho cadastro
-              </a>
-            </div>
-          </v-form>
+              elevation="0"
+              color="#FE5D26"
+              height="52px"
+              to="/register"
+            >
+              cadastre-se grátis
+            </v-btn>
+            <a class="text__login" href="https://app.euyo.me/login">
+              já tenho cadastro
+            </a>
+          </div>
         </div>
       </v-container>
     </v-col>

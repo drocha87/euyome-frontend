@@ -3,21 +3,17 @@
     <v-card width="100%" flat>
       <v-card-title class="text-h2 justify-center"> Olá </v-card-title>
       <v-card-subtitle class="mt-4 text-justify text-caption">
-        Para criar seu perfil, o primeiro passo é escolher seu nome de usuário,
-        dê preferência para um nome que descreva sua marca ou seu nome pessoal,
-        sem espaços e sem caracteres especiais tá
+        Para criar sua conta, você só precisa digitar o seu melhor email, porque
+        é através dele que vamos verificar sua conta e depois cadastrar uma
+        senha que seja bem segura e pronto!
       </v-card-subtitle>
       <v-card-text>
-        <div class="link__preview">
-          {{ `https://euyo.me/${username}` }}
-        </div>
-
         <v-form v-model="valid" @submit.prevent="next">
           <v-text-field
-            v-model="username"
-            type="text"
-            label="Nome de usuário"
-            :rules="[rules.required, rules.minLength(3), allowedName]"
+            v-model="email"
+            type="email"
+            label="Seu melhor Email"
+            :rules="[rules.required, rules.email]"
           />
           <div v-if="errorMessage" class="text-center red--text text-caption">
             {{ errorMessage }}
@@ -54,23 +50,10 @@ export default Vue.extend({
   data() {
     return {
       valid: false,
-      username: this.$route.query?.username || '',
+      email: '',
       loading: false,
       errorMessage: '',
       rules,
-
-      allowedName: (v: string) => {
-        const fnames = this.$store.getters.getForbiddenNames;
-        if (fnames && fnames.includes(v)) {
-          return `${v} não está disponivel para uso`;
-        }
-
-        if (!/^[\w.]+$/.test(v)) {
-          return 'Use somente letras e digitos, remova espaços e acentos';
-        }
-
-        return true;
-      },
     };
   },
 
@@ -79,19 +62,15 @@ export default Vue.extend({
       try {
         this.loading = true;
         this.errorMessage = '';
-
-        await this.$axios.$post('/users/verify_username', {
-          username: this.username,
-        });
-        this.$router.push({
-          path: '/register/email',
-          query: { username: this.username },
-        });
-      } catch (error) {
-        if (error.response.status === 409) {
-          this.errorMessage = 'Nome de usuário já está em uso';
+        const res =
+          await this.$axios.$post('/users/exists', { email: this.email });
+        if (res.exists) {
+          this.errorMessage = "Usuário já existe em nosso banco de dados";
         } else {
-          this.errorMessage = error.response.data.message;
+          this.$router.push({
+            path: '/register/password',
+            query: { ...this.$route.query, email: this.email },
+          });
         }
       } finally {
         this.loading = false;
