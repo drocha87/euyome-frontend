@@ -1,39 +1,22 @@
 <template>
-  <v-card
-    width="100%"
-    flat
-    :style="`background: ${theme.background}; border: ${border};`"
-  >
-    <v-img v-if="card.imageUrl" height="100px" :src="card.imageUrl"> </v-img>
-    <v-card-title
-      class="text-body-1 font-weight-bold"
-      :style="`color: ${theme.color}`"
+  <v-card width="100%" @click="$emit('click', card.buttonLink)">
+    <v-img
+      v-if="card.imageUrl"
+      max-height="300px"
+      :src="`https://res.cloudinary.com/euyome/image/upload/${card.imageUrl}`"
     >
-      {{ card.title }}
+    </v-img>
+    <v-card-title class="flex-column align-start">
+      <div v-if="card.subtitle" class="text-caption">
+        {{ card.subtitle }}
+      </div>
+      <div>
+        {{ card.title }}
+      </div>
     </v-card-title>
-    <v-card-subtitle
-      class="text-caption text-justify"
-      :style="`color: ${theme.color}`"
-    >
-      {{ card.subtitle }}
-    </v-card-subtitle>
-    <v-card-actions
-      class="pa-0"
-      :style="`overflow: hidden; background: ${theme.buttonBackground}`"
-    >
-      <v-btn
-        tile
-        block
-        height="48px"
-        :color="theme.buttonBackground"
-        :style="`color: ${theme.buttonColor}`"
-        @click="$emit('click', card.buttonLink)"
-      >
-        <span class="text-caption font-weight-bold">
-          {{ card.buttonText || 'Saiba mais' }}
-        </span>
-      </v-btn>
-    </v-card-actions>
+    <v-card-text class="text-justify">
+      {{ card.content }}
+    </v-card-text>
   </v-card>
 </template>
 
