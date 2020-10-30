@@ -1,38 +1,40 @@
 <template>
   <v-container
-    v-if="user.id && theme && card && links"
-    class="fill-height flex-column profile_background"
+    v-if="profile.id && theme"
+    class="fill-height profile_background"
     fluid
     :style="background"
   >
-    <v-avatar
-      :tile="theme.tileAvatar"
-      size="115px"
-      :style="`border: ${
-        theme.border ? `solid 2px ${theme.borderColor}` : 'none'
-      };`"
-    >
-      <v-img
-        eager
-        :lazy-src="require('~/assets/euyome_logo_bg_white_small.jpeg')"
-        transition="true"
-        :src="avatar"
-      />
-    </v-avatar>
+    <v-container style="max-width: 600px; margin: 0 auto">
+      <div class="mb-6 d-flex flex-column justify-center align-center mx-auto">
+        <v-avatar
+          :tile="theme.tileAvatar"
+          size="115px"
+          :style="`border: ${
+            theme.border ? `solid 2px ${theme.borderColor}` : 'none'
+          };`"
+        >
+          <v-img
+            eager
+            :lazy-src="require('~/assets/euyome_logo_bg_white_small.jpeg')"
+            transition="true"
+            :src="avatar"
+          />
+        </v-avatar>
 
-    <div class="text-h5 text-center" :style="`color: ${theme.color};`">
-      {{ user.name ? user.name : user.username }}
-    </div>
+        <div class="mt-2 text-h5 text-center" :style="`color: ${theme.color};`">
+          {{ profile.title || profile.name }}
+        </div>
 
-    <div
-      v-if="user.subtitle"
-      class="text-caption text-center"
-      :style="`color: ${theme.color}`"
-    >
-      {{ user.subtitle }}
-    </div>
+        <div
+          v-if="profile.subtitle"
+          class="text-caption text-center"
+          :style="`color: ${theme.color}`"
+        >
+          {{ profile.subtitle }}
+        </div>
+      </div>
 
-    <v-container style="max-width: 600px; margin: 1rem auto">
       <div v-if="loading" class="text-center">
         <v-progress-circular
           color="primary"
@@ -43,36 +45,32 @@
       </div>
 
       <client-only>
-        <div
-          v-if="user.youtubeVideo"
-          class="video__container text-center mx-auto"
-        >
+        <div v-if="profile.video" class="video__container text-center mx-auto">
           <iframe
             id="ytplayer"
             class="video"
             type="text/html"
             width="100%"
             height="100%"
-            :src="`https://www.youtube.com/embed/${user.youtubeVideo}?autoplay=1&https://euyo.me`"
+            :src="`https://www.youtube.com/embed/${profile.video}?autoplay=1&https://euyo.me`"
             frameborder="0"
           />
         </div>
       </client-only>
 
       <UserCard
-        v-if="card.id"
+        v-if="card"
         class="my-3"
         :card="card"
         :theme="theme"
         :border="
-          theme.backgroundImage ? 'none' : `solid 1px ${theme.buttonBackground}`
+        theme.backgroundImage ? 'none' : `solid 1px ${theme.buttonBackground}`
         "
-        @click="cardClick"
       />
 
       <ButtonIcon
         v-for="link in links"
-        :key="link.name"
+        :key="link.label"
         class="my-2"
         height="58px"
         :rounded="theme.buttonStyle === 'rounded'"
@@ -80,14 +78,13 @@
         :outlined="theme.buttonStyle === 'outlined'"
         :tile="theme.buttonStyle === 'tile'"
         :text-color="
-          theme.buttonStyle === 'outlined'
-            ? theme.buttonBackground
-            : theme.buttonColor
+        theme.buttonStyle === 'outlined'
+        ? theme.buttonBackground
+        : theme.buttonColor
         "
         :color="theme.buttonBackground"
-        :label="link.name"
+        :label="link.label"
         :icon="findIcon(link.media)"
-        @click="followLink(link)"
       />
     </v-container>
   </v-container>
@@ -97,7 +94,7 @@
 import Vue from 'vue';
 import UserCard from '@/components/Profile/UserCard.vue';
 import ButtonIcon from '@/components/Profile/ButtonIcon.vue';
-import { Card, User } from '~/types';
+import { Card, User, Profile, Link, Style } from '~/types';
 
 // FIXME: we need to pass this class in head() function to avoid `this is not defined` problem
 // but I don't think this is the best aproach to fix this problem
@@ -105,6 +102,7 @@ interface MyComponent {
   user: any;
   theme: any;
   profile: any;
+  '$route': any;
 }
 
 export default Vue.extend({
@@ -117,14 +115,11 @@ export default Vue.extend({
 
   async asyncData(context) {
     try {
-      const user: User = await context.$axios.$get(
-        `/profiles/${context.params.id}`
+      const profile: any = await context.$axios.$get(
+        `/views/${context.params.id}`
       );
       return {
-        user,
-        // theme: user.theme,
-        // card: user.card,
-        // links: user.links,
+        profile
       };
     } catch (error) {
       context.error({
@@ -135,11 +130,10 @@ export default Vue.extend({
   },
 
   data() {
+    const profile: Partial<Profile> = {};
     return {
-      links: [],
-      card: {},
-      theme: {},
       loading: true,
+      profile,
     };
   },
 
@@ -149,12 +143,12 @@ export default Vue.extend({
     },
 
     avatar(): string {
-      const img = (this as any).user.avatar || 'v1596315038/profile/euyome.jpg';
+      const img = this.profile.avatar || 'v1596315038/profile/euyome.jpg';
       return `https://res.cloudinary.com/euyome/image/upload/${img}`;
     },
 
     background(): string {
-      const { backgroundImage: image, background } = (this as any).theme;
+      const { backgroundImage: image, background } = this.profile.style!;
 
       if (image) {
         if (image.startsWith('linear-gradient')) {
@@ -167,43 +161,42 @@ export default Vue.extend({
       }
       return `background-color: ${background}`;
     },
+
+    theme(): Style {
+      return this.profile.style!;
+    },
+
+    card(): Card {
+      return this.profile.card!;
+    },
+
+    links(): Link[] {
+      const lks: Link[] = this.profile.links!.slice();
+
+      if (lks === undefined) {
+        return [];
+      }
+
+      return lks.sort((a, b) => {
+        const ai = a?.index || 0;
+        const bi = b?.index || 0;
+        return ai - bi;
+      });
+    },
   },
 
+
   async mounted() {
-    const { theme, card, links } = await this.$axios.$get(
-      `/profiles/${this.$route.params.id}/data`
-    );
-    this.theme = theme;
-    this.card = card;
-    this.links = links;
+    // const { theme, card, links } = await this.$axios.$get(
+    //   `/profiles/${this.$route.params.id}/data`
+    // );
+    // this.theme = theme;
+    // this.card = card;
+    // this.links = links;
     this.loading = false;
   },
 
   methods: {
-    followLink(link: any) {
-      const medias = (this as any).medias;
-      const found = medias.find((el: any) => el.media === link.media);
-
-      this.$axios.post(`/users/links/${link.id}/click`);
-
-      if (found) {
-        window.location.href = found.site + link.url;
-      } else {
-        window.location.href = link.url;
-      }
-    },
-
-    async cardClick(url: string) {
-      try {
-        await this.$axios.$post(
-          `/users/cards/clicks/${((this as any).card as Card).id}`
-        );
-        window.location.href = url;
-      } catch (error) {
-        console.error(error);
-      }
-    },
-
     findIcon(media: string) {
       const found = (this as any).medias.find((el: any) => el.media === media);
       if (found) {
@@ -214,62 +207,62 @@ export default Vue.extend({
   },
 
   head(this: MyComponent) {
+    const title = this.profile.title || this.$route.params.id;
     return {
-      title: `${this.user.name || this.user.username} | ${
-        this.user.subtitle || this.user.username
-      }`,
-      meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.user.subtitle,
-        },
-        {
-          hid: 'og:type',
-          property: 'og:type',
-          content: 'website',
-        },
-        {
-          hid: 'og:url',
-          property: 'og:url',
-          content: `https://euyo.me/${this.user.username}`,
-        },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: this.user.name,
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: this.user.subtitle || this.user.username,
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: `https://res.cloudinary.com/euyome/image/upload/${
-            this.user.avatar
-              ? this.user.avatar + '?v=' + Date.now()
+      title: `${title} | ${this.profile.subtitle || ''}`,
+
+    meta: [
+      // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+      {
+        hid: 'description',
+        name: 'description',
+        content: this.profile.subtitle,
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: `https://euyo.me/${this.$route.params.id}`,
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: title,
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: this.profile.subtitle || '',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: `https://res.cloudinary.com/euyome/image/upload/${
+            this.profile.avatar
+              ? this.profile.avatar + '?v=' + Date.now()
               : 'v1595937483/profile/euyome.jpg'
           }`,
-        },
-        {
-          hid: 'og:image:alt',
-          property: 'og:image:alt',
-          content: this.user.username,
-        },
-        {
-          hid: 'og:image:width',
-          property: 'og:image:width',
-          content: '1200',
-        },
-        {
-          hid: 'og:image:height',
-          property: 'og:image:height',
-          content: '630',
-        },
-      ],
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: this.profile.id,
+      },
+      {
+        hid: 'og:image:width',
+        property: 'og:image:width',
+        content: '1200',
+      },
+      {
+        hid: 'og:image:height',
+        property: 'og:image:height',
+        content: '630',
+      },
+    ],
     };
   },
 });
