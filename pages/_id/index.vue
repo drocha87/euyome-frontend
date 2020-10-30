@@ -92,8 +92,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import UserCard from '@/components/Profile/UserCard.vue';
-import ButtonIcon from '@/components/Profile/ButtonIcon.vue';
 import { Card, User, Profile, Link, Style } from '~/types';
 
 // FIXME: we need to pass this class in head() function to avoid `this is not defined` problem
@@ -107,11 +105,6 @@ interface MyComponent {
 
 export default Vue.extend({
   layout: 'profile',
-
-  components: {
-    UserCard,
-    ButtonIcon,
-  },
 
   async asyncData(context) {
     try {
@@ -171,13 +164,10 @@ export default Vue.extend({
     },
 
     links(): Link[] {
-      const lks: Link[] = this.profile.links!.slice();
-
-      if (lks === undefined) {
+      if (this.profile.links === undefined) {
         return [];
       }
-
-      return lks.sort((a, b) => {
+      return this.profile.links.slice().sort((a, b) => {
         const ai = a?.index || 0;
         const bi = b?.index || 0;
         return ai - bi;
@@ -187,12 +177,6 @@ export default Vue.extend({
 
 
   async mounted() {
-    // const { theme, card, links } = await this.$axios.$get(
-    //   `/profiles/${this.$route.params.id}/data`
-    // );
-    // this.theme = theme;
-    // this.card = card;
-    // this.links = links;
     this.loading = false;
   },
 
