@@ -85,6 +85,7 @@
         :color="theme.buttonBackground"
         :label="link.label"
         :icon="findIcon(link.media)"
+        @click="linkAction(link)"
       />
     </v-container>
   </v-container>
@@ -188,6 +189,18 @@ export default Vue.extend({
       }
       return ['fas', 'question'];
     },
+
+    linkAction(link: Link) {
+      console.log(link);
+      const medias = (this as any).medias;
+      const found = medias.find((el: any) => el.media === link.media);
+      this.$axios.post(`/users/profiles/${this.profile.id}/links/${link.id}/click`);
+      if (found) {
+        window.location.href = found.site + link.action;
+      } else {
+        window.location.href = link.action;
+      }
+    }
   },
 
   head(this: MyComponent) {
