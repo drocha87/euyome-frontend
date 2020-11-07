@@ -1,11 +1,11 @@
 <template>
   <div class="hero_smartphone">
     <img :src="require('~/assets/images/cover.png')" />
-    <div class="cover__animation__username">
+    <div v-if="user" class="cover__animation__username">
       {{ user.name || user.username }}
     </div>
     <div class="pictures_loop">
-      <v-avatar v-if="user.avatar" size="80px">
+      <v-avatar v-if="user && user.avatar" size="80px">
         <v-img
           :src="`https://res.cloudinary.com/euyome/image/upload/${user.avatar}`"
         ></v-img>
