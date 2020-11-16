@@ -59,7 +59,7 @@
       </client-only>
 
       <UserCard
-        v-if="card"
+        v-if="card && !loading"
         class="my-3"
         :profileId="profile.id"
         :card="card"
