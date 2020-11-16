@@ -25,7 +25,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
   props: {
-    profileId: { type: String, requried: true },
+    profileId: { type: String, required: true },
     card: { type: Object, required: true },
     theme: { type: Object, required: true },
     border: { type: String, default: 'none' },
