@@ -6,7 +6,7 @@
       :src="`https://res.cloudinary.com/euyome/image/upload/${card.imageUrl}`"
     >
     </v-img>
-    <v-card-title class="flex-column align-start">
+    <v-card-title class="pb-1 pt-4 flex-column align-start">
       <div v-if="card.subtitle" class="text-caption">
         {{ card.subtitle }}
       </div>
