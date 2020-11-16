@@ -1,5 +1,5 @@
 <template>
-  <v-card width="100%" @click="$emit('click', card.buttonLink)">
+  <v-card width="100%" @click="cardClick()">
     <v-img
       v-if="card.imageUrl"
       max-height="300px"
@@ -25,9 +25,17 @@ import Vue from 'vue';
 
 export default Vue.extend({
   props: {
+    profileId: { type: String, requried: true },
     card: { type: Object, required: true },
     theme: { type: Object, required: true },
     border: { type: String, default: 'none' },
   },
+
+  methods: {
+    async cardClick(): Promise<void> {
+      await this.$axios.post(`/views/${this.profileId}/card/click`);
+      window.location.href = this.card.buttonLink;
+    },
+  }
 });
 </script>

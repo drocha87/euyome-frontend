@@ -61,11 +61,13 @@
       <UserCard
         v-if="card"
         class="my-3"
+        :profileId="profile.id"
         :card="card"
         :theme="theme"
         :border="
         theme.backgroundImage ? 'none' : `solid 1px ${theme.buttonBackground}`
         "
+        @click=""
       />
 
       <ButtonIcon
@@ -191,7 +193,6 @@ export default Vue.extend({
     },
 
     linkAction(link: Link) {
-      console.log(link);
       const medias = (this as any).medias;
       const found = medias.find((el: any) => el.media === link.media);
       this.$axios.post(`/users/profiles/${this.profile.id}/links/${link.id}/click`);
