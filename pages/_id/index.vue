@@ -67,7 +67,6 @@
         :border="
         theme.backgroundImage ? 'none' : `solid 1px ${theme.buttonBackground}`
         "
-        @click=""
       />
 
       <ButtonIcon
@@ -114,6 +113,7 @@ export default Vue.extend({
       const profile: any = await context.$axios.$get(
         `/views/${context.params.id}`
       );
+
       return {
         profile
       };
@@ -144,9 +144,9 @@ export default Vue.extend({
     },
 
     background(): string {
-      const { backgroundImage: image, background } = this.profile.style!;
+      const { backgroundImage: image, background } = this.theme;
 
-      if (image) {
+      if (image?.length > 0) {
         if (image.startsWith('linear-gradient')) {
           return `background-image: ${image}`;
         }
@@ -159,7 +159,20 @@ export default Vue.extend({
     },
 
     theme(): Style {
-      return this.profile.style!;
+      if (this.profile.style) {
+        return this.profile.style;
+      }
+      return {
+        tileAvatar: false,
+        border: false,
+        borderColor: '#7ebc89',
+        background: '#ffffff',
+        backgroundImage: '',
+        color: '#191919',
+        buttonColor: '#ffffff',
+        buttonBackground: '#7ebc89',
+        buttonStyle: 'rounded',
+      }
     },
 
     card(): Card {
