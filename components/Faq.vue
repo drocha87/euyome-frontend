@@ -9,17 +9,22 @@
           Este perfil depois é utilizado para divulgação de seus contatos, redes sociais e trabalhos em outras plataformas.
           </FaqQuestion>
 
-          <FaqQuestion question="Como faço meu cadastro?">
-          O cadastro é rápido e fácil de ser realizado. Através do
-          <a href="https://euyo.me/register">link</a>
-          você realiza seu cadastro.
-          Fique tranquilo, pois é tudo muito didático, fique atento ao que é solicitado e rápido terá seu perfil.
+          <FaqQuestion question="É gratuito?">
+          O cadastro é gratuito e sem necessiade de cadastrar cartão de crédito,
+          temos uma versão PRO, que lhe permite personalizar seu link, criar card na capa, acompanhar
+          suas estatísticas, e muito mais. Após o cadastro você terá uma chave de acesso PRO de 14 dias
+          disponível gratuitamente, para você sentir todos os beneficios de ser PRO, e se após esse período
+          você quiser comprar a chave por um ano, é só acessar o menu 'Chaves PRO' ir em 'Comprar Chave'
+          e comprar seu acesso PRO pelo período de um ano, e para te dar toda a segurança na hora da compra
+          você pode pagar com seu PicPay ou entrar em contato conosco e escolher outra forma de pagamento.
           </FaqQuestion>
 
-          <FaqQuestion question="É gratuito?">
-          O cadastro é gratuito, temos uma versão PRO, que lhe permite personalizar mais seu link.
-          Verifique como contratar a versão PRO, dentro da sua dashboard, ou seja, depois que seu
-          cadastro for realizado, vá no botão QUERO SER PRO e arrasa!
+          <FaqQuestion question="Como faço meu cadastro?">
+          O cadastro é rápido e fácil de ser realizado,
+          <a href="https://euyo.me/register">clique aqui</a>
+          e crie sua conta gratuita, sem necessidade de cadastrar cartão de crédito.
+          Fique tranquilo, pois é tudo muito didático, para criar sua conta você só precisa do
+          seu email e de criar uma senha de acesso!
           </FaqQuestion>
 
           <FaqQuestion question="Não recebi o email de ativação da minha conta! O que faço?">
@@ -30,7 +35,7 @@
           Caso não consiga resolver esse problema, <a href="https://euyo.me/euyome">fale conosco</a>
           </FaqQuestion>
 
-          <FaqQuestion question="Como funciona a Versão PRO? O que ela possui de diferente na Versão FREE?">
+          <FaqQuestion question="Como funciona a Versão PRO?">
           A Versão PRO é um sonho!! Na verdade, nos permite deixar o nosso perfil a nossa cara,
           pois nela conseguimos mudar a aparência do nosso link. 
           Podemos alterar a cor do botão, a cor da letra, estilo da foto, Cor de fundo,
