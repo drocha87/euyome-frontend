@@ -6,6 +6,7 @@
       <Impressions class="top__margin" />
       <Showcases class="top__margin" />
       <Prices id="prices" class="top__margin" />
+      <Faq id="prices" class="top__margin" />
     </v-container>
   </div>
 </template>
