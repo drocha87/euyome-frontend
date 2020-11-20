@@ -39,7 +39,7 @@
       <nuxt />
     </v-main>
 
-    <v-footer class="mt-12" color="primary">
+    <v-footer class="mt-12 pb-6" color="primary">
       <div class="mx-auto text-center white--text">
         <span class="text-caption">
           <nuxt-link to="/" style="text-decoration: none; color: white">
@@ -47,9 +47,9 @@
           </nuxt-link>
         </span>
         <p class="text-caption">Todos os direitos reservados a euyo.me.</p>
-        <a class="text-caption terms_links" href="https://euyo.me/termos">
+        <nuxt-link class="text-caption terms_links" to="/termos">
           TERMOS E CONDIÇÕES
-        </a>
+        </nuxt-link>
       </div>
     </v-footer>
   </v-app>
