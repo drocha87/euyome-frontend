@@ -40,9 +40,9 @@
         <v-card-text>
           <p class="price__card__content">ao mês no plano anual</p>
         </v-card-text>
-        <v-card-actions>
+        <v-card-actions class="justify-center">
           <v-btn
-            class="mx-auto px-8"
+            class="px-8"
             height="52px"
             dark
             rounded
