@@ -2,7 +2,7 @@
   <div class="hero_smartphone">
     <img :src="require('~/assets/images/cover.png')" />
     <div v-if="user" class="cover__animation__username">
-      {{ user.name || user.username }}
+      {{ user.title || user.name }}
     </div>
     <div class="pictures_loop">
       <v-avatar v-if="user && user.avatar" size="80px">
