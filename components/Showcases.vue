@@ -29,7 +29,7 @@
             reverse-transition="fade-transition"
           >
             <v-container>
-              <v-list-item :href="`https://euyo.me/${user.username}`">
+              <v-list-item :href="`https://euyo.me/${user.name}`">
                 <v-list-item-avatar size="60px">
                   <v-img
                     :src="`https://res.cloudinary.com/euyome/image/upload/${user.avatar}`"
