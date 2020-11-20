@@ -59,7 +59,7 @@
       <nuxt />
     </v-main>
 
-    <!-- <v-footer class="mt-12" color="primary" fixed>
+    <v-footer class="mt-8 pb-6" color="primary">
       <div class="mx-auto text-center white--text">
         <span class="text-caption">
           <nuxt-link to="/" style="text-decoration: none; color: white">
@@ -67,8 +67,11 @@
           </nuxt-link>
         </span>
         <p class="text-caption">Todos os direitos reservados a euyo.me.</p>
+        <nuxt-link class="text-caption terms_links" to="/termos">
+          TERMOS E CONDIÇÕES
+        </nuxt-link>
       </div>
-    </v-footer> -->
+    </v-footer>
   </v-app>
 </template>
 
@@ -104,5 +107,10 @@ html {
   font-weight: 500;
   text-transform: capitalize;
   color: #7ebc89;
+}
+.terms_links {
+  color: white !important;
+  text-decoration: none;
+  font-size: 0.8rem;
 }
 </style>
