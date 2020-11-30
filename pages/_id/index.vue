@@ -98,6 +98,14 @@
         @click="linkAction(link)"
       />
     </v-container>
+
+    <div v-if="!shareable" class="shareable-icon">
+      <v-btn icon @click="share" :color="theme.buttonBackground">
+        <v-icon>
+          mdi-share
+        </v-icon>
+      </v-btn>
+    </div>
   </v-container>
 </template>
 
@@ -139,6 +147,7 @@ export default Vue.extend({
     return {
       loading: true,
       profile,
+      shareable: false,
     };
   },
 
@@ -205,7 +214,8 @@ export default Vue.extend({
   },
 
 
-  async mounted() {
+  mounted() {
+    this.shareable = !!(navigator && navigator.share);
     this.loading = false;
   },
 
@@ -226,6 +236,15 @@ export default Vue.extend({
         window.location.href = found.site + link.action;
       } else {
         window.location.href = link.action;
+      }
+    },
+
+    share() {
+      if (this.shareable) {
+        navigator.share({
+          title: this.profile.title || this.profile.name,
+          url: `https://euyo.me/${this.profile.name}`,
+        });
       }
     }
   },
@@ -299,7 +318,6 @@ export default Vue.extend({
   background-repeat: no-repeat;
   background-position: center center;
 }
-
 .video__container {
   position: relative;
   width: 100%;
@@ -318,5 +336,11 @@ export default Vue.extend({
 .center__container {
   display: block;
   margin: 1rem auto;
+}
+.shareable-icon {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 15px
 }
 </style>
