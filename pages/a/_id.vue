@@ -136,6 +136,61 @@ export default Vue.extend({
       const img = avatar || 'v1596315038/profile/euyome.jpg';
       return `https://res.cloudinary.com/euyome/image/upload/${img}`;
     },
-  }
+  },
+
+
+  head(this: any) {
+    const title = this.title || this.$route.params.id;
+    return {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.bio,
+        },
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://euyo.me/a/${this.$route.params.id}`,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: title,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.bio || '',
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.avatar,
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: title,
+        },
+        {
+          hid: 'og:image:width',
+          property: 'og:image:width',
+          content: '1200',
+        },
+        {
+          hid: 'og:image:height',
+          property: 'og:image:height',
+          content: '630',
+        },
+      ],
+    };
+  },
 })
 </script>
