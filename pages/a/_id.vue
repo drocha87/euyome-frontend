@@ -9,7 +9,7 @@
           {{ title }}
         </div>
 
-        <v-btn class="mt-4" block depressed color="primary">contato</v-btn>
+        <v-btn class="mt-4" block depressed color="primary" :to="`/${agency.name}`">contato</v-btn>
 
         <div v-if="agency.bio" class="text-justify mt-6" style="color: #3d405b">
           {{ bio }}
