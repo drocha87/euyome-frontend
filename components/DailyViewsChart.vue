@@ -1,6 +1,6 @@
 <template>
   <div>
-    <canvas id="chart" width="100%" height="250px"></canvas>
+    <canvas id="chart" width="100%" max-height="250px" style="min-height: 150px"></canvas>
   </div>
 </template>
 
@@ -23,6 +23,12 @@ export default Vue.extend({
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        spanGaps: false,
+        plugins: {
+          filler: {
+            propagate: false
+          }
+        },
         legend: {
           display: false,
         },

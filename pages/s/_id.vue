@@ -23,22 +23,6 @@
             </client-only>
           </v-card-text>
         </v-card>
-      </v-col>
-      <v-col>
-        <v-card width="100%" class="mt-6">
-          <v-card-title> Impressões </v-card-title>
-          <v-card-subtitle class="text-caption">
-            <span> Quantas vezes seu perfil foi acessado no total. </span>
-          </v-card-subtitle>
-          <v-card-text>
-            <div class="text-center pa-1">
-              <span class="text__style">
-                {{ stats.impressions || 0 }}
-              </span>
-            </div>
-          </v-card-text>
-        </v-card>
-
         <v-card v-if="stats.card" width="100%" class="mt-2">
           <v-card-title>Estatísticas do Card</v-card-title>
           <v-card-text>
@@ -58,7 +42,21 @@
             </v-row>
           </v-card-text>
         </v-card>
-
+      </v-col>
+      <v-col>
+        <v-card width="100%" class="mt-2">
+          <v-card-title> Impressões </v-card-title>
+          <v-card-subtitle class="text-caption">
+            <span> Quantas vezes seu perfil foi acessado no total. </span>
+          </v-card-subtitle>
+          <v-card-text>
+            <div class="text-center pa-1">
+              <span class="text__style">
+                {{ stats.impressions || 0 }}
+              </span>
+            </div>
+          </v-card-text>
+        </v-card>
         <LinksStats :links="stats.links" class="mt-2 mb-8" />
       </v-col>
     </v-row>
@@ -111,10 +109,10 @@ export default Vue.extend({
         }),
         datasets: [
           {
-            backgroundColor: '#41B38A',
+            backgroundColor: '#41B38A33',
             borderColor: '#41B38A',
             data: dailyViews.map((stat: any) => stat.views),
-            fill: false,
+            fill: true,
             pointRadius: 7,
             pointHoverRadius: 10,
           },
