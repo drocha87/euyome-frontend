@@ -1,6 +1,6 @@
 <template>
   <v-row class="cover">
-    <v-col class="cover_left" cols="12" md="7">
+    <v-col cols="12" md="7">
       <v-container class="fill-height">
         <div class="cover__left__container">
           <Header title="você a um clique" subtitle="sempre conectado" />

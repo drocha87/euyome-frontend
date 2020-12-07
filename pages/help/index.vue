@@ -72,11 +72,11 @@ export default Vue.extend({
           title: 'Criando seu perfil',
         },
         {
-          to: 'creating-account',
+          to: 'creating-link',
           title: 'Criando um link',
         },
         {
-          to: 'creating-account',
+          to: 'customizing-profile',
           title: 'Customizando seu perfil',
         },
       ],

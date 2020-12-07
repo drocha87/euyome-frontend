@@ -14,7 +14,9 @@
 
         <v-row>
           <v-col>
-            <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607366648/docs/first_profile_n0jcps.png"></v-img>
+            <a href="https://res.cloudinary.com/euyome/image/upload/v1607366648/docs/first_profile_n0jcps.png">
+              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607366648/docs/first_profile_n0jcps.png"></v-img>
+            </a>
           </v-col>
         </v-row>
 

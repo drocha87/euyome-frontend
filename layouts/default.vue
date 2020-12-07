@@ -1,8 +1,7 @@
 <template>
   <v-app>
     <v-app-bar
-      class="app__container"
-      :color="barBgColor"
+      color="white"
       flat
       fixed
       clipped-right
