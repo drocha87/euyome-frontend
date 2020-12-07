@@ -6,7 +6,7 @@
       flat
       fixed
       clipped-right
-      :app="$vuetify.breakpoint.smAndDown"
+      app
     >
       <div class="logo" style="cursor: pointer" @click="$router.push('/')">
         euyo.me
@@ -31,7 +31,7 @@
       <v-btn class="topbar__link" text color="#c4c4c4" to="/euyome">
         Contato
       </v-btn>
-      <v-btn class="topbar__link" text color="#c4c4c4" to="/help">
+      <v-btn class="topbar__link" text color="#c4c4c4" to="/help" exact>
         Ajuda
       </v-btn>
       <v-spacer></v-spacer>
