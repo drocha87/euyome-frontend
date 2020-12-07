@@ -76,8 +76,12 @@ export default Vue.extend({
           title: 'Criando um link',
         },
         {
+          to: 'customizing-avatar',
+          title: 'Customizando sua foto de perfil ',
+        },
+        {
           to: 'customizing-profile',
-          title: 'Customizando seu perfil',
+          title: 'Estilizando seu perfil',
         },
       ],
       tutorials: [

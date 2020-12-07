@@ -24,7 +24,7 @@
           </v-col>
         </v-row>
         Após a criação da conta você irá receber um email para confirmar sua conta,
-        clique em CONFIRMAR EMAIL e você será redirecionado para a
+        clique em <Highlight>Confirmar Email</Highlight> e você será redirecionado para a
         <a href="https://app.euyo.me/login">
           página de login,
         </a>
