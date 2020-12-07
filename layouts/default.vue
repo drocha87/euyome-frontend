@@ -31,6 +31,9 @@
       <v-btn class="topbar__link" text color="#c4c4c4" to="/euyome">
         Contato
       </v-btn>
+      <v-btn class="topbar__link" text color="#c4c4c4" to="/help">
+        Ajuda
+      </v-btn>
       <v-spacer></v-spacer>
       <button class="button_login" @click="login()">Login</button>
     </v-app-bar>
