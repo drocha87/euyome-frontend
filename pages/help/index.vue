@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="mt-12">
     <Header center title="ajuda" subtitle="central de" />
 
       <v-row class="mt-8">

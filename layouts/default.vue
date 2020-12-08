@@ -20,7 +20,7 @@
           </a>
         </v-col>
         <v-col class="text-center">
-          <a class="topbar__link" href="#prices">
+          <a class="topbar__link" href="/#prices">
             Preços
           </a>
         </v-col>
@@ -94,6 +94,13 @@ html {
   overflow-y: auto;
 }
 
+.logo {
+  font-family: 'Patua One', cursive;
+  font-size: 2.4rem;
+  color: #7ebc89;
+  text-decoration: none;
+}
+
 .app__container {
   margin-top: 1rem;
   padding: 0 3rem;
@@ -102,13 +109,6 @@ html {
   @media screen and (max-width: 600px) {
     padding: 0;
   }
-}
-
-.logo {
-  font-family: 'Patua One', cursive;
-  font-size: 2.4rem;
-  color: #7ebc89;
-  text-decoration: none;
 }
 
 .button_login {
@@ -124,6 +124,7 @@ html {
 }
 
 .topbar__link {
+  display: inline-block;
   margin: 0 1.5rem;
   font-family: Rubik;
   font-style: normal;
@@ -131,14 +132,21 @@ html {
   text-transform: capitalize;
   color: #c4c4c4;
   text-decoration: none;
-}
 
-.drawer__link {
-  font-family: Rubik;
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-transform: capitalize;
-  color: #7ebc89;
+  &:after {
+    content: '';
+    display: block;
+    margin-top: 2px;
+    width: 0;
+    height: 2px;
+    background: #fe5d26;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover:after {
+    width: 90%;
+    transition: width .3s;
+  }
 }
 
 .terms_links {
