@@ -49,9 +49,7 @@ import { Context } from '@nuxt/types';
 import rules from '~/rules';
 
 export default Vue.extend({
-  layout(ctx: Context) {
-    return ctx.isMobileOrTablet ? 'mobile' : 'default';
-  },
+  layout: 'default',
 
   components: {},
 

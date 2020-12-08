@@ -20,10 +20,7 @@ import Prices from '@/components/Prices.vue';
 import { Context } from '@nuxt/types';
 
 export default Vue.extend({
-  layout(ctx: Context) {
-    // console.log(ctx.app.vuetify.framework.breakpoint.mdAndDown);
-    return ctx.isMobileOrTablet ? 'mobile' : 'default';
-  },
+  layout: 'default',
 
   components: {
     Cover,
@@ -38,6 +35,10 @@ export default Vue.extend({
 <style lang="scss">
 * {
   font-family: 'Rubik', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .top__margin {
