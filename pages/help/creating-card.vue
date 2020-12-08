@@ -86,9 +86,9 @@
         No próximo tutorial iremos descubrir como adicionar um video do YouTube na capa, até lá!
       </v-card-text>
       <v-card-actions>
-        <v-btn text color="primary" to="/help/customizing-avatar">Anterior</v-btn>
+        <v-btn text color="primary" to="/help/customizing-profile">Anterior</v-btn>
         <v-spacer></v-spacer>
-        <v-btn text color="primary" disabled to="/help/customizing-profile">Próximo</v-btn>
+        <v-btn text color="primary" to="/help/adding-cover-video">Próximo</v-btn>
       </v-card-actions>
     </v-card>
   </v-container>

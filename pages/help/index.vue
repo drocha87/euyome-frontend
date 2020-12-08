@@ -90,7 +90,7 @@ export default Vue.extend({
           title: 'Criando um Card',
         },
         {
-          to: 'creating-account',
+          to: 'adding-cover-video',
           title: 'Adicionando um video na capa',
         },
         {
