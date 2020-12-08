@@ -86,7 +86,7 @@ export default Vue.extend({
       ],
       tutorials: [
         {
-          to: 'creating-account',
+          to: 'creating-card',
           title: 'Criando um Card',
         },
         {
@@ -96,6 +96,10 @@ export default Vue.extend({
         {
           to: 'creating-account',
           title: 'Comprando uma chave PRO',
+        },
+        {
+          to: 'creating-account',
+          title: 'Usando sua chave PRO',
         }
       ],
       agencies: [
