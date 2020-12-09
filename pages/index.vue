@@ -12,23 +12,13 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Cover from '@/components/Cover.vue';
-import About from '@/components/About.vue';
-import Impressions from '@/components/Impressions.vue';
-import Showcases from '@/components/Showcases.vue';
-import Prices from '@/components/Prices.vue';
-import { Context } from '@nuxt/types';
 
 export default Vue.extend({
   layout: 'default',
 
-  components: {
-    Cover,
-    About,
-    Showcases,
-    Impressions,
-    Prices,
-  },
+   created() {
+     this.$store.dispatch('fetchShowcasesUsers');
+   },
 });
 </script>
 
