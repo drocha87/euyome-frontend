@@ -22,9 +22,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607377728/docs/Customizing_1_fsfbax.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607377728/docs/Customizing_1_fsfbax.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607377728/docs/Customizing_1_fsfbax.png" />
           </v-col>
         </v-row>
 
@@ -38,9 +36,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607425168/docs/appearance-2_atjg46.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607425168/docs/appearance-2_atjg46.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607425168/docs/appearance-2_atjg46.png" />
           </v-col>
         </v-row>
 

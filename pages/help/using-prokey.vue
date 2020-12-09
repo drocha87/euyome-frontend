@@ -18,9 +18,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607522822/docs/Untitled_design_6_cts6xh.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607522822/docs/Untitled_design_6_cts6xh.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607522822/docs/Untitled_design_6_cts6xh.png" />
           </v-col>
         </v-row>
 
@@ -29,9 +27,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607523510/docs/prokeys_nl4gxz.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607523510/docs/prokeys_nl4gxz.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607523510/docs/prokeys_nl4gxz.png" />
           </v-col>
         </v-row>
         Você deverá ver uma tela semelhante a tela acima, dependendo da quantidade de chaves
@@ -57,9 +53,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607524032/docs/Peek_2020-12-09_11-26_rqv0ct.gif">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607524032/docs/Peek_2020-12-09_11-26_rqv0ct.gif"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607524032/docs/Peek_2020-12-09_11-26_rqv0ct.gif" />
           </v-col>
         </v-row>
 

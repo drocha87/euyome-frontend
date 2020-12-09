@@ -21,9 +21,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607431057/docs/dashboard-profile-2_3_yfckhd.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607431057/docs/dashboard-profile-2_3_yfckhd.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607431057/docs/dashboard-profile-2_3_yfckhd.png" />
           </v-col>
         </v-row>
 
@@ -77,9 +75,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607435088/docs/card-final_p1pmqn.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607435088/docs/card-final_p1pmqn.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607435088/docs/card-final_p1pmqn.png" />
           </v-col>
         </v-row>
 

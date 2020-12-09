@@ -14,9 +14,7 @@
 
         <v-row>
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607366648/docs/first_profile_n0jcps.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607366648/docs/first_profile_n0jcps.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607366648/docs/first_profile_n0jcps.png" />
           </v-col>
         </v-row>
 
@@ -26,9 +24,7 @@
 
         <v-row>
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607367639/docs/creating-profile_jlawiu.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607367639/docs/creating-profile_jlawiu.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607367639/docs/creating-profile_jlawiu.png" />
           </v-col>
         </v-row>
 
@@ -41,9 +37,8 @@
 
         <v-row>
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607368434/docs/Foto_do_perfil_ufz7z4.png">
-              <v-img contain max-height="350px" src="https://res.cloudinary.com/euyome/image/upload/v1607368434/docs/Foto_do_perfil_ufz7z4.png"></v-img>
-            </a>
+            <ShowImage max-height="350px"
+                       image="https://res.cloudinary.com/euyome/image/upload/v1607368434/docs/Foto_do_perfil_ufz7z4.png" />
           </v-col>
         </v-row>
 
@@ -52,9 +47,7 @@
 
         <v-row>
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607370821/docs/profile-dashboard_fsgyjm.png">
-              <v-img contain max-height="350px" src="https://res.cloudinary.com/euyome/image/upload/v1607370821/docs/profile-dashboard_fsgyjm.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607370821/docs/profile-dashboard_fsgyjm.png" />
           </v-col>
         </v-row>
 

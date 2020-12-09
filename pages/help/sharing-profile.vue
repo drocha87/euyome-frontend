@@ -22,9 +22,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607517534/docs/sharing-link-instagram_xyfrau.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607517534/docs/sharing-link-instagram_xyfrau.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607517534/docs/sharing-link-instagram_xyfrau.png" />
           </v-col>
         </v-row>
         Agora todas suas redes sociais, estão a um clique dos seus seguidores.<br><br>
@@ -36,9 +34,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607519030/docs/Peek_2020-12-09_10-02_wattrr.gif">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607519030/docs/Peek_2020-12-09_10-02_wattrr.gif"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607519030/docs/Peek_2020-12-09_10-02_wattrr.gif" />
           </v-col>
         </v-row>
         Pronto, é só colocar o link do seu perfil no formato <Highlight>https://euyo.me/euyome</Highlight>

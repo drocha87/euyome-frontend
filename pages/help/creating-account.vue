@@ -15,14 +15,16 @@
         você será redirecionado para a página de cadastro que irá te solicitar seu
         melhor email e uma senha forte, lembre-se de usar um email válido e que você tenha
         acesso pois será nele que você irá receber um email para confirmar sua conta.
-        <v-row>
+
+        <v-row class="my-6">
           <v-col cols="6">
-            <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607362685/docs/email_xlwvqb.png"></v-img>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607362685/docs/email_xlwvqb.png" />
           </v-col>
           <v-col cols="6">
-            <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607362713/docs/pass_twbtlj.png"></v-img>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607362713/docs/pass_twbtlj.png" />
           </v-col>
         </v-row>
+
         Após a criação da conta você irá receber um email para confirmar sua conta,
         clique em <Highlight>Confirmar Email</Highlight> e você será redirecionado para a
         <a href="https://app.euyo.me/login">
@@ -30,11 +32,13 @@
         </a>
         onde você deverá usar seu email e sua senha para acessar seu dashboard e pronto,
         você já tem sua conta confirmada e pronta para criar seu primeiro perfil.
+
         <v-row>
           <v-col>
-            <v-img contain max-height="350px" src="https://res.cloudinary.com/euyome/image/upload/v1607364842/docs/login_vudt8a.png"></v-img>
+            <ShowImage class="mx-auto" max-height="350px" image="https://res.cloudinary.com/euyome/image/upload/v1607364842/docs/login_vudt8a.png" />
           </v-col>
         </v-row>
+
         Agora vamos criar nosso primeiro perfil, clique em próximo para seguir o tutorial.
       </v-card-text>
       <v-card-actions>

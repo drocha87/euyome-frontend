@@ -30,9 +30,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607522822/docs/Untitled_design_6_cts6xh.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607522822/docs/Untitled_design_6_cts6xh.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607522822/docs/Untitled_design_6_cts6xh.png" />
           </v-col>
         </v-row>
         Com isso você será redirecionado para a tela de compra da chave, e aqui
@@ -40,9 +38,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607522918/docs/prokey-buying-screen_co4bid.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607522918/docs/prokey-buying-screen_co4bid.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607522918/docs/prokey-buying-screen_co4bid.png" />
           </v-col>
         </v-row>
 
@@ -72,9 +68,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607521713/docs/Peek_2020-12-09_10-48_ba4zdl.gif">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607521713/docs/Peek_2020-12-09_10-48_ba4zdl.gif"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607521713/docs/Peek_2020-12-09_10-48_ba4zdl.gif" />
           </v-col>
         </v-row>
 

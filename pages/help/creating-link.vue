@@ -16,9 +16,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607373515/docs/add-links_design_kjtwqm.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607373515/docs/add-links_design_kjtwqm.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607373515/docs/add-links_design_kjtwqm.png" />
           </v-col>
         </v-row>
 
@@ -26,9 +24,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607374309/docs/dashboard-link_e8uesh.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607374309/docs/dashboard-link_e8uesh.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607374309/docs/dashboard-link_e8uesh.png" />
           </v-col>
         </v-row>
         Nesta tela temos que escolher o <Highlight>tipo</Highlight> que será o link, o <Highlight>título</Highlight>
@@ -91,9 +87,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607377298/docs/links_lwq83n.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607377298/docs/links_lwq83n.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607377298/docs/links_lwq83n.png" />
           </v-col>
         </v-row>
 

@@ -17,9 +17,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607458415/docs/cover-video-dashboard-5_puf1zi.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607458415/docs/cover-video-dashboard-5_puf1zi.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607458415/docs/cover-video-dashboard-5_puf1zi.png" />
           </v-col>
         </v-row>
 
@@ -28,9 +26,7 @@
 
         <v-row class="my-4">
           <v-col>
-            <a href="https://res.cloudinary.com/euyome/image/upload/v1607458656/docs/youtube-video_h2rfzv.png">
-              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607458656/docs/youtube-video_h2rfzv.png"></v-img>
-            </a>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607458656/docs/youtube-video_h2rfzv.png" />
           </v-col>
         </v-row>
 
