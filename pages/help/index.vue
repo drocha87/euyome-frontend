@@ -83,6 +83,10 @@ export default Vue.extend({
           to: 'customizing-profile',
           title: 'Estilizando seu perfil',
         },
+        {
+          to: 'sharing-profile',
+          title: 'Compartilhando seu perfil',
+        }
       ],
       tutorials: [
         {

@@ -61,7 +61,7 @@
       <v-card-actions>
         <v-btn text color="primary" to="/help/customizing-avatar">Anterior</v-btn>
         <v-spacer></v-spacer>
-        <v-btn text color="primary" disabled to="/help/customizing-profile">Próximo</v-btn>
+        <v-btn text color="primary" to="/help/sharing-profile">Próximo</v-btn>
       </v-card-actions>
     </v-card>
   </v-container>
