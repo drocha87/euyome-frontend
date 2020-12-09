@@ -12,8 +12,8 @@
         nosso perfil em nossas redes sociais.<br><br>
 
         Vamos ver alguns exemplos de como podemos compartilhar nosso perfil, lembrando
-        que exsitem varias formas de divulgar e varias redes socias diferentes que
-        permitem que você divulgue algum link de contato.<br><br>
+        que existem várias formas de divulgar e várias redes socias diferentes que
+        permitem que você compartilhe algum link de contato.<br><br>
 
 
         Compartilhar seu perfil na bio do instagram, facilita o acesso dos seus

@@ -26,10 +26,13 @@
 
         <v-row>
           <v-col>
-            <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607367639/docs/creating-profile_jlawiu.png"></v-img>
+            <a href="https://res.cloudinary.com/euyome/image/upload/v1607367639/docs/creating-profile_jlawiu.png">
+              <v-img contain src="https://res.cloudinary.com/euyome/image/upload/v1607367639/docs/creating-profile_jlawiu.png"></v-img>
+            </a>
           </v-col>
         </v-row>
-        Nesta tela você é hora de escolher seu <Highlight>Nome de Usuário</Highlight>
+
+        Nesta tela é hora de você escolher seu <Highlight>Nome de Usuário</Highlight>
         lembrando que seu nome de usuário NÃO deverá conter caracteres especiais nem
         espaços. A seguir você deverá escolher um <Highlight>Título</Highlight>
         que será o nome que aparecerá logo abaixo da sua foto de perfil e por último
@@ -38,7 +41,9 @@
 
         <v-row>
           <v-col>
-            <v-img contain max-height="350px" src="https://res.cloudinary.com/euyome/image/upload/v1607368434/docs/Foto_do_perfil_ufz7z4.png"></v-img>
+            <a href="https://res.cloudinary.com/euyome/image/upload/v1607368434/docs/Foto_do_perfil_ufz7z4.png">
+              <v-img contain max-height="350px" src="https://res.cloudinary.com/euyome/image/upload/v1607368434/docs/Foto_do_perfil_ufz7z4.png"></v-img>
+            </a>
           </v-col>
         </v-row>
 
@@ -47,7 +52,9 @@
 
         <v-row>
           <v-col>
-            <v-img contain max-height="350px" src="https://res.cloudinary.com/euyome/image/upload/v1607370821/docs/profile-dashboard_fsgyjm.png"></v-img>
+            <a href="https://res.cloudinary.com/euyome/image/upload/v1607370821/docs/profile-dashboard_fsgyjm.png">
+              <v-img contain max-height="350px" src="https://res.cloudinary.com/euyome/image/upload/v1607370821/docs/profile-dashboard_fsgyjm.png"></v-img>
+            </a>
           </v-col>
         </v-row>
 
