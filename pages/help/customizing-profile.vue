@@ -53,8 +53,8 @@
           <v-card-title class="text-body-1 font-weight-bold">Atenção</v-card-title>
           <v-card-text class="text-caption">
             É recomendável que você desative a visibilidade do seu perfil enquanto
-            edita a aparência, pois com seu perfil visível a cada modificação feita
-            será reflita instantâneamente no perfil online.
+            edita a aparência, pois com seu perfil visível a cada modificação ela
+            será refletida instantâneamente no perfil online.
           </v-card-text>
         </v-card>
       </v-card-text>
