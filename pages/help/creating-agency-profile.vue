@@ -86,22 +86,39 @@
         Para isto basta acessar o seu perfil em <Highlight>https://euyo.me/a/SEU_PERFIL</Highlight>
         onde <Highlight>SEU_PERFIL</Highlight> deverá ser substituido pelo nome
         do perfil base que você escolheu lá na primeira opção, ou se você preferir
-        é só clicar no link que aparece que parte superior da tela de
+        é só clicar no link que aparece na parte superior da tela em
         <Highlight>Configurar Agência</Highlight>
 
         <v-row class="my-6">
           <v-col>
             <ShowImage max-height="350px"
-            image="https://res.cloudinary.com/euyome/image/upload/v1607612802/docs/Untitled_design_8_umjtt8.png" />
+                       image="https://res.cloudinary.com/euyome/image/upload/v1607612802/docs/Untitled_design_8_umjtt8.png" />
+          </v-col>
+        </v-row>
+        Agora acessando seu link você deveria ver uma tela como a tela a seguir:
+
+        <v-row class="my-6">
+          <v-col>
+            <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607622506/docs/imobiliaria_xcwlb2.png" />
+          </v-col>
+        </v-row>
+        Agora você pode compartilhar o link da sua agência/empresa e colocar o cliente
+        diretamente em contato com seus corretores, agilizando  o atendimento e
+        criando uma melhor experiência para o cliente, agora o ciclo fica assim.
+
+        <v-row class="my-6">
+          <v-col>
+            <ShowImage max-height="350px"
+                       image="https://res.cloudinary.com/euyome/image/upload/v1607623020/docs/Blue_and_Ivory_Cycle_Diagram_Chart_2_rn94yq.png" />
           </v-col>
         </v-row>
 
-        No próximo tutorial iremos aprender como criar nosso primeiro link.
+        Caso tenha alguma dúvida ou queira saber mais, entre em
+        <nuxt-link to="/euyome" exact>contato conosco</nuxt-link>.
       </v-card-text>
       <v-card-actions>
-        <v-btn text color="primary" to="/help/creating-account">Anterior</v-btn>
+        <v-btn text color="primary" to="/help">Voltar para ajuda</v-btn>
         <v-spacer></v-spacer>
-        <v-btn text color="primary" to="/help/creating-link">Próximo</v-btn>
       </v-card-actions>
     </v-card>
   </v-container>

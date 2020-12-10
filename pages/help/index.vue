@@ -109,16 +109,16 @@ export default Vue.extend({
       agencies: [
         {
           to: 'creating-agency-profile',
-          title: 'Criando seu perfil',
+          title: 'Criando seu perfil de agência/empresa',
         },
-        {
-          to: 'creating-account',
-          title: 'Divulgando seu link da agência/empresa',
-        },
-        {
-          to: 'creating-account',
-          title: 'Compartilhando as estatísticas dos seus clientes/funcionários',
-        }
+        //{
+        //  to: 'creating-account',
+        //  title: 'Divulgando seu link da agência/empresa',
+        //},
+        //{
+        //  to: 'creating-account',
+        //  title: 'Compartilhando as estatísticas dos seus clientes/funcionários',
+        //}
       ]
     }
   }
