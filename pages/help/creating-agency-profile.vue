@@ -14,7 +14,7 @@
 
         Vamos imaginar um cenário simples, onde uma imobiliária cria sua conta aqui
         na euyo.me, e cria o perfil dos seus 10 corretores de imóveis, para que eles
-        possam usufruir dos beneficios da euyo.me.<br><br>
+        possam usufruir dos benefícios da euyo.me.<br><br>
 
         O procedimento então fica da seguinte maneira, a imobiliária compartilha o
         link dela em suas redes sociais, e cada corretor compartilha seu próprio link
