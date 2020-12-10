@@ -56,6 +56,15 @@
             frameborder="0"
           />
         </div>
+
+        <!-- <iframe v-if="spotifyTrack" -->
+        <!--         :class="{ 'mt-4': profile.video }" -->
+        <!--         :src="`https://open.spotify.com/embed/track/${spotifyTrack}`" -->
+        <!--         width="100%" -->
+        <!--         height="80" -->
+        <!--         frameborder="0" -->
+        <!--         style="border: none; overflow: hidden; border-radius: 4px;" -->
+        <!--         allowtransparency="true" allow="encrypted-media"></iframe> -->
       </client-only>
 
       <UserCard
@@ -89,6 +98,14 @@
         @click="linkAction(link)"
       />
     </v-container>
+
+    <div v-if="!shareable" class="shareable-icon">
+      <v-btn icon @click="share" :color="theme.buttonBackground">
+        <v-icon>
+          mdi-share
+        </v-icon>
+      </v-btn>
+    </div>
   </v-container>
 </template>
 
@@ -130,6 +147,7 @@ export default Vue.extend({
     return {
       loading: true,
       profile,
+      shareable: false,
     };
   },
 
@@ -189,10 +207,16 @@ export default Vue.extend({
         return ai - bi;
       });
     },
+
+    // TODO: implements this feature in app first
+    //    spotifyTrack(): string {
+    //      return '1TX4h6MrIZ0K3r4OOG11WO';
+    //    }
   },
 
 
-  async mounted() {
+  mounted() {
+    this.shareable = !!(navigator && navigator.share);
     this.loading = false;
   },
 
@@ -213,6 +237,15 @@ export default Vue.extend({
         window.location.href = found.site + link.action;
       } else {
         window.location.href = link.action;
+      }
+    },
+
+    share() {
+      if (this.shareable) {
+        navigator.share({
+          title: this.profile.title || this.profile.name,
+          url: `https://euyo.me/${this.profile.name}`,
+        });
       }
     }
   },
@@ -286,7 +319,6 @@ export default Vue.extend({
   background-repeat: no-repeat;
   background-position: center center;
 }
-
 .video__container {
   position: relative;
   width: 100%;
@@ -305,5 +337,11 @@ export default Vue.extend({
 .center__container {
   display: block;
   margin: 1rem auto;
+}
+.shareable-icon {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 15px
 }
 </style>
