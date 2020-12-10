@@ -243,6 +243,9 @@ export default Vue.extend({
     async share() {
       if (this.shareable) {
         await navigator.share({
+          // TODO: figure a way to show the avatar preview
+          title: this.profile.title || this.profile.name,
+          text: 'Acesse meu perfil clicando no link abaixo.',
           url: `https://euyo.me/${this.profile.name}`,
         });
       }
