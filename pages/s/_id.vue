@@ -47,7 +47,7 @@
         <v-card width="100%" class="mt-2">
           <v-card-title> Impressões </v-card-title>
           <v-card-subtitle class="text-caption">
-            <span> Quantas vezes seu perfil foi acessado no total. </span>
+            Quantas vezes seu perfil foi acessado no total.
           </v-card-subtitle>
           <v-card-text>
             <div class="text-center pa-1">
