@@ -208,9 +208,10 @@ export default Vue.extend({
       });
     },
 
-    spotifyTrack(): string {
-      return '1TX4h6MrIZ0K3r4OOG11WO';
-    }
+    // TODO: implements this feature in app first
+    //    spotifyTrack(): string {
+    //      return '1TX4h6MrIZ0K3r4OOG11WO';
+    //    }
   },
 
 
