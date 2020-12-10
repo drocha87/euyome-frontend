@@ -99,7 +99,7 @@
       />
     </v-container>
 
-    <div v-if="!shareable" class="shareable-icon">
+    <div v-if="shareable" class="shareable-icon">
       <v-btn icon @click="share" :color="theme.buttonBackground">
         <v-icon>
           mdi-share
