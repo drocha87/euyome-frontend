@@ -3,7 +3,7 @@
     <Header center title="ajuda" subtitle="central de" />
 
       <v-row class="mt-8">
-        <v-col cols="12" sm="6">
+        <v-col cols="12" sm="4">
           <v-card>
             <v-card-title>
               Primeiros Passos
@@ -19,7 +19,7 @@
           </v-card>
         </v-col>
 
-        <v-col cols="12" sm="6">
+        <v-col cols="12" sm="4">
           <v-card class="fill-height">
             <v-card-title>
               Tutoriais
@@ -35,21 +35,21 @@
           </v-card>
         </v-col>
 
-        <!-- <v-col cols="12" sm="4"> -->
-        <!--   <v-card class="fill-height"> -->
-        <!--     <v-card-title> -->
-        <!--       Para Agências e Empresas -->
-        <!--     </v-card-title> -->
-        <!--     <v-card-subtitle class="text-caption"> -->
-        <!--       Funcionalidades exclusivas para as agências e empresas. -->
-        <!--     </v-card-subtitle> -->
-        <!--     <v-card-text> -->
-        <!--       <div v-for="item in agencies" :key="item.to"> -->
-        <!--         <nuxt-link :to="item.to" append>{{ item.title }}</nuxt-link> -->
-        <!--       </div> -->
-        <!--     </v-card-text> -->
-        <!--   </v-card> -->
-        <!-- </v-col> -->
+        <v-col cols="12" sm="4">
+          <v-card class="fill-height">
+            <v-card-title>
+              Para Agências e Empresas
+            </v-card-title>
+            <v-card-subtitle class="text-caption">
+              Funcionalidades exclusivas para as agências e empresas.
+            </v-card-subtitle>
+            <v-card-text>
+              <div v-for="item in agencies" :key="item.to">
+                <nuxt-link :to="item.to" append>{{ item.title }}</nuxt-link>
+              </div>
+            </v-card-text>
+          </v-card>
+        </v-col>
       </v-row>
       <Faq id="prices" class="top__margin" />
   </v-container>
@@ -108,7 +108,7 @@ export default Vue.extend({
       ],
       agencies: [
         {
-          to: 'creating-account',
+          to: 'creating-agency-profile',
           title: 'Criando seu perfil',
         },
         {
