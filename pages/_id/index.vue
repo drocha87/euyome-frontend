@@ -57,14 +57,14 @@
           />
         </div>
 
-        <iframe v-if="spotifyTrack"
-                :class="{ 'mt-4': profile.video }"
-                :src="`https://open.spotify.com/embed/track/${spotifyTrack}`"
-                width="100%"
-                height="80"
-                frameborder="0"
-                style="border: none; overflow: hidden; border-radius: 4px;"
-                allowtransparency="true" allow="encrypted-media"></iframe>
+        <!-- <iframe v-if="spotifyTrack" -->
+        <!--         :class="{ 'mt-4': profile.video }" -->
+        <!--         :src="`https://open.spotify.com/embed/track/${spotifyTrack}`" -->
+        <!--         width="100%" -->
+        <!--         height="80" -->
+        <!--         frameborder="0" -->
+        <!--         style="border: none; overflow: hidden; border-radius: 4px;" -->
+        <!--         allowtransparency="true" allow="encrypted-media"></iframe> -->
       </client-only>
 
       <UserCard
