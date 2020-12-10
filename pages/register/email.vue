@@ -41,9 +41,7 @@ import Vue from 'vue';
 import rules from '~/rules';
 
 export default Vue.extend({
-  layout(ctx: Context) {
-    return ctx.isMobileOrTablet ? 'mobile' : 'default';
-  },
+  layout: 'default',
 
   components: {},
 

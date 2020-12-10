@@ -1,6 +1,6 @@
 <template>
   <v-row class="cover">
-    <v-col class="cover_left" cols="12" md="7">
+    <v-col cols="12" md="7">
       <v-container class="fill-height">
         <div class="cover__left__container">
           <Header title="você a um clique" subtitle="sempre conectado" />
@@ -11,13 +11,13 @@
           </Paragraph>
           <div class="cover__left__button d-flex flex-column align-center">
             <v-btn
-              class="mt-4 px-4"
+              class="mt-6 mb-4 px-6"
               type="submit"
               dark
               rounded
               elevation="0"
               color="#FE5D26"
-              height="52px"
+              height="40px"
               to="/register"
             >
               cadastre-se grátis
@@ -123,7 +123,7 @@ export default Vue.extend({
 }
 
 .cover {
-  height: 100vh;
+  height: 90vh;
   max-width: 100%;
   margin: 0 auto;
 
@@ -143,13 +143,13 @@ export default Vue.extend({
 }
 
 .text__login {
-  margin-top: 0.8rem;
   font-family: Rubik;
   font-style: normal;
   font-weight: bold;
   font-size: 11px;
   line-height: 13px;
   text-transform: uppercase;
+  text-decoration: none;
   color: #7ebc89;
 }
 </style>

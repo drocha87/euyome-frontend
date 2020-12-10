@@ -1,38 +1,44 @@
 <template>
   <v-app>
     <v-app-bar
-      class="app__container"
-      :color="barBgColor"
+      color="white"
       flat
       fixed
       clipped-right
-      :app="$vuetify.breakpoint.smAndDown"
-    >
-      <div class="logo" style="cursor: pointer" @click="$router.push('/')">
+      app
+      >
+      <nuxt-link class="logo" to="/" append>
         euyo.me
-      </div>
+      </nuxt-link>
 
-      <v-btn
-        class="topbar__link"
-        text
-        color="#c4c4c4"
-        href="https://instagram.com/euyo.me"
-      >
-        Instagram
-      </v-btn>
-      <v-btn
-        class="topbar__link"
-        text
-        color="#c4c4c4"
-        @click="$vuetify.goTo('#prices', scrollOptions)"
-      >
-        Preços
-      </v-btn>
-      <v-btn class="topbar__link" text color="#c4c4c4" to="/euyome">
-        Contato
-      </v-btn>
+      <NavigationDrawer v-if="smallScreen" v-model="drawer"/>
+
+      <v-row v-else class="ml-8 mt-4" align="end" justify="center" style="max-width: 600px">
+        <v-col class="text-center">
+          <a class="topbar__link"  href="https://instagram.com/euyo.me" target="_blank">
+            Instagram
+          </a>
+        </v-col>
+        <v-col class="text-center">
+          <a class="topbar__link" href="/#prices">
+            Preços
+          </a>
+        </v-col>
+        <v-col class="text-center">
+          <a class="topbar__link"  href="https://euyo.me/euyome" target="_blank">
+            Contato
+          </a>
+        </v-col>
+        <v-col class="text-center">
+          <nuxt-link class="topbar__link"  to="/help">
+            Ajuda
+          </nuxt-link>
+        </v-col>
+      </v-row>
+
       <v-spacer></v-spacer>
-      <button class="button_login" @click="login()">Login</button>
+      <v-app-bar-nav-icon v-if="smallScreen" @click="drawer = true" />
+      <button v-else class="button_login" @click="login()">Login</button>
     </v-app-bar>
 
     <v-main fill-height>
@@ -62,28 +68,19 @@ export default Vue.extend({
   data() {
     return {
       drawer: false,
-      barBgColor: 'transparent',
-      scrollOptions: {
-        duration: 500,
-        offset: 0,
-      },
     };
   },
-  created() {
-    this.$store.dispatch('fetchShowcasesUsers');
+
+  computed: {
+    smallScreen() {
+      return this.$vuetify.breakpoint.smAndDown;
+    }
   },
-  mounted() {
-    window.onscroll = () => {
-      if (
-        document.body.scrollTop > 100 ||
-        document.documentElement.scrollTop > 100
-      ) {
-        this.barBgColor = 'white';
-      } else {
-        this.barBgColor = 'transparent';
-      }
-    };
-  },
+
+//   created() {
+//     this.$store.dispatch('fetchShowcasesUsers');
+//   },
+
   methods: {
     login() {
       window.location.href = 'https://app.euyo.me/login';
@@ -97,6 +94,13 @@ html {
   overflow-y: auto;
 }
 
+.logo {
+  font-family: 'Patua One', cursive;
+  font-size: 2.4rem;
+  color: #7ebc89;
+  text-decoration: none;
+}
+
 .app__container {
   margin-top: 1rem;
   padding: 0 3rem;
@@ -105,12 +109,6 @@ html {
   @media screen and (max-width: 600px) {
     padding: 0;
   }
-}
-
-.logo {
-  font-family: 'Patua One', cursive;
-  font-size: 2.4rem;
-  color: #7ebc89;
 }
 
 .button_login {
@@ -126,20 +124,29 @@ html {
 }
 
 .topbar__link {
+  display: inline-block;
   margin: 0 1.5rem;
   font-family: Rubik;
   font-style: normal;
   font-weight: 500;
   text-transform: capitalize;
   color: #c4c4c4;
-}
+  text-decoration: none;
 
-.drawer__link {
-  font-family: Rubik;
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-transform: capitalize;
-  color: #7ebc89;
+  &:after {
+    content: '';
+    display: block;
+    margin-top: 2px;
+    width: 0;
+    height: 2px;
+    background: #fe5d26;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover:after {
+    width: 90%;
+    transition: width .3s;
+  }
 }
 
 .terms_links {
