@@ -39,6 +39,6 @@ html {
 }
 
 .v-card__text, .v-card__title {
-  word-break: normal; /* maybe !important  */
+  word-break: normal !important;
 }
 </style>
