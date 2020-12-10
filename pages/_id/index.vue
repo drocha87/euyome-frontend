@@ -240,10 +240,11 @@ export default Vue.extend({
       }
     },
 
-    share() {
+    async share() {
       if (this.shareable) {
-        navigator.share({
+        await navigator.share({
           title: this.profile.title || this.profile.name,
+          text: `Compartilhe o perfil ${this.profile.name}`,
           url: `https://euyo.me/${this.profile.name}`,
         });
       }
