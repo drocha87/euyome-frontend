@@ -45,19 +45,13 @@
                     <v-list-item-avatar>
                       <v-img :src="getAvatar(item.avatar)"></v-img>
                     </v-list-item-avatar>
-
                     <v-list-item-content>
-                      <v-list-item-title>
-                        <div class="text-caption">
+                      <v-list-item-title class="text-caption">
                           {{ item.title }}
-                        </div>
-                        <div
-                          class="font-weight-bold text-caption"
-                          style="color: #c4c4c4"
-                          >
-                          {{ item.name }}
-                        </div>
                       </v-list-item-title>
+                      <v-list-item-subtitle class="font-weight-bold text-caption" style="color: #c4c4c4">
+                          {{ item.name }}
+                      </v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                 </template>
