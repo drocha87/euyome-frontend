@@ -82,9 +82,9 @@
         </v-card>
 
         Preenchendo estas informações e clicando em salvar, seu perfil da agência,
-        já estará automaticamente publicado e disponível para acesso ao publico.
+        já estará automaticamente publicado e disponível para acesso ao público.
         Para isto basta acessar o seu perfil em <Highlight>https://euyo.me/a/SEU_PERFIL</Highlight>
-        onde <Highlight>SEU_PERFIL</Highlight> deverá ser substituido pelo nome
+        onde <Highlight>SEU_PERFIL</Highlight> deverá ser substituído pelo nome
         do perfil base que você escolheu lá na primeira opção, ou se você preferir
         é só clicar no link que aparece na parte superior da tela em
         <Highlight>Configurar Agência</Highlight>
@@ -102,7 +102,7 @@
             <ShowImage image="https://res.cloudinary.com/euyome/image/upload/v1607622506/docs/imobiliaria_xcwlb2.png" />
           </v-col>
         </v-row>
-        Agora você pode compartilhar o link da sua agência/empresa e colocar o cliente
+        Você já pode compartilhar o link da sua agência/empresa e colocar o cliente
         diretamente em contato com seus corretores, agilizando  o atendimento e
         criando uma melhor experiência para o cliente, agora o ciclo fica assim.
 

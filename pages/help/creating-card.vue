@@ -79,7 +79,7 @@
           </v-col>
         </v-row>
 
-        No próximo tutorial iremos descubrir como adicionar um video do YouTube na capa, até lá!
+        No próximo tutorial iremos descobrir como adicionar um video do YouTube na capa, até lá!
       </v-card-text>
       <v-card-actions>
         <v-btn text color="primary" to="/help/customizing-profile">Anterior</v-btn>
