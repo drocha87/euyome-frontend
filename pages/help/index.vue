@@ -115,10 +115,10 @@ export default Vue.extend({
         //  to: 'creating-account',
         //  title: 'Divulgando seu link da agência/empresa',
         //},
-        //{
-        //  to: 'creating-account',
-        //  title: 'Compartilhando as estatísticas dos seus clientes/funcionários',
-        //}
+        {
+          to: 'sharing-stats',
+          title: 'Compartilhando as estatísticas dos seus clientes/funcionários',
+        }
       ]
     }
   }
