@@ -8,7 +8,7 @@
       <v-list nav dense>
         <v-list-item-group
           class="px-8"
-          active-class="deep-purple--text text--accent-4"
+          active-class="primary--text text--accent-4"
         >
           <v-list-item to="/" exact>
             <v-list-item-content class="drawer__link">
