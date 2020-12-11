@@ -104,7 +104,12 @@ export default Vue.extend({
 
   computed: {
     profiles(): any {
-      return (this.agency as any).profiles;
+      const a: any = this.agency;
+      const ps = a.profiles;
+      if (ps) {
+        return ps.filter((p: any) => p.name !== a.name);
+      }
+      return [];
     },
 
     title(): string {
