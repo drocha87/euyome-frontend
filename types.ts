@@ -26,6 +26,7 @@ export interface Profile {
   style?: Style;
   links?: Link[];
   card?: Card;
+  ageGate?: boolean;
 }
 
 export interface Link {
