@@ -106,6 +106,7 @@
         </v-icon>
       </v-btn>
     </div>
+    <AgeGate v-if="ageGate" />
   </v-container>
 </template>
 
@@ -206,6 +207,10 @@ export default Vue.extend({
         const bi = b?.index || 0;
         return ai - bi;
       });
+    },
+
+    ageGate(): boolean {
+      return this.profile.ageGate || false;
     },
 
     // TODO: implements this feature in app first

@@ -22,10 +22,13 @@
                 </span>
               </td>
               <td class="text-center">
-                <font-awesome-icon v-if="!item.pro" :icon="['fas', 'check']" />
+                <v-icon v-if="!item.pro" color="#212529">mdi-check-bold</v-icon>
+                <!-- <font-awesome-icon v-if="!item.pro" :icon="['fas', 'check']" /> -->
               </td>
               <td class="text-center">
-                <font-awesome-icon :icon="['fas', 'check']" />
+                <v-icon v-if="!item.pro" color="#6c757d">mdi-check</v-icon>
+                <v-icon v-else color="#212529">mdi-check-bold</v-icon>
+                <!-- <font-awesome-icon :icon="['fas', 'check']" /> -->
               </td>
             </tr>
           </tbody>
@@ -43,7 +46,7 @@
         <v-card-actions class="justify-center">
           <v-btn
             class="px-8"
-            height="52px"
+            height="45px"
             dark
             rounded
             elevation="0"
@@ -60,13 +63,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Header from '@/components/Header.vue';
 
 export default Vue.extend({
-  components: {
-    Header,
-  },
-
   data() {
     return {
       items: [
@@ -91,7 +89,15 @@ export default Vue.extend({
           pro: false,
         },
         {
-          name: 'Estatísticas',
+          name: 'Modo restrito',
+          pro: false,
+        },
+        {
+          name: 'Impressões',
+          pro: true,
+        },
+        {
+          name: 'Compartilhamento de impressões',
           pro: true,
         },
         {
