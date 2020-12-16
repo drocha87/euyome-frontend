@@ -97,8 +97,8 @@ export default {
     baseURL:
       process.env.NODE_ENV === 'development'
         ? 'http://127.0.0.1:3333/v1'
-        // : 'https://api.euyo.me/v1',
-        : 'https://test-backend.euyo.me/v1',
+        : 'https://api.euyo.me/v1',
+        // : 'https://test-backend.euyo.me/v1',
 
     common: {
       'Content-Type': 'application/json',
