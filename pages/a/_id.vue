@@ -107,7 +107,7 @@ export default Vue.extend({
       const a: any = this.agency;
       const ps = a.profiles;
       if (ps) {
-        return ps.filter((p: any) => p.name !== a.name);
+        return ps.filter((p: any) => (p.name !== a.name && !p.hiddenAgency));
       }
       return [];
     },
