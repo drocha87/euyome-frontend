@@ -52,7 +52,7 @@ function initialState() {
       {
         media: 'phone',
         icon: ['fas', 'phone'],
-        site: 'tel:',
+        site: 'tel:+',
       },
     ],
 
