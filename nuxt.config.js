@@ -36,7 +36,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Compartilhe suas redes sociais, crie salto para links e muito mais, tudo isso com temas exclusivos e uma central de estatísticas simples e fácil de entender.',
+          'Euyo.me é seu perfil virtual, colocando você em contato direto com sua audiência. Compartilhe seu euyome no seu Instagram e em todas as suas redes socias e tenha suas impressões em um único lugar!',
       },
     ],
     link: [
