@@ -39,55 +39,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Header from '@/components/Header.vue';
-import Paragraph from '@/components/Paragraph.vue';
-import CoverPageAnimation from '@/components/CoverPageAnimation.vue';
-import rules from '~/rules';
 
 export default Vue.extend({
-  components: {
-    Header,
-    Paragraph,
-    CoverPageAnimation,
-  },
-
-  data() {
-    return {
-      rules,
-      user: {},
-      username: '',
-
-      allowedName: (v: string) => {
-        const fnames = this.$store.getters.getForbiddenNames;
-        if (fnames && fnames.includes(v)) {
-          return `${v} não está disponivel para uso`;
-        }
-
-        if (!/^[\w.]+$/.test(v)) {
-          return 'Use somente letras e digitos, remova espaços e acentos';
-        }
-
-        return true;
-      },
-    };
-  },
-
   computed: {
     users() {
       return this.$store.state.users;
-    },
-  },
-
-  methods: {
-    registerUsername(username: string) {
-      if (username.length > 0) {
-        this.$router.push({
-          path: '/register',
-          query: { username },
-        });
-      } else {
-        this.$router.push('/register');
-      }
     },
   },
 });
