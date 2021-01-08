@@ -73,6 +73,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/device',
+    '@nuxtjs/sitemap',
     [
       'nuxt-fontawesome',
       {
@@ -130,6 +131,16 @@ export default {
       },
     },
   },
+
+  /* sitemap configuration */
+  sitemap: {
+    hostname: 'https://euyo.me',
+    gzip: true,
+    routes: [
+      '/euyome',
+    ],
+  },
+
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

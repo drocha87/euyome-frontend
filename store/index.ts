@@ -72,6 +72,9 @@ function initialState() {
       'help',
       '404',
       'pro',
+      'sitemap.xml',
+      'sitemap',
+      'robots.txt',
     ],
   };
 }
