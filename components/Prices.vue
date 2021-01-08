@@ -105,7 +105,7 @@ export default Vue.extend({
           pro: true,
         },
         {
-          name: 'Video na capa',
+          name: 'Vídeo na capa',
           pro: true,
         },
         {

@@ -1,11 +1,13 @@
 <template>
   <v-container>
-    <Header center title="nossos euyome’s" subtitle="pra quem é, e quem são" />
+    <Header center title="nossos euyome’s" subtitle="para quem é, e quem são" />
     <v-row class="mt-6" align="center">
       <v-col cols="12" md="6">
         <Paragraph>
-          Euyo.me é pra todo mundo, para todos os tipos de seguimento. Se seu
-          negócio ou você precisa se apresentar, você precisa de um perfil
+          Euyo.me é para todo mundo, para todos os tipos de seguimento. Seja você
+          uma Banda famosa, Escola de Idiomas, DJ, confeiteiro, advogada, influenciadora
+          digital, etc...
+          Se seu negócio ou você precisa se apresentar, você precisa de um perfil
           virtual.
         </Paragraph>
       </v-col>

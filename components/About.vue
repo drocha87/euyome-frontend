@@ -22,8 +22,10 @@
       />
     </div>
     <Paragraph class="text-center about__info">
-      Pronto! Após isto, seu link já vai estar disponível e depois é só
-      compartilhar nas suas conversas e biografia.
+      Pronto! Após isto, seu perfil virtual já vai estar disponível e depois é só
+      compartilhar nas suas conversas e bio das suas redes socias. E ah, usando seu
+      perfil nas suas principais redes sociais você vai ter todas as suas impressões
+      em um único lugar, na nossa tela de impressões e cliques.
     </Paragraph>
   </v-container>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="hero_smartphone">
-    <img :src="require('~/assets/images/cover.png')" />
+    <img :src="require('~/assets/images/cover.png')" alt="Preview do euyo.me" />
     <div v-if="user" class="cover__animation__username">
       {{ user.title || user.name }}
     </div>
