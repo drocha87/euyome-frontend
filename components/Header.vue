@@ -1,9 +1,9 @@
 <template>
   <div :class="center ? 'header__center' : 'header__left'">
     <div class="header__container">
-      <div class="header__subtitle">{{ subtitle }}</div>
+      <h6 class="header__subtitle">{{ subtitle }}</h6>
       <div class="header__divider"></div>
-      <div class="header__title">{{ title }}</div>
+      <h1 class="header__title">{{ title }}</h1>
     </div>
   </div>
 </template>

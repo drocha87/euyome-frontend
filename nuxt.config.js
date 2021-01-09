@@ -26,8 +26,9 @@ export default {
   head: {
     htmlAttrs: {
       prefix: 'og: https://ogp.me/ns#',
+      lang: 'pt-BR',
     },
-    titleTemplate: '%s - ' + 'Você a um clique',
+    titleTemplate: '%s - ' + 'Seu perfil virtual',
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
