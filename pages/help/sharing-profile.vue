@@ -17,7 +17,7 @@
 
 
         Compartilhar seu perfil na bio do instagram, facilita o acesso dos seus
-        seguidores/clientes, aproximando você ou sua empresa do seu publico alvo.
+        seguidores/clientes, aproximando você ou sua empresa do seu público alvo.
         Na imagem a seguir vamos ver como compartilhamos nosso perfil no instagram.
 
         <v-row class="my-4">

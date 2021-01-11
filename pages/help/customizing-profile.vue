@@ -42,7 +42,7 @@
 
         Nesta tela tudo é bem intuitivo, você pode experimentar a vontade as combinações
         da aparência e deixar o seu perfil com a sua cara e as cores da sua marca,
-        ressaltando mais uma vez que as modificações só são visíveis para o publico
+        ressaltando mais uma vez que as modificações só são visíveis para o público
         se seu perfil for PRO.
 
         <v-card class="my-4" flat color="#fff3b0">

@@ -13,7 +13,7 @@
 
         Cada perfil PRO pode ter apenas um Card, e isso é intencional, pois dentro
         da estrutura do layout da euyo.me, o Card é um elemento de destaque, ficando
-        acima de todos os botões logo abaixo do Título e do seu video institucional.<br><br>
+        acima de todos os botões logo abaixo do Título e do seu vídeo institucional.<br><br>
 
         Para criar seu Card você precisa que seu perfil seja PRO e então a partir
         do dashboard do seu perfil clicar em <Highlight>Card na Capa</Highlight>.
@@ -79,7 +79,7 @@
           </v-col>
         </v-row>
 
-        No próximo tutorial iremos descobrir como adicionar um video do YouTube na capa, até lá!
+        No próximo tutorial iremos descobrir como adicionar um vídeo do YouTube na capa, até lá!
       </v-card-text>
       <v-card-actions>
         <v-btn text color="primary" to="/help/customizing-profile">Anterior</v-btn>

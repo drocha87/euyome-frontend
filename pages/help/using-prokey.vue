@@ -37,7 +37,7 @@
         <v-card flat outlined class="mt-6">
           <v-card-title>Chave</v-card-title>
           <v-card-text>
-            O id unico da chave associado a sua conta e intransferível.
+            O id único da chave associado a sua conta e intransferível.
           </v-card-text>
         </v-card>
 
@@ -61,7 +61,7 @@
           <v-card-title>Status</v-card-title>
           <v-card-text>
             Aqui temos dois status da chave <Highlight>Ativa</Highlight> e <Highlight>Inativa</Highlight>,
-            sua chave fica inativa quando o periodo de uso dela expira ou o pagamento é cancelado.
+            sua chave fica inativa quando o período de uso dela expira ou o pagamento é cancelado.
           </v-card-text>
         </v-card>
 
@@ -75,13 +75,13 @@
         </v-card>
 
         Aqui na euyo.me nos não temos o conceito de renovar a chave PRO, sendo assim
-        quando a chave estiver perto do periodo de expirar, você receberá um email,
+        quando a chave estiver perto do período de expirar, você receberá um email,
         te informando que a chave irá expirar, e então você repete o ciclo de compra
         e de associar o perfil a nova chave. As chaves inativas continuam visível,
         como um registro das suas compras.<br><br>
 
         Se você fez tudo certinho, agora o prefil associado a esta chave estará PRO,
-        e todos os recursos e customizações, estarão visíveis ao publico.
+        e todos os recursos e customizações, estarão visíveis ao público.
 
       </v-card-text>
       <v-card-actions>

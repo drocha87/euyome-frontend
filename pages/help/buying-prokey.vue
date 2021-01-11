@@ -10,7 +10,7 @@
       <v-card-text class="text-justify">
         Após você deixar seu perfil incrível, customizado, com a sua cara, é hora
         de tornar tudo isso visível e deixar o público maravilhado com seu perfil,
-        pra isso você vai precisar ser PRO.<br><br>
+        para isso você vai precisar ser PRO.<br><br>
 
         A euyo.me é com certeza a plataforma de compartilhamento de links, com melhor
         custo benefício, e após você se tornar PRO você terá acesso a todos os

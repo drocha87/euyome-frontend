@@ -95,7 +95,7 @@ export default Vue.extend({
         },
         {
           to: 'adding-cover-video',
-          title: 'Adicionando um video na capa',
+          title: 'Adicionando um vídeo na capa',
         },
         {
           to: 'buying-prokey',
