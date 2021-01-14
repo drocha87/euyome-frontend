@@ -8,10 +8,8 @@
     :style="`color: ${textColor}`"
     @click="emitClick"
   >
-    <font-awesome-icon :icon="icon" />
-    <span class="link__text ml-2">
-      {{ label.substring(0, 35) }}
-    </span>
+    <font-awesome-icon :icon="icon" style="font-size: 18px; opacity: 0.8;" />
+    <span class="link__text ml-2">{{ label.substring(0, 35) }}</span>
   </v-btn>
 </template>
 
