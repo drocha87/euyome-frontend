@@ -22,26 +22,20 @@
           />
         </v-avatar>
 
-        <div class="mt-2 text-h5 text-center" :style="`color: ${theme.color};`">
-          {{ profile.title || profile.name }}
-        </div>
+        <div
+          class="mt-2 text-h5 text-center"
+          :style="`color: ${theme.color};`"
+        >{{ profile.title || profile.name }}</div>
 
         <div
           v-if="profile.subtitle"
           class="text-caption text-center"
           :style="`color: ${theme.color}`"
-        >
-          {{ profile.subtitle }}
-        </div>
+        >{{ profile.subtitle }}</div>
       </div>
 
       <div v-if="loading" class="text-center">
-        <v-progress-circular
-          color="primary"
-          size="40"
-          width="2"
-          indeterminate
-        />
+        <v-progress-circular color="primary" size="40" width="2" indeterminate />
       </div>
 
       <client-only>
@@ -97,16 +91,33 @@
         :icon="findIcon(link.media)"
         @click="linkAction(link)"
       />
+
+      <ButtonIcon
+        class="my-2"
+        height="58px"
+        :rounded="theme.buttonStyle === 'rounded'"
+        :depressed="theme.buttonStyle === 'depressed'"
+        :outlined="theme.buttonStyle === 'outlined'"
+        :tile="theme.buttonStyle === 'tile'"
+        :text-color="
+        theme.buttonStyle === 'outlined'
+        ? theme.buttonBackground
+        : theme.buttonColor
+        "
+        :color="theme.buttonBackground"
+        :label="profile.form.title"
+        :icon="['fas', 'address-book']"
+        @click="() => dialog = true"
+      />
     </v-container>
 
     <div v-if="shareable" class="shareable-icon">
       <v-btn icon @click="share" :color="theme.buttonBackground">
-        <v-icon>
-          mdi-share
-        </v-icon>
+        <v-icon>mdi-share</v-icon>
       </v-btn>
     </div>
     <AgeGate v-if="ageGate" />
+    <Form v-model="dialog" :form="profile.form" @data="sendForm"></Form>
   </v-container>
 </template>
 
@@ -120,7 +131,7 @@ interface MyComponent {
   user: any;
   theme: any;
   profile: any;
-  '$route': any;
+  $route: any;
 }
 
 export default Vue.extend({
@@ -133,7 +144,7 @@ export default Vue.extend({
       );
 
       return {
-        profile
+        profile,
       };
     } catch (error) {
       context.error({
@@ -149,6 +160,7 @@ export default Vue.extend({
       loading: true,
       profile,
       shareable: false,
+      dialog: false,
     };
   },
 
@@ -191,7 +203,7 @@ export default Vue.extend({
         buttonColor: '#ffffff',
         buttonBackground: '#7ebc89',
         buttonStyle: 'rounded',
-      }
+      };
     },
 
     card(): Card {
@@ -219,7 +231,6 @@ export default Vue.extend({
     //    }
   },
 
-
   mounted() {
     this.shareable = !!(navigator && navigator.share);
     this.loading = false;
@@ -237,7 +248,9 @@ export default Vue.extend({
     linkAction(link: Link) {
       const medias = (this as any).medias;
       const found = medias.find((el: any) => el.media === link.media);
-      this.$axios.post(`/users/profiles/${this.profile.id}/links/${link.id}/click`);
+      this.$axios.post(
+        `/users/profiles/${this.profile.id}/links/${link.id}/click`
+      );
       if (found) {
         window.location.href = found.site + link.action;
       } else {
@@ -254,7 +267,12 @@ export default Vue.extend({
           url: `https://euyo.me/${this.profile.name}`,
         });
       }
-    }
+    },
+
+    async sendForm(f: any) {
+      await this.$axios.post(`/views/${this.profile.id}/forms`, f);
+      this.dialog = false;
+    },
   },
 
   head(this: MyComponent) {
@@ -262,58 +280,58 @@ export default Vue.extend({
     return {
       title: `${title} | ${this.profile.subtitle || ''}`,
 
-    meta: [
-      // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-      {
-        hid: 'description',
-        name: 'description',
-        content: this.profile.subtitle,
-      },
-      {
-        hid: 'og:type',
-        property: 'og:type',
-        content: 'website',
-      },
-      {
-        hid: 'og:url',
-        property: 'og:url',
-        content: `https://euyo.me/${this.$route.params.id}`,
-      },
-      {
-        hid: 'og:title',
-        property: 'og:title',
-        content: title,
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: this.profile.subtitle || '',
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: `https://res.cloudinary.com/euyome/image/upload/${
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.profile.subtitle,
+        },
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://euyo.me/${this.$route.params.id}`,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: title,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.profile.subtitle || '',
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `https://res.cloudinary.com/euyome/image/upload/${
             this.profile.avatar
               ? this.profile.avatar + '?v=' + Date.now()
               : 'v1595937483/profile/euyome.jpg'
           }`,
-      },
-      {
-        hid: 'og:image:alt',
-        property: 'og:image:alt',
-        content: this.profile.id,
-      },
-      {
-        hid: 'og:image:width',
-        property: 'og:image:width',
-        content: '1200',
-      },
-      {
-        hid: 'og:image:height',
-        property: 'og:image:height',
-        content: '630',
-      },
-    ],
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: this.profile.id,
+        },
+        {
+          hid: 'og:image:width',
+          property: 'og:image:width',
+          content: '1200',
+        },
+        {
+          hid: 'og:image:height',
+          property: 'og:image:height',
+          content: '630',
+        },
+      ],
     };
   },
 });
@@ -349,6 +367,6 @@ export default Vue.extend({
   display: block;
   position: absolute;
   top: 10px;
-  right: 15px
+  right: 15px;
 }
 </style>
