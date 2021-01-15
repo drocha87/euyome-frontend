@@ -8,17 +8,17 @@
     @input="(v) => $emit('input', v)"
   >
     <v-card tile>
-      <v-card-title>{{ form.title || 'Formulário de reserva' }}</v-card-title>
+      <v-card-title>{{ form.title || 'Formulário' }}</v-card-title>
       <v-card-text>
         <p>{{ form.content }}</p>
+
+        <p v-if="form.infoSite">
+          Para mais informações
+          <a :href="`https://${form.infoSite}`" target="_blank">clique aqui</a>.
+        </p>
         <v-text-field v-model="name" label="Nome" :rules="[rules.required, rules.maxLength(50)]"></v-text-field>
 
-        <v-text-field
-          v-if="form.captureEmail"
-          v-model="email"
-          label="Email"
-          :rules="[rules.required, rules.email]"
-        ></v-text-field>
+        <v-text-field v-model="email" label="Email" :rules="[rules.required, rules.email]"></v-text-field>
 
         <v-row v-if="form.capturePhone">
           <v-col cols="3">
@@ -39,6 +39,7 @@
         </v-row>
 
         <v-textarea
+          v-if="form.captureMessage"
           v-model="message"
           label="Mensagem"
           placeholder="Escreva aqui uma mensagem, esse campo é opcional."
