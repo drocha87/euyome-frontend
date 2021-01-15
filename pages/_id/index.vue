@@ -92,7 +92,9 @@
         @click="linkAction(link)"
       />
 
+      <!-- Starts forms here -->
       <ButtonIcon
+        v-if="profile.form && profile.form.visible"
         class="my-2"
         height="58px"
         :rounded="theme.buttonStyle === 'rounded'"
@@ -109,6 +111,13 @@
         :icon="['fas', 'address-book']"
         @click="() => dialog = true"
       />
+
+      <Form
+        v-if="profile.form && profile.form.visible"
+        v-model="dialog"
+        :form="profile.form"
+        @data="sendForm"
+      ></Form>
     </v-container>
 
     <div v-if="shareable" class="shareable-icon">
@@ -117,7 +126,6 @@
       </v-btn>
     </div>
     <AgeGate v-if="ageGate" />
-    <Form v-model="dialog" :form="profile.form" @data="sendForm"></Form>
   </v-container>
 </template>
 
