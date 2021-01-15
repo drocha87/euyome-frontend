@@ -5,6 +5,10 @@
     fluid
     :style="background"
   >
+    <v-snackbar v-model="snackbar" timeout="2500" color="primary" top>
+      <div class="text-caption text-center">{{ text }}</div>
+    </v-snackbar>
+
     <v-container style="max-width: 600px; margin: 0 auto">
       <div class="mb-6 d-flex flex-column justify-center align-center mx-auto">
         <v-avatar
@@ -169,6 +173,9 @@ export default Vue.extend({
       profile,
       shareable: false,
       dialog: false,
+
+      snackbar: true,
+      text: '',
     };
   },
 
@@ -280,6 +287,8 @@ export default Vue.extend({
     async sendForm(f: any) {
       await this.$axios.post(`/views/${this.profile.id}/forms`, f);
       this.dialog = false;
+      this.text = 'Formulário enviado com sucesso';
+      this.snackbar = true;
     },
   },
 
