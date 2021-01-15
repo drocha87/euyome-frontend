@@ -16,41 +16,48 @@
           Para mais informações
           <a :href="`https://${form.infoSite}`" target="_blank">clique aqui</a>.
         </p>
-        <v-text-field v-model="name" label="Nome" :rules="[rules.required, rules.maxLength(50)]"></v-text-field>
 
-        <v-text-field v-model="email" label="Email" :rules="[rules.required, rules.email]"></v-text-field>
+        <v-form v-model="valid">
+          <v-text-field
+            v-model.trim="name"
+            label="Nome"
+            :rules="[rules.required, rules.maxLength(50)]"
+          ></v-text-field>
 
-        <v-row v-if="form.capturePhone">
-          <v-col cols="3">
-            <v-text-field v-model="ddi" :rules="[rules.required]" label="Código DDI">
-              <template #prepend-inner>
-                <span class="text-caption">+</span>
-              </template>
-            </v-text-field>
-          </v-col>
-          <v-col>
-            <v-text-field
-              v-model="phone"
-              :rules="[rules.required, rules.phoneNumber]"
-              label="Telefone com DDD"
-              placeholder="(DDD) 0 0000-0000"
-            ></v-text-field>
-          </v-col>
-        </v-row>
+          <v-text-field v-model.trim="email" label="Email" :rules="[rules.required, rules.email]"></v-text-field>
 
-        <v-textarea
-          v-if="form.captureMessage"
-          v-model="message"
-          label="Mensagem"
-          placeholder="Escreva aqui uma mensagem, esse campo é opcional."
-          :rules="[rules.text, rules.maxLength(300)]"
-        ></v-textarea>
+          <v-row v-if="form.capturePhone">
+            <v-col cols="3">
+              <v-text-field v-model="ddi" :rules="[rules.required]" label="Código DDI">
+                <template #prepend-inner>
+                  <span class="text-caption">+</span>
+                </template>
+              </v-text-field>
+            </v-col>
+            <v-col>
+              <v-text-field
+                v-model.trim="phone"
+                :rules="[rules.required, rules.phoneNumber]"
+                label="Telefone com DDD"
+                placeholder="(DDD) 0 0000-0000"
+              ></v-text-field>
+            </v-col>
+          </v-row>
 
-        <v-row class="mt-2" alig="center">
-          <v-btn text color="error" @click="() => $emit('input', false)">Cancelar</v-btn>
-          <v-spacer></v-spacer>
-          <v-btn depressed color="primary" @click="sendForm">Enviar</v-btn>
-        </v-row>
+          <v-textarea
+            v-if="form.captureMessage"
+            v-model.trim="message"
+            label="Mensagem"
+            placeholder="Escreva aqui sua mensagem."
+            :rules="[rules.required, rules.text, rules.maxLength(300)]"
+          ></v-textarea>
+
+          <v-row class="mt-2" alig="center">
+            <v-btn text color="error" @click="() => $emit('input', false)">Cancelar</v-btn>
+            <v-spacer></v-spacer>
+            <v-btn :disabled="!valid" depressed color="primary" @click="sendForm">Enviar</v-btn>
+          </v-row>
+        </v-form>
       </v-card-text>
     </v-card>
   </v-dialog>
@@ -74,13 +81,17 @@ export default Vue.extend({
       email: '',
       name: '',
       message: '',
+      valid: true,
     };
   },
 
   methods: {
     sendForm() {
-      // strip unnecesarry characters and format phone with DDI
-      let pn = '+' + this.ddi + this.phone.replace(/[()\s-]/g, '');
+      let pn = '';
+      if (this.phone.length > 0) {
+        // strip unnecesarry characters and format phone with DDI
+        pn = '+' + this.ddi + this.phone.replace(/[()\s-]/g, '');
+      }
 
       this.$emit('data', {
         name: this.name,
