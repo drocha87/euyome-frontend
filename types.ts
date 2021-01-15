@@ -98,15 +98,36 @@ export interface Rules {
   text(v: string): boolean | string;
   email(v: string): boolean | string;
   password(v: string): boolean | string;
-  // url(v: string): boolean | string;
+  url(v: string): boolean | string;
+  phoneNumber(v: string): boolean | string;
+  digits(v: string): boolean | string;
+  instagram(v: string): boolean | string;
+  facebook(v: string): boolean | string;
   required(v: string): boolean | string;
   maxLength(l: number): (v: string) => boolean | string;
   minLength(l: number): (v: string) => boolean | string;
 
-  // validate(reg: RegExp, msg: string): (v: string) => boolean | string;
-  // hexColor(v: string): boolean | string;
+  validate(reg: RegExp, msg: string): (v: string) => boolean | string;
+  hexColor(v: string): boolean | string;
 }
 
+export interface Rules {
+  required(v: string): boolean | string;
+  text(v: string): boolean | string;
+  email(v: string): boolean | string;
+  password(v: string): boolean | string;
+  url(v: string): boolean | string;
+  phoneNumber(v: string): boolean | string;
+  digits(v: string): boolean | string;
+  instagram(v: string): boolean | string;
+  facebook(v: string): boolean | string;
+  required(v: string): boolean | string;
+  maxLength(l: number): (v: string) => boolean | string;
+  minLength(l: number): (v: string) => boolean | string;
+
+  validate(reg: RegExp, msg: string): (v: string) => boolean | string;
+  hexColor(v: string): boolean | string;
+}
 export interface Media {
   icon: Array<string>;
   media: string;
