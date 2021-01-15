@@ -174,7 +174,7 @@ export default Vue.extend({
       shareable: false,
       dialog: false,
 
-      snackbar: true,
+      snackbar: false,
       text: '',
     };
   },

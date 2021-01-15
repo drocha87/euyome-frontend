@@ -8,9 +8,9 @@
     @input="(v) => $emit('input', v)"
   >
     <v-card tile>
-      <v-card-title>{{ form.title || 'Formulário' }}</v-card-title>
+      <v-card-title class="justify-center">{{ form.title || 'Formulário' }}</v-card-title>
       <v-card-text>
-        <p>{{ form.content }}</p>
+        <p class="text-justify">{{ form.content }}</p>
 
         <p v-if="form.infoSite">
           Para mais informações
@@ -58,6 +58,15 @@
             <v-btn :disabled="!valid" depressed color="primary" @click="sendForm">Enviar</v-btn>
           </v-row>
         </v-form>
+        <p class="mt-12 text-caption text-justify" style="color: #979dac">
+          Ao enviar seus dados você está de acordo com os
+          <a
+            href="https://euyo.me/termos"
+            target="_blank"
+          >termos e condições</a>
+          da euyo.me e também está ciente que nós não nos responsabilizamos pela forma como seus dados serão utilizados.
+          Sendo assim só forneça as suas informações se realmente você estiver seguro sobre a origem do formulário.
+        </p>
       </v-card-text>
     </v-card>
   </v-dialog>
