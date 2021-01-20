@@ -122,6 +122,16 @@
         :form="profile.form"
         @data="sendForm"
       ></Form>
+
+      <div
+        class="mx-auto text-center mt-8 mb-2 font-weight-bold text-h6"
+        :style="`color: ${theme.color}`"
+      >
+        <a href="https://euyo.me/" target="_blank" style="text-decoration: none; color: inherit">
+          euyo.me
+          <span class="text-caption">&copy;</span>
+        </a>
+      </div>
     </v-container>
 
     <div v-if="shareable" class="shareable-icon">
