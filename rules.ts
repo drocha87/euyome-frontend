@@ -44,19 +44,6 @@ const rules: Rules = {
 
   hexColor: (v: string) =>
     /^#[0-9a-fA-F]{6}$/.test(v) || 'Código da cor inválido',
-
-  // allowedName: (v: string) => {
-  //   const fnames = this.$store.getters.getForbiddenNames;
-  //   if (fnames && fnames.includes(v)) {
-  //     return `${v} não está disponivel para uso`;
-  //   }
-
-  //   if (!/^\w+$/.test(v)) {
-  //     return 'Use somente letras e digitos, remova espaços e acentos';
-  //   }
-
-  //   return true;
-  // },
 };
 
 export default rules;

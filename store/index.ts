@@ -55,27 +55,6 @@ function initialState() {
         site: 'tel:+',
       },
     ],
-
-    forbiddenNames: [
-      'dashboard',
-      'login',
-      'register',
-      'logout',
-      'faq',
-      'home',
-      'index',
-      'indexhtml',
-      'main',
-      'terms',
-      'conditions',
-      'undefined',
-      'help',
-      '404',
-      'pro',
-      'sitemap.xml',
-      'sitemap',
-      'robots.txt',
-    ],
   };
 }
 
@@ -103,9 +82,5 @@ export const actions: ActionTree<RootState, RootState> = {
 export const getters = {
   getMedias(state: RootState) {
     return state.medias;
-  },
-
-  getForbiddenNames(state: RootState) {
-    return state.forbiddenNames;
   },
 };
