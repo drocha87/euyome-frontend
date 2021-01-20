@@ -226,14 +226,14 @@ export default Vue.extend({
     },
 
     links(): Link[] {
-      if (this.profile.links === undefined) {
-        return [];
+      if (this.profile.links) {
+        return this.profile.links.slice().sort((a, b) => {
+          const ai = a?.index || 0;
+          const bi = b?.index || 0;
+          return ai - bi;
+        });
       }
-      return this.profile.links.slice().sort((a, b) => {
-        const ai = a?.index || 0;
-        const bi = b?.index || 0;
-        return ai - bi;
-      });
+      return [];
     },
 
     ageGate(): boolean {
