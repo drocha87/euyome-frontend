@@ -1,6 +1,6 @@
 <template>
   <v-row class="mx-auto fill-height" justify="center" style="max-width: 900px">
-    <v-col class="text-center" align-self="center">
+    <v-col class="text-center px-2" align-self="center">
       <v-avatar size="150px">
         <v-img :src="avatar"></v-img>
       </v-avatar>
