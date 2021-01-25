@@ -16,7 +16,7 @@
     </v-avatar>
 
     <div
-      class="mt-2 text-h5 text-center"
+      class="mt-2 text-h6 text-center font-weight-bold"
       :style="`color: ${theme.color};`"
     >{{ profile.title || profile.name }}</div>
 
