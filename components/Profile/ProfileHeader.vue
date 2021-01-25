@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-6 d-flex flex-column justify-center align-center mx-auto">
+  <div class="mb-5 d-flex flex-column justify-center align-center mx-auto">
     <v-avatar
       :tile="theme.tileAvatar"
       size="115px"
