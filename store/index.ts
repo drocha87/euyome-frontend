@@ -1,8 +1,23 @@
 import { ActionTree } from 'vuex';
+import { Style } from '~/types';
 
 function initialState() {
+  const defStyle: Style = {
+    tileAvatar: false,
+    border: false,
+    borderColor: '#7ebc89',
+    background: '#ffffff',
+    backgroundImage: '',
+    color: '#191919',
+    buttonColor: '#ffffff',
+    buttonBackground: '#7ebc89',
+    buttonStyle: 'rounded',
+  };
+
   return {
     users: [],
+    defStyle,
+
     medias: [
       {
         media: 'website',
@@ -82,5 +97,9 @@ export const actions: ActionTree<RootState, RootState> = {
 export const getters = {
   getMedias(state: RootState) {
     return state.medias;
+  },
+
+  defaultStyle(state: RootState): Style {
+    return state.defStyle;
   },
 };

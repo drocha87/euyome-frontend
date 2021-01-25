@@ -1,60 +1,18 @@
 <template>
-  <v-container
-    v-if="profile.id && theme"
-    class="fill-height profile_background"
-    fluid
-    :style="background"
-  >
+  <v-container v-if="profile.id" class="fill-height profile_background" fluid :style="background">
     <v-snackbar v-model="snackbar" timeout="2500" color="primary" top>
       <div class="text-caption text-center">{{ text }}</div>
     </v-snackbar>
 
     <v-container style="max-width: 600px; margin: 0 auto">
-      <div class="mb-6 d-flex flex-column justify-center align-center mx-auto">
-        <v-avatar
-          :tile="theme.tileAvatar"
-          size="115px"
-          :style="`border: ${
-            theme.border ? `solid 2px ${theme.borderColor}` : 'none'
-          };`"
-        >
-          <v-img
-            eager
-            :lazy-src="require('~/assets/euyome_logo_bg_white_small.jpeg')"
-            transition="true"
-            :src="avatar"
-          />
-        </v-avatar>
+      <ProfileHeader :profile="profile" />
 
-        <div
-          class="mt-2 text-h5 text-center"
-          :style="`color: ${theme.color};`"
-        >{{ profile.title || profile.name }}</div>
-
-        <div
-          v-if="profile.subtitle"
-          class="text-caption text-center"
-          :style="`color: ${theme.color}`"
-        >{{ profile.subtitle }}</div>
-      </div>
-
-      <div v-if="loading" class="text-center">
+      <v-row v-if="loading" class="justify-center">
         <v-progress-circular color="primary" size="40" width="2" indeterminate />
-      </div>
+      </v-row>
 
       <client-only>
-        <div v-if="profile.video" class="video__container text-center mx-auto">
-          <iframe
-            id="ytplayer"
-            class="video"
-            type="text/html"
-            width="100%"
-            height="100%"
-            :src="`https://www.youtube.com/embed/${profile.video}?autoplay=1&https://euyo.me`"
-            frameborder="0"
-          />
-        </div>
-
+        <ProfileYoutubeVideo :profile="profile" />
         <!-- <iframe v-if="spotifyTrack" -->
         <!--         :class="{ 'mt-4': profile.video }" -->
         <!--         :src="`https://open.spotify.com/embed/track/${spotifyTrack}`" -->
@@ -65,52 +23,14 @@
         <!--         allowtransparency="true" allow="encrypted-media"></iframe> -->
       </client-only>
 
-      <UserCard
-        v-if="card && !loading"
-        class="my-3 shake-bottom"
-        :profileId="profile.id"
-        :card="card"
-        :theme="theme"
-        :border="
-        theme.backgroundImage ? 'none' : `solid 1px ${theme.buttonBackground}`
-        "
-      />
-
-      <ButtonIcon
-        v-for="link in links"
-        :key="link.label"
-        class="my-2"
-        height="58px"
-        :rounded="theme.buttonStyle === 'rounded'"
-        :depressed="theme.buttonStyle === 'depressed'"
-        :outlined="theme.buttonStyle === 'outlined'"
-        :tile="theme.buttonStyle === 'tile'"
-        :text-color="
-        theme.buttonStyle === 'outlined'
-        ? theme.buttonBackground
-        : theme.buttonColor
-        "
-        :color="theme.buttonBackground"
-        :label="link.label"
-        :icon="findIcon(link.media)"
-        @click="linkAction(link)"
-      />
+      <UserCard v-if="card && !loading" class="my-3 shake-bottom" :profile="profile" />
+      <ButtonIcon :profile="profile" />
 
       <!-- Starts forms here -->
-      <ButtonIcon
+      <ButtonIconBase
         v-if="profile.form && profile.form.visible"
         class="my-2"
-        height="58px"
-        :rounded="theme.buttonStyle === 'rounded'"
-        :depressed="theme.buttonStyle === 'depressed'"
-        :outlined="theme.buttonStyle === 'outlined'"
-        :tile="theme.buttonStyle === 'tile'"
-        :text-color="
-        theme.buttonStyle === 'outlined'
-        ? theme.buttonBackground
-        : theme.buttonColor
-        "
-        :color="theme.buttonBackground"
+        :theme="theme"
         :label="profile.form.title"
         :icon="['fas', 'address-book']"
         @click="() => dialog = true"
@@ -123,15 +43,7 @@
         @data="sendForm"
       ></Form>
 
-      <div
-        class="mx-auto text-center mt-8 mb-2 font-weight-bold text-h6"
-        :style="`color: ${theme.color}`"
-      >
-        <a href="https://euyo.me/" target="_blank" style="text-decoration: none; color: inherit">
-          euyo.me
-          <span class="text-caption">&copy;</span>
-        </a>
-      </div>
+      <FooterLogo :color="theme.color" />
     </v-container>
 
     <div v-if="shareable" class="shareable-icon">
@@ -190,22 +102,9 @@ export default Vue.extend({
   },
 
   computed: {
-    medias(): [any] {
-      return this.$store.getters.getMedias;
-    },
-
-    avatar(): string {
-      const img = this.profile.avatar || 'v1596315038/profile/euyome.jpg';
-      return `https://res.cloudinary.com/euyome/image/upload/${img}`;
-    },
-
     background(): string {
       const { backgroundImage: image, background } = this.theme;
-
       if (image?.length > 0) {
-        if (image.startsWith('linear-gradient')) {
-          return `background-image: ${image}`;
-        }
         return `
         background-image: url(https://res.cloudinary.com/euyome/image/upload/${image});
         background-color: ${background}
@@ -218,32 +117,11 @@ export default Vue.extend({
       if (this.profile.style) {
         return this.profile.style;
       }
-      return {
-        tileAvatar: false,
-        border: false,
-        borderColor: '#7ebc89',
-        background: '#ffffff',
-        backgroundImage: '',
-        color: '#191919',
-        buttonColor: '#ffffff',
-        buttonBackground: '#7ebc89',
-        buttonStyle: 'rounded',
-      };
+      return this.$store.getters['defaultStyle'];
     },
 
-    card(): Card {
-      return this.profile.card!;
-    },
-
-    links(): Link[] {
-      if (this.profile.links) {
-        return this.profile.links.slice().sort((a, b) => {
-          const ai = a?.index || 0;
-          const bi = b?.index || 0;
-          return ai - bi;
-        });
-      }
-      return [];
+    card(): Card | undefined {
+      return this.profile.card;
     },
 
     ageGate(): boolean {
@@ -262,27 +140,6 @@ export default Vue.extend({
   },
 
   methods: {
-    findIcon(media: string) {
-      const found = (this as any).medias.find((el: any) => el.media === media);
-      if (found) {
-        return found.icon;
-      }
-      return ['fas', 'question'];
-    },
-
-    linkAction(link: Link) {
-      const medias = (this as any).medias;
-      const found = medias.find((el: any) => el.media === link.media);
-      this.$axios.post(
-        `/users/profiles/${this.profile.id}/links/${link.id}/click`
-      );
-      if (found) {
-        window.location.href = found.site + link.action;
-      } else {
-        window.location.href = link.action;
-      }
-    },
-
     async share() {
       if (this.shareable) {
         await navigator.share({
@@ -363,6 +220,7 @@ export default Vue.extend({
   },
 });
 </script>
+
 <style lang="scss" scoped>
 .profile_background {
   width: 100%;
@@ -370,21 +228,6 @@ export default Vue.extend({
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
-}
-.video__container {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-  border-radius: 4px;
-  overflow: hidden;
-}
-.video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 .center__container {
   display: block;
@@ -480,6 +323,48 @@ export default Vue.extend({
   90% {
     -webkit-transform: rotate(1deg);
     transform: rotate(1deg);
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-1-25 16:42:20
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+.tracking-in-expand {
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
+    1s both;
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) 1s both;
+}
+/**
+ * ----------------------------------------
+ * animation tracking-in-expand
+ * ----------------------------------------
+ */
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>
