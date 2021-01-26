@@ -23,6 +23,7 @@
     <div
       v-if="profile.subtitle"
       class="text-caption text-center"
+      style="margin-top: -4px"
       :style="`color: ${theme.color}`"
     >{{ profile.subtitle }}</div>
   </div>
