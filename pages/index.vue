@@ -16,9 +16,69 @@ import Vue from 'vue';
 export default Vue.extend({
   layout: 'default',
 
-   created() {
-     this.$store.dispatch('fetchShowcasesUsers');
-   },
+  created() {
+    this.$store.dispatch('fetchShowcasesUsers');
+  },
+
+  head() {
+    const title = 'euyo.me | Suas redes sociais a um click';
+    const description =
+      'Organize suas redes sociais criando um perfil virtual que tem a sua cara';
+
+    return {
+      title: title,
+
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: description,
+        },
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://euyo.me',
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: title,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content:
+            'https://res.cloudinary.com/euyome/image/upload/v1611254403/profile/5fc017c0833d135f880f9c1f.jpg',
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: 'euyo.me',
+        },
+        {
+          hid: 'og:image:width',
+          property: 'og:image:width',
+          content: '1200',
+        },
+        {
+          hid: 'og:image:height',
+          property: 'og:image:height',
+          content: '630',
+        },
+      ],
+    };
+  },
 });
 </script>
 
@@ -38,7 +98,8 @@ html {
   }
 }
 
-.v-card__text, .v-card__title {
+.v-card__text,
+.v-card__title {
   word-break: normal !important;
 }
 </style>
