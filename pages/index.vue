@@ -21,7 +21,7 @@ export default Vue.extend({
   },
 
   head() {
-    const title = 'euyo.me | Suas redes sociais a um click';
+    const title = 'euyo.me | Seu perfil virtual';
     const description =
       'Organize suas redes sociais criando um perfil virtual que tem a sua cara';
 
@@ -59,7 +59,7 @@ export default Vue.extend({
           hid: 'og:image',
           property: 'og:image',
           content:
-            'https://res.cloudinary.com/euyome/image/upload/v1611254403/profile/5fc017c0833d135f880f9c1f.jpg',
+            'https://res.cloudinary.com/euyome/image/upload/v1611776467/frontend/logo_jai8s3.png',
         },
         {
           hid: 'og:image:alt',
@@ -69,12 +69,12 @@ export default Vue.extend({
         {
           hid: 'og:image:width',
           property: 'og:image:width',
-          content: '1200',
+          content: '830',
         },
         {
           hid: 'og:image:height',
           property: 'og:image:height',
-          content: '630',
+          content: '830',
         },
       ],
     };
