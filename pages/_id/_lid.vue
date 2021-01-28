@@ -1,59 +1,49 @@
 <template>
-  <div></div>
+  <v-container>
+    <v-overlay>
+      <v-progress-circular indeterminate size="64"></v-progress-circular>
+    </v-overlay>
+  </v-container>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { mapGetters } from 'vuex';
 
 export default Vue.extend({
+  layout: 'empty',
   fetchOnServer: false,
-  layout: 'user',
 
-  components: {},
-
-  fetch() {
-    this.$axios
-      .$get(
-        `/profiles/${this.$route.params.id}/leap_link/${this.$route.params.lid}`
-      )
-      .then((response) => {
-        // Prevent an infinity loop between leap links e.g:
-        // a leap link to https://euyo.me/user1/link_to_leap_link_user2 redirecting to
-        // https://euyo.me/user2/link_to_leap_link_user1
-        if (/(www\.){0,1}(euyo\.me\/).+\/.+/gi.test(response.url)) {
-          this.$router.push('/404');
-        }
-        this.followLink(response);
-      })
-      .catch((error) => {
-        this.$nuxt.error({
-          statusCode: 404,
-          message: error.response.data.message,
-        });
+  async fetch() {
+    try {
+      const data = await this.$axios.$get(
+        `/views/leap_link/${this.$route.params.lid}`
+      );
+      this.followLink(data);
+    } catch (error) {
+      this.$nuxt.error({
+        statusCode: 404,
+        message: error.response.data.message,
       });
+    }
   },
 
-  data() {
-    const user: any = {};
-    return {
-      user,
-    };
+  computed: {
+    medias(): [any] {
+      return this.$store.getters.getMedias;
+    },
   },
 
   methods: {
-    ...mapGetters({
-      medias: 'getMedias',
-    }),
-
-    followLink(link: any) {
-      const medias = this.medias();
-      const found = medias.find((el: any) => el.media === link.media);
-
+    followLink(data: any) {
+      const medias = (this as any).medias;
+      const found = medias.find((el: any) => el.media === data.link.media);
+      this.$axios.post(
+        `/users/profiles/${data.profileId}/links/${data.link._id}/click`
+      );
       if (found) {
-        window.location.href = found.site + link.url;
+        window.location.href = found.site + data.link.action;
       } else {
-        window.location.href = link.url;
+        window.location.href = data.link.action;
       }
     },
   },
