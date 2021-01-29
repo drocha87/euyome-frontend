@@ -9,17 +9,8 @@
             redes sociais e conversa com clientes. Tudo sobre você de uma forma
             super personalizada.
           </Paragraph>
-          <div class="cover__left__button d-flex flex-column align-center">
-            <v-btn
-              class="mt-6 mb-4 px-6"
-              type="submit"
-              dark
-              rounded
-              elevation="0"
-              color="#21c25e"
-              height="40px"
-              to="/register"
-            >cadastre-se grátis</v-btn>
+          <div class="mt-8 d-flex flex-column align-center">
+            <RegisterButton class="mb-3" label="Cadastre-se GRÁTIS" />
             <a class="text__login" href="https://app.euyo.me/login">já tenho cadastro</a>
           </div>
         </v-container>
@@ -69,13 +60,13 @@ export default Vue.extend({
 }
 
 .text__login {
-  font-family: Rubik;
+  font-family: Popppins, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 11px;
+  font-size: 0.7rem;
   line-height: 13px;
   text-transform: uppercase;
   text-decoration: none;
-  color: #7ebc89;
+  color: $paragraph-color;
 }
 </style>

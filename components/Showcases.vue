@@ -33,16 +33,12 @@
             <v-container>
               <v-list-item :href="`https://euyo.me/${user.name}`">
                 <v-list-item-avatar size="60px">
-                  <v-img
-                    :src="`https://res.cloudinary.com/euyome/image/upload/${user.avatar}`"
-                  ></v-img>
+                  <v-img :src="`https://res.cloudinary.com/euyome/image/upload/${user.avatar}`"></v-img>
                 </v-list-item-avatar>
 
                 <v-list-item-content>
                   <v-list-item-title>{{ user.title || user.name }}</v-list-item-title>
-                  <v-list-item-subtitle class="text-caption">
-                    {{ user.subtitle }}
-                  </v-list-item-subtitle>
+                  <v-list-item-subtitle class="text-caption">{{ user.subtitle }}</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
             </v-container>
@@ -51,19 +47,8 @@
       </v-col>
     </v-row>
 
-    <div class="text-center">
-      <v-btn
-        width="250px"
-        class="mx-auto mt-7"
-        height="48px"
-        dark
-        rounded
-        elevation="0"
-        color="#FE5D26"
-        to="/register"
-      >
-        cadastre-se grátis
-      </v-btn>
+    <div class="mt-8 text-center">
+      <RegisterButton label="Cadastre-se GRÁTIS" />
     </div>
   </v-container>
 </template>

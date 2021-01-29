@@ -46,24 +46,25 @@ export default Vue.extend({
   font-size: 1rem;
   line-height: 1.5rem;
   text-transform: uppercase;
-  color: #212121;
+  /* color: $paragraph-color; */
+  color: $primary-green;
 }
 .header__title {
   margin-top: 15px;
   font-family: Rubik, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 3.5rem;
-  line-height: 4.1rem;
+  font-size: 3rem;
+  line-height: 4rem;
   text-transform: uppercase;
-  color: #7ebc89;
+  color: #212121;
   @media screen and (max-width: 768px) {
     font-size: 3rem;
     line-height: 3.9rem;
   }
 }
 .header__divider {
-  background: rgba(254, 93, 38, 0.8);
+  background: rgba($paragraph-color, 0.4);
   height: 2px;
   max-width: 250px;
   @media screen and (max-width: 768px) {

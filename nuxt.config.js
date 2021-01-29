@@ -125,7 +125,7 @@ export default {
       light: true,
       themes: {
         light: {
-          primary: '#7ebc89',
+          primary: '#21c25e',
           euyomeOrange: '#fe5d26',
           // accent: colors.grey.darken3,
           // secondary: colors.amber.darken3,

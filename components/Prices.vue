@@ -42,15 +42,7 @@
           <p class="price__card__content">ao mês no plano anual</p>
         </v-card-text>
         <v-card-actions class="justify-center">
-          <v-btn
-            class="px-8"
-            height="45px"
-            dark
-            rounded
-            elevation="0"
-            color="#FE5D26"
-            to="/register"
-          >faça seu cadastro grátis</v-btn>
+          <RegisterButton label="Faça seu cadastro GRÁTIS" width="300px" />
         </v-card-actions>
       </v-card>
     </v-container>
@@ -59,8 +51,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import RegisterButton from './RegisterButton.vue';
 
 export default Vue.extend({
+  components: { RegisterButton },
   data() {
     return {
       items: [
@@ -161,7 +155,7 @@ export default Vue.extend({
   font-family: Rubik, Roboto, sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  color: #7ebc89;
+  color: $primary-green;
   @media screen and (max-width: 768px) {
     font-size: 0.7rem;
   }
@@ -177,7 +171,7 @@ export default Vue.extend({
 }
 
 .pro_orange {
-  color: #fe5d26;
+  color: $primary-green;
 }
 
 .gray {

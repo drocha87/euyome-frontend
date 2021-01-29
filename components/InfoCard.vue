@@ -8,9 +8,7 @@
   >
     <div class="euyome__card__title">{{ title }}</div>
     <div class="euyome__card__subtitle">{{ subtitle }}</div>
-    <div class="euyome__card__content">
-      {{ content }}
-    </div>
+    <div class="euyome__card__content">{{ content }}</div>
   </v-card>
 </template>
 
@@ -46,7 +44,7 @@ export default Vue.extend({
   line-height: 21px;
   text-transform: uppercase;
   text-align: center;
-  color: #fe5d26;
+  color: $primary-green;
 }
 
 .euyome__card__content {

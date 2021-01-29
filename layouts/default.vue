@@ -37,7 +37,7 @@
       <nuxt />
     </v-main>
 
-    <v-footer class="mt-12 pb-6" color="primary">
+    <v-footer class="mt-12 pb-6" color="#21c25e">
       <div class="mx-auto text-center white--text">
         <span class="text-caption">
           <nuxt-link
@@ -98,7 +98,7 @@ html {
 .button_login {
   width: 130px;
   height: 35px;
-  background-color: #21c25e;
+  background-color: $primary-green;
   color: #fff;
   font-family: 'Rubik', sans-serif;
   font-weight: 700;
@@ -109,13 +109,12 @@ html {
 
 .topbar__link {
   display: inline-block;
-  margin: 0 1.5rem;
   font-family: Rubik;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: capitalize;
-  color: #c4c4c4;
   text-decoration: none;
+  color: #212121 !important;
 
   &:after {
     content: '';
@@ -123,7 +122,7 @@ html {
     margin-top: 2px;
     width: 0;
     height: 2px;
-    background: #fe5d26;
+    background: $primary-green;
     transition: all 0.3s ease-in-out;
   }
 
