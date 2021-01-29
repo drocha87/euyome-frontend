@@ -45,7 +45,12 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;600;700&family=Patua+One:wght@400;600;700&display=swap',
+          'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;600;700&display=swap',
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap',
       },
     ],
   },
@@ -100,7 +105,7 @@ export default {
       process.env.NODE_ENV === 'development'
         ? 'http://127.0.0.1:3333/v1'
         : 'https://api.euyo.me/v1',
-        // : 'https://test-backend.euyo.me/v1',
+    // : 'https://test-backend.euyo.me/v1',
 
     common: {
       'Content-Type': 'application/json',
@@ -137,9 +142,7 @@ export default {
   sitemap: {
     hostname: 'https://euyo.me',
     gzip: true,
-    routes: [
-      '/euyome',
-    ],
+    routes: ['/euyome'],
   },
 
   /*

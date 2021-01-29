@@ -7,12 +7,7 @@
         theme.border ? `solid 2px ${theme.borderColor}` : 'none'
         };`"
     >
-      <v-img
-        eager
-        :lazy-src="require('~/assets/euyome_logo_bg_white_small.jpeg')"
-        transition="true"
-        :src="avatar"
-      />
+      <v-img eager :lazy-src="require('~/assets/logo.png')" transition="true" :src="avatar" />
     </v-avatar>
 
     <div

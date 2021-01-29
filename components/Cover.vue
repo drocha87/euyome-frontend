@@ -1,8 +1,8 @@
 <template>
-  <v-row class="cover">
-    <v-col cols="12" md="7">
-      <v-container class="fill-height">
-        <div class="cover__left__container">
+  <v-container fluid>
+    <v-row align="center" :class="{ 'px-12': $vuetify.breakpoint.mdAndUp }">
+      <v-col cols="12" md="6">
+        <v-container>
           <Header title="você a um clique" subtitle="sempre conectado" />
           <Paragraph class="mt-5">
             Seu perfil virtual em forma de link, utilize na sua biografia das
@@ -16,25 +16,26 @@
               dark
               rounded
               elevation="0"
-              color="#FE5D26"
+              color="#21c25e"
               height="40px"
               to="/register"
-            >
-              cadastre-se grátis
-            </v-btn>
-            <a class="text__login" href="https://app.euyo.me/login">
-              já tenho cadastro
-            </a>
+            >cadastre-se grátis</v-btn>
+            <a class="text__login" href="https://app.euyo.me/login">já tenho cadastro</a>
           </div>
-        </div>
-      </v-container>
-    </v-col>
-    <v-col class="cover_right" cols="12" md="5">
-      <v-container class="fill-height center__animation">
-        <CoverPageAnimation :users="users" />
-      </v-container>
-    </v-col>
-  </v-row>
+        </v-container>
+      </v-col>
+      <v-col cols="12" md="6">
+        <v-container class="text-center">
+          <video autoplay muted loop :height="videoHeight">
+            <source
+              src="https://res.cloudinary.com/euyome/video/upload/v1611948727/frontend/Untitled_design_5_hojnmh.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </v-container>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -45,18 +46,15 @@ export default Vue.extend({
     users() {
       return this.$store.state.users;
     },
+
+    videoHeight(): string {
+      return this.$vuetify.breakpoint.smAndDown ? '300px' : '550px';
+    },
   },
 });
 </script>
 
 <style lang="scss" scoped>
-.cover__left__container {
-  padding: 0 3rem;
-  @media screen and (max-width: 600px) {
-    padding: 0;
-  }
-}
-
 .cover__left__button {
   max-width: 200px;
   @media screen and (max-width: 768px) {
@@ -67,34 +65,6 @@ export default Vue.extend({
 .cover__left__input {
   @media screen and (max-width: 768px) {
     margin: 0 auto;
-  }
-}
-
-.center__animation {
-  padding: 0 6rem;
-  @media screen and (max-width: 960px) {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-.cover {
-  height: 90vh;
-  max-width: 100%;
-  margin: 0 auto;
-
-  .cover_right {
-    background: linear-gradient(203.28deg, #85ffbd 0.06%, #fffb7d 139.96%);
-    border-radius: 0px 0px 0px 150px;
-
-    @media screen and (max-width: 600px) {
-      border-radius: 0;
-    }
-  }
-
-  @media screen and (max-width: 960px) {
-    height: auto;
-    margin-top: 0rem;
   }
 }
 

@@ -6,11 +6,11 @@
 
 <style lang="scss" scoped>
 .paragraph {
-  font-family: Rubik, sans-serif;
+  font-family: Poppins, sans-serif;
   font-style: normal;
-  font-weight: 500;
-  font-size: 0.9rem;
-  line-height: 1.2rem;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4rem;
   color: $paragraph-color;
   text-align: left;
 
