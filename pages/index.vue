@@ -21,7 +21,7 @@ export default Vue.extend({
   },
 
   head() {
-    const title = 'euyo.me | Seu perfil virtual';
+    const title = 'euyo.me';
     const description =
       'Organize suas redes sociais criando um perfil virtual que tem a sua cara';
 
