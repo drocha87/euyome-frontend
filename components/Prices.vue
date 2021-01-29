@@ -10,16 +10,14 @@
               <th class="text-center"></th>
               <th class="text-center header gray">Gratuito</th>
               <th class="text-center header">
-                <span class="pro_orange"> PRO </span>
+                <span class="pro_orange">PRO</span>
               </th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="item in items" :key="item.name">
               <td>
-                <span class="item__desc">
-                  {{ item.name }}
-                </span>
+                <span class="item__desc">{{ item.name }}</span>
               </td>
               <td class="text-center">
                 <v-icon v-if="!item.pro" color="#212529">mdi-check-bold</v-icon>
@@ -52,9 +50,7 @@
             elevation="0"
             color="#FE5D26"
             to="/register"
-          >
-            faça seu cadastro grátis
-          </v-btn>
+          >faça seu cadastro grátis</v-btn>
         </v-card-actions>
       </v-card>
     </v-container>
@@ -93,6 +89,10 @@ export default Vue.extend({
           pro: false,
         },
         {
+          name: 'Formulário de captura',
+          pro: false,
+        },
+        {
           name: 'Impressões',
           pro: true,
         },
@@ -109,7 +109,7 @@ export default Vue.extend({
           pro: true,
         },
         {
-          name: 'Card na capa',
+          name: 'Destaque na capa',
           pro: true,
         },
       ],
