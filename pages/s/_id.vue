@@ -15,7 +15,8 @@
         </v-card>
 
         <v-card class="mt-4">
-          <v-card-title>Impressões por hora (Hoje)</v-card-title>
+          <v-card-title>Impressões por hora</v-card-title>
+          <v-card-subtitle class="text-left text-caption">Últimos 7 dias</v-card-subtitle>
           <v-card-text>
             <client-only>
               <ChartImpressionsPerHour
@@ -105,12 +106,10 @@ export default Vue.extend({
       const adata = [...Array(24).keys()];
       const data = adata.map((x: number) => {
         const y = impressionsLast24Hours.find((val: any) => {
-          const date = new Date(val._id);
-          const hours = date.getUTCHours() - timezoneOffsetInHours;
-
+          const hours = val._id - timezoneOffsetInHours;
           return hours === x;
         });
-        const impressions = y?.impressions || 0;
+        let impressions = y?.impressions || 0;
         return { hour: `${x}h`, impressions };
       });
 

@@ -62,7 +62,7 @@ export default Vue.extend({
               },
               ticks: {
                 beginAtZero: true,
-                stepSize: 2,
+                stepSize: 5,
               },
             },
           ],
