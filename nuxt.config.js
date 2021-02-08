@@ -80,6 +80,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/device',
     '@nuxtjs/sitemap',
+    'cookie-universal-nuxt',
     [
       'nuxt-fontawesome',
       {

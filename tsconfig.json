@@ -21,7 +21,8 @@
       "@nuxt/types",
       "@nuxtjs/axios",
       "vuetify",
-      "@nuxtjs/device"
+      "@nuxtjs/device",
+      "cookie-universal-nuxt/types"
     ]
   },
   "exclude": ["node_modules", ".nuxt", "dist"]
