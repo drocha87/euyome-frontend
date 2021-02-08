@@ -1,34 +1,36 @@
 <template>
   <v-container class="main__container">
     <v-card width="100%" flat>
-      <v-card-title class="text-h2 justify-center"> Olá </v-card-title>
+      <v-card-title class="text-h2 justify-center">Olá</v-card-title>
       <v-card-subtitle class="mt-4 text-justify text-caption">
         Para criar sua conta, você só precisa digitar o seu melhor email, porque
         é através dele que vamos verificar sua conta e depois cadastrar uma
         senha que seja bem segura e pronto!
       </v-card-subtitle>
-      <v-card-text>
+      <v-card-text class="text-right">
         <v-form v-model="valid" @submit.prevent="next">
           <v-text-field
             v-model="email"
+            class="mt-4"
             type="email"
             label="Seu melhor Email"
+            outlined
+            dense
             :rules="[rules.required, rules.email]"
           />
-          <div v-if="errorMessage" class="text-center red--text text-caption">
-            {{ errorMessage }}
-          </div>
+          <div v-if="errorMessage" class="text-center red--text text-caption">{{ errorMessage }}</div>
+          <v-spacer></v-spacer>
           <v-btn
             class="mt-4"
-            block
             type="submit"
-            height="52px"
+            rounded
+            depressed
+            height="45px"
+            min-width="150px"
             color="primary"
             :disabled="!valid"
             :loading="loading"
-          >
-            Próximo
-          </v-btn>
+          >Próximo</v-btn>
         </v-form>
       </v-card-text>
     </v-card>
@@ -60,10 +62,11 @@ export default Vue.extend({
       try {
         this.loading = true;
         this.errorMessage = '';
-        const res =
-          await this.$axios.$post('/users/exists', { email: this.email });
+        const res = await this.$axios.$post('/users/exists', {
+          email: this.email,
+        });
         if (res.exists) {
-          this.errorMessage = "Usuário já existe em nosso banco de dados";
+          this.errorMessage = 'Usuário já existe em nosso banco de dados';
         } else {
           this.$router.push({
             path: '/register/password',
