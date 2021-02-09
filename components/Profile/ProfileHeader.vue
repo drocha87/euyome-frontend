@@ -3,7 +3,7 @@
     <v-badge bottom color="transparent" overlap offset-x="0" offset-y="20">
       <template #badge>
         <v-icon
-          @click="test()"
+          @click="like()"
           :color="theme.color"
           size="18px"
         >{{ liked ? 'mdi-thumb-up' : 'mdi-thumb-up-outline' }}</v-icon>
@@ -77,7 +77,7 @@ export default Vue.extend({
   },
 
   methods: {
-    async test() {
+    async like() {
       if (!this.liked) {
         this.liked = true;
         this.$cookies.set(this.cname, 'true', {
