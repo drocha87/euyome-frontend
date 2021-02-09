@@ -20,7 +20,7 @@
     </v-badge>
 
     <div class="mt-2 text-h6 text-center font-weight-bold" :style="`color: ${theme.color};`">
-      <v-badge :value="likes > 99" color="transparent" overlap offset-x="0">
+      <v-badge :value="likes > 499" color="transparent" overlap offset-x="0">
         <template #badge>
           <v-icon :color="theme.color" size="12px">mdi-check-decagram-outline</v-icon>
         </template>
