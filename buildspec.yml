@@ -1,15 +1,15 @@
 version: 0.2
 
 phases:
-  install:
+  pre-build:
     commands:
       # Install dependencies needed for running tests
+      - echo Installing application dependencies
       - npm install
-      
+
         # Upgrade AWS CLI to the latest version
       - pip install --upgrade awscli
 
   build:
     commands:
-      - npm run build
-
+      - echo Building project
