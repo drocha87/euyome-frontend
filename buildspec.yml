@@ -1,7 +1,7 @@
 version: 0.2
 
 phases:
-  pre-build:
+  pre_build:
     commands:
       # Install dependencies needed for running tests
       - echo Installing application dependencies
