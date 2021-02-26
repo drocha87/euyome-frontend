@@ -7,7 +7,7 @@ phases:
       - echo Installing application dependencies
       - npm install
 
-        # Upgrade AWS CLI to the latest version
+      # Upgrade AWS CLI to the latest version
       - pip install --upgrade awscli
 
   build:

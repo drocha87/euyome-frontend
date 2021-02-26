@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "12.20.2"
+    "node": "12.20.1"
   },
   "scripts": {
     "postinstall": "npm run build",
