@@ -1,5 +1,10 @@
 <template>
-  <v-container v-if="profile.id" class="fill-height profile_background" fluid :style="background">
+  <v-container
+    v-if="profile.id"
+    class="fill-height profile_background"
+    fluid
+    :style="background"
+  >
     <v-snackbar v-model="snackbar" timeout="2500" color="primary" top>
       <div class="text-caption text-center">{{ text }}</div>
     </v-snackbar>
@@ -8,7 +13,12 @@
       <ProfileHeader :profile="profile" />
 
       <v-row v-if="loading" class="justify-center">
-        <v-progress-circular color="primary" size="40" width="2" indeterminate />
+        <v-progress-circular
+          color="primary"
+          size="40"
+          width="2"
+          indeterminate
+        />
       </v-row>
 
       <client-only>
@@ -33,7 +43,7 @@
         :theme="theme"
         :label="profile.form.title"
         :icon="['fas', 'address-book']"
-        @click="() => dialog = true"
+        @click="() => (dialog = true)"
       />
 
       <Form
@@ -47,7 +57,7 @@
     </v-container>
 
     <div v-if="shareable" class="shareable-icon">
-      <v-btn icon @click="share" :color="theme.buttonBackground">
+      <v-btn icon :color="theme.buttonBackground" @click="share">
         <v-icon>mdi-share</v-icon>
       </v-btn>
     </div>
@@ -57,16 +67,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Card, User, Profile, Link, Style } from '~/types';
-
-// FIXME: we need to pass this class in head() function to avoid `this is not defined` problem
-// but I don't think this is the best aproach to fix this problem
-interface MyComponent {
-  user: any;
-  theme: any;
-  profile: any;
-  $route: any;
-}
+import { Card, Profile, Style } from '~/types';
 
 export default Vue.extend({
   layout: 'profile',
@@ -101,65 +102,7 @@ export default Vue.extend({
     };
   },
 
-  computed: {
-    background(): string {
-      const { backgroundImage: image, background } = this.theme;
-      if (image?.length > 0) {
-        return `
-        background-image: url(https://res.cloudinary.com/euyome/image/upload/${image});
-        background-color: ${background}
-        `;
-      }
-      return `background-color: ${background}`;
-    },
-
-    theme(): Style {
-      if (this.profile.style) {
-        return this.profile.style;
-      }
-      return this.$store.getters['defaultStyle'];
-    },
-
-    card(): Card | undefined {
-      return this.profile.card;
-    },
-
-    ageGate(): boolean {
-      return this.profile.ageGate || false;
-    },
-
-    // TODO: implements this feature in app first
-    //    spotifyTrack(): string {
-    //      return '1TX4h6MrIZ0K3r4OOG11WO';
-    //    }
-  },
-
-  mounted() {
-    this.shareable = !!(navigator && navigator.share);
-    this.loading = false;
-  },
-
-  methods: {
-    async share() {
-      if (this.shareable) {
-        await navigator.share({
-          // TODO: figure a way to show the avatar preview
-          title: this.profile.title || this.profile.name,
-          text: 'Acesse meu perfil clicando no link abaixo.',
-          url: `https://euyo.me/${this.profile.name}`,
-        });
-      }
-    },
-
-    async sendForm(f: any) {
-      await this.$axios.post(`/views/${this.profile.id}/forms`, f);
-      this.dialog = false;
-      this.text = 'Formulário enviado com sucesso';
-      this.snackbar = true;
-    },
-  },
-
-  head(this: MyComponent) {
+  head(this: any) {
     const title = this.profile.title || this.$route.params.id;
     return {
       title: `${title} | ${this.profile.subtitle || ''}`,
@@ -217,6 +160,64 @@ export default Vue.extend({
         },
       ],
     };
+  },
+
+  computed: {
+    background(): string {
+      const { backgroundImage: image, background } = this.theme;
+      if (image?.length > 0) {
+        return `
+        background-image: url(https://res.cloudinary.com/euyome/image/upload/${image});
+        background-color: ${background}
+        `;
+      }
+      return `background-color: ${background}`;
+    },
+
+    theme(): Style {
+      if (this.profile.style) {
+        return this.profile.style;
+      }
+      return this.$store.getters.defaultStyle;
+    },
+
+    card(): Card | undefined {
+      return this.profile.card;
+    },
+
+    ageGate(): boolean {
+      return this.profile.ageGate || false;
+    },
+
+    // TODO: implements this feature in app first
+    //    spotifyTrack(): string {
+    //      return '1TX4h6MrIZ0K3r4OOG11WO';
+    //    }
+  },
+
+  mounted() {
+    this.shareable = !!(navigator && navigator.share);
+    this.loading = false;
+  },
+
+  methods: {
+    async share() {
+      if (this.shareable) {
+        await navigator.share({
+          // TODO: figure a way to show the avatar preview
+          title: this.profile.title || this.profile.name,
+          text: 'Acesse meu perfil clicando no link abaixo.',
+          url: `https://euyo.me/${this.profile.name}`,
+        });
+      }
+    },
+
+    async sendForm(f: any) {
+      await this.$axios.post(`/views/${this.profile.id}/forms`, f);
+      this.dialog = false;
+      this.text = 'Formulário enviado com sucesso';
+      this.snackbar = true;
+    },
   },
 });
 </script>

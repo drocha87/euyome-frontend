@@ -11,6 +11,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
   layout: 'empty',
+  // FIX: fetch on server side may be good
   fetchOnServer: false,
 
   async fetch() {
