@@ -14,11 +14,11 @@
         dark
         color="primary"
         height="50px"
-        :to="`/${agency.profileName}`"
+        :to="`/${team.profileName}`"
         >contato</v-btn
       >
 
-      <div v-if="agency.bio" class="text-justify mt-6" style="color: #3d405b">
+      <div v-if="bio" class="text-justify mt-6" style="color: #3d405b">
         {{ bio }}
       </div>
     </v-col>
@@ -55,23 +55,24 @@
                 disable-pagination
                 @pagination="refreshSearchLen"
               >
-                <template v-slot:no-data
-                  >Ainda não tem nenhum perfil criado!</template
-                >
+                <template #no-data>
+                  Ainda não tem nenhum perfil criado!
+                </template>
                 <template #item="{ item }">
                   <v-list-item two-line :href="`https://euyo.me/${item.name}`">
                     <v-list-item-avatar>
                       <v-img :src="getAvatar(item.avatar)"></v-img>
                     </v-list-item-avatar>
                     <v-list-item-content>
-                      <v-list-item-title class="text-caption">{{
-                        item.title
-                      }}</v-list-item-title>
+                      <v-list-item-title class="text-caption">
+                        {{ item.title }}
+                      </v-list-item-title>
                       <v-list-item-subtitle
                         class="font-weight-bold text-caption"
                         style="color: #c4c4c4"
-                        >{{ item.name }}</v-list-item-subtitle
                       >
+                        {{ item.name }}
+                      </v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                   <v-divider inset></v-divider>
@@ -92,12 +93,12 @@ export default Vue.extend({
 
   async asyncData(context) {
     try {
-      const agency: any = await context.$axios.$get(
+      const team: any = await context.$axios.$get(
         `/views/${context.params.id}/team`
       );
 
       return {
-        agency,
+        team,
       };
     } catch (error) {
       context.error({
@@ -110,7 +111,7 @@ export default Vue.extend({
   data() {
     return {
       search: '',
-      agency: {},
+      team: {},
       searchLen: 0,
 
       headers: [
@@ -122,46 +123,6 @@ export default Vue.extend({
         { text: 'Nome', value: 'name' },
       ],
     };
-  },
-
-  computed: {
-    profiles(): any {
-      const a: any = this.agency;
-      const ps = a.members || [];
-      // if (ps) {
-      //   return ps.filter((p: any) => p.name !== a.name && !p.hiddenAgency);
-      // }
-      return ps;
-    },
-
-    title(): string {
-      return (this.agency as any).title;
-    },
-
-    bio(): string {
-      return (this.agency as any).bio;
-    },
-
-    header(): string {
-      return (this.agency as any).header;
-    },
-
-    avatar(): string {
-      const img =
-        (this.agency as any).avatar || 'v1596315038/profile/euyome.jpg';
-      return `https://res.cloudinary.com/euyome/image/upload/${img}`;
-    },
-  },
-
-  methods: {
-    getAvatar(avatar: string): string {
-      const img = avatar || 'v1596315038/profile/euyome.jpg';
-      return `https://res.cloudinary.com/euyome/image/upload/${img}`;
-    },
-
-    refreshSearchLen(pagination: any) {
-      this.searchLen = pagination.itemsLength;
-    },
   },
 
   head(this: any) {
@@ -216,6 +177,42 @@ export default Vue.extend({
         },
       ],
     };
+  },
+
+  computed: {
+    profiles(): any {
+      const a: any = this.team;
+      const ps = a.members || [];
+      return ps;
+    },
+
+    title(): string {
+      return (this.team as any).title;
+    },
+
+    bio(): string {
+      return (this.team as any).bio;
+    },
+
+    header(): string {
+      return (this.team as any).header;
+    },
+
+    avatar(): string {
+      const img = (this.team as any).avatar || 'v1596315038/profile/euyome.jpg';
+      return `https://res.cloudinary.com/euyome/image/upload/${img}`;
+    },
+  },
+
+  methods: {
+    getAvatar(avatar: string): string {
+      const img = avatar || 'v1596315038/profile/euyome.jpg';
+      return `https://res.cloudinary.com/euyome/image/upload/${img}`;
+    },
+
+    refreshSearchLen(pagination: any) {
+      this.searchLen = pagination.itemsLength;
+    },
   },
 });
 </script>
