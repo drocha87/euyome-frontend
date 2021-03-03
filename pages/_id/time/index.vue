@@ -183,7 +183,7 @@ export default Vue.extend({
     profiles(): any {
       const a: any = this.team;
       const ps = a.members || [];
-      return ps;
+      return ps.sort((a: any, b: any) => b.rating - a.rating);
     },
 
     title(): string {
