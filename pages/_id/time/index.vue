@@ -15,8 +15,9 @@
         color="primary"
         height="50px"
         :to="`/${team.profileName}`"
-        >contato</v-btn
       >
+        contato
+      </v-btn>
 
       <div v-if="bio" class="text-justify mt-6" style="color: #3d405b">
         {{ bio }}
@@ -27,8 +28,9 @@
         <v-card-title
           class="justify-center text-h5 font-weight-bold"
           style="color: #081c15"
-          >{{ header }}</v-card-title
         >
+          {{ header }}
+        </v-card-title>
         <v-card-text>
           <v-text-field
             v-model="search"
