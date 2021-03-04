@@ -4,7 +4,7 @@
 
     <v-container class="mt-6 center-mw600">
       <v-simple-table :dense="$vuetify.breakpoint.smAndDown">
-        <template v-slot:default>
+        <template #default>
           <thead>
             <tr>
               <th class="text-center"></th>
@@ -80,6 +80,14 @@ export default Vue.extend({
         },
         {
           name: 'Modo restrito',
+          pro: false,
+        },
+        {
+          name: 'Meus Times',
+          pro: false,
+        },
+        {
+          name: 'Perfil do Time',
           pro: false,
         },
         {
