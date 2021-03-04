@@ -12,11 +12,11 @@
         quanto em contas com perfis gratuitos.<br /><br />
 
         O perfil do time possibilita a uma conta se conectar com perfis da sua
-        propria conta ou de contas externas em um único local. <br /><br />
+        própria conta ou de contas externas em um único local. <br /><br />
 
         A principal finalidade do perfil do time, é te auxiliar na divulgação
-        dos perfis do seus colaboradores, parceiros, afiliados ou admiradores da
-        sua marca pessoal ou empresa.<br /><br />
+        dos perfis dos seus colaboradores, parceiros, afiliados ou admiradores
+        da sua marca pessoal ou empresa.<br /><br />
 
         A seguir alguns exemplos de uso:
         <ul class="my-4">
@@ -35,15 +35,15 @@
           </li>
           <li class="my-1">
             Você profissional usa o perfil do time para divulgar seu network de
-            recomendações de profissionais de outras areas
+            recomendações de profissionais de outras áreas
           </li>
           <li class="my-1">
-            Sua banda usa o perfil do time para divulgar o contatos dos seus
+            Sua banda usa o perfil do time para divulgar os contatos dos seus
             integrantes
           </li>
         </ul>
 
-        Essas são apenas algumas possibilidades de uso do perfil to time, use
+        Essas são apenas algumas possibilidades de uso do perfil do time, use
         sua criatividade e se conecte com outros perfis :)<br /><br />
 
         Para criar o seu perfil do time é muito simples, na tela inicial após
@@ -127,8 +127,9 @@
         deverá usar para enviar a solicitação. Se você quiser saber mais como
         enviar uma solicitação para se unir a um time
         <a href="http://euyo.me" target="_blank" rel="noopener noreferrer">
-          clique aqui </a
-        ><br /><br />
+          clique aqui
+        </a>
+        <br /><br />
 
         Pronto seu perfil do time foi criado com sucesso, no próximo tutorial
         vamos aprender como enviar uma solicitação para integrar um time. Caso

@@ -35,7 +35,7 @@
 
       <v-col cols="12" sm="4">
         <v-card class="fill-height">
-          <v-card-title> Super diferencial </v-card-title>
+          <v-card-title> Super Diferencial </v-card-title>
           <v-card-subtitle class="text-caption">
             Funcionalidades que beneficiam agências, empresas e marca pessoal.
           </v-card-subtitle>
