@@ -68,7 +68,7 @@
           <v-card-title>Selecionar Perfil</v-card-title>
           <v-card-text>
             A primeira opção que aparece é uma caixa para selecionar o perfil
-            base da agência, sendo assim, você já precisa ter criado um perfil
+            base do time, sendo assim, você já precisa ter criado um perfil
             previamente, e então selecionar ele. Lembre-se que usando este
             perfil como base, a euyo.me irá utilizar o avatar e nome de acesso
             deste perfil no perfil do time.
