@@ -113,7 +113,7 @@ export default Vue.extend({
         // },
         {
           to: 'sharing-stats',
-          title: 'Compartilhando suas estatísticas',
+          title: 'Compartilhando suas impressões',
         },
       ],
     };

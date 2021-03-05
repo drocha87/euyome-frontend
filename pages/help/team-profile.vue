@@ -124,11 +124,13 @@
         usou no cadastro da sua conta, por exemplo:<br /><br />
         Se ao criar minha conta eu usei o email
         <Highlight>suporte@euyo.me</Highlight> esse será o email que os perfis
-        deverá usar para enviar a solicitação. Se você quiser saber mais como
+        deverá usar para enviar a solicitação.
+
+        <!-- Se você quiser saber mais como
         enviar uma solicitação para se unir a um time
         <a href="http://euyo.me" target="_blank" rel="noopener noreferrer">
           clique aqui
-        </a>
+        </a> -->
         <br /><br />
 
         Pronto seu perfil do time foi criado com sucesso, no próximo tutorial
