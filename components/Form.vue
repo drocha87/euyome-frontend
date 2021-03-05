@@ -8,7 +8,9 @@
     @input="(v) => $emit('input', v)"
   >
     <v-card tile>
-      <v-card-title class="justify-center">{{ form.title || 'Formulário' }}</v-card-title>
+      <v-card-title class="justify-center">{{
+        form.title || 'Formulário'
+      }}</v-card-title>
       <v-card-text>
         <p class="text-justify">{{ form.content }}</p>
 
@@ -24,11 +26,19 @@
             :rules="[rules.required, rules.maxLength(50)]"
           ></v-text-field>
 
-          <v-text-field v-model.trim="email" label="Email" :rules="[rules.required, rules.email]"></v-text-field>
+          <v-text-field
+            v-model.trim="email"
+            label="Email"
+            :rules="[rules.required, rules.email]"
+          ></v-text-field>
 
           <v-row v-if="form.capturePhone">
             <v-col cols="3">
-              <v-text-field v-model="ddi" :rules="[rules.required]" label="Código DDI">
+              <v-text-field
+                v-model="ddi"
+                :rules="[rules.required]"
+                label="Código DDI"
+              >
                 <template #prepend-inner>
                   <span class="text-caption">+</span>
                 </template>
@@ -53,19 +63,28 @@
           ></v-textarea>
 
           <v-row class="mt-2" alig="center">
-            <v-btn text color="error" @click="() => $emit('input', false)">Cancelar</v-btn>
+            <v-btn text color="error" @click="() => $emit('input', false)"
+              >Cancelar</v-btn
+            >
             <v-spacer></v-spacer>
-            <v-btn :disabled="!valid" depressed color="primary" @click="sendForm">Enviar</v-btn>
+            <v-btn
+              :disabled="!valid"
+              depressed
+              color="primary"
+              @click="sendForm"
+              >Enviar</v-btn
+            >
           </v-row>
         </v-form>
         <p class="mt-12 text-caption text-justify" style="color: #979dac">
           Ao enviar seus dados você está de acordo com os
-          <a
-            href="https://euyo.me/termos"
-            target="_blank"
-          >termos e condições</a>
-          da euyo.me e também está ciente que nós não nos responsabilizamos pela forma como seus dados serão utilizados.
-          Sendo assim só forneça as suas informações se realmente você estiver seguro sobre a origem do formulário.
+          <a href="https://euyo.me/termos" target="_blank">
+            termos e condições
+          </a>
+          da euyo.me e também está ciente que nós não nos responsabilizamos pela
+          forma como seus dados serão utilizados. Sendo assim só forneça as suas
+          informações se realmente você estiver seguro sobre a origem do
+          formulário.
         </p>
       </v-card-text>
     </v-card>
