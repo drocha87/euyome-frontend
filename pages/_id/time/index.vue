@@ -185,7 +185,7 @@ export default Vue.extend({
     profiles(): any {
       const a: any = this.team;
       const ps = a.members || [];
-      return ps.sort((a: any, b: any) => b.rating - a.rating);
+      return ps.sort((a: any, b: any) => (b.rating || 0) - (a.rating || 0));
     },
 
     title(): string {
