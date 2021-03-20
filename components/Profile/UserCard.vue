@@ -27,7 +27,7 @@ export default Vue.extend({
       if (this.profile.style) {
         return this.profile.style;
       }
-      return this.$store.getters['defaultProfile'];
+      return this.$store.getters.defaultProfile;
     },
 
     card(): Card {
@@ -37,7 +37,7 @@ export default Vue.extend({
 
   methods: {
     async cardClick(): Promise<void> {
-      await this.$axios.post(`/views/${this.profile.id}/card/click`);
+      await this.$axios.post(`/views/click/card/${this.profile.id}`);
       window.location.href = this.card.buttonLink;
     },
   },

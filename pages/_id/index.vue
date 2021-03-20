@@ -83,8 +83,8 @@ export default Vue.extend({
       };
     } catch (error) {
       context.error({
-        statusCode: error.response.status,
-        message: error.response.data.message,
+        statusCode: error.response?.status || 500,
+        message: error.response?.data?.message || 'something went wrong',
       });
     }
   },

@@ -1,9 +1,9 @@
 <template>
   <div>
     <ButtonIconBase
-      class="my-2"
       v-for="link in links"
       :key="link.id"
+      class="my-2"
       :icon="findIcon(link.media)"
       :theme="theme"
       :label="link.label"
@@ -41,7 +41,7 @@ export default Vue.extend({
       if (this.profile.style) {
         return this.profile.style;
       }
-      return this.$store.getters['defaultStyle'];
+      return this.$store.getters.defaultStyle;
     },
   },
 
@@ -57,9 +57,7 @@ export default Vue.extend({
     linkAction(link: Link) {
       const medias = (this as any).medias;
       const found = medias.find((el: any) => el.media === link.media);
-      this.$axios.post(
-        `/users/profiles/${this.profile.id}/links/${link.id}/click`
-      );
+      this.$axios.post(`/views/click/link/${this.profile.id}/${link.id}`);
       if (found) {
         window.location.href = found.site + link.action;
       } else {
