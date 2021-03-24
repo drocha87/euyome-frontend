@@ -35,15 +35,12 @@
 </template>
 
 <script lang="ts">
-import { Context } from '@nuxt/types';
 import Vue from 'vue';
 
 import rules from '~/rules';
 
 export default Vue.extend({
   layout: 'default',
-
-  components: {},
 
   data() {
     return {
@@ -60,7 +57,7 @@ export default Vue.extend({
       try {
         this.loading = true;
         this.errorMessage = '';
-        await this.$axios.$post('/users/verify_email', { email: this.email });
+        await this.$axios.$post('/view/check-new-user', { email: this.email });
         this.$router.push({
           path: '/register/password',
           query: { ...this.$route.query, email: this.email },

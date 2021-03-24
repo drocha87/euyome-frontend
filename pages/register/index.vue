@@ -15,10 +15,16 @@
             type="email"
             label="Seu melhor Email"
             outlined
+            hide-details
             dense
             :rules="[rules.required, rules.email]"
           />
-          <div v-if="errorMessage" class="text-center red--text text-caption">{{ errorMessage }}</div>
+          <div
+            v-if="errorMessage"
+            class="text-left mt-0 red--text text-caption"
+          >
+            {{ errorMessage }}
+          </div>
           <v-spacer></v-spacer>
           <v-btn
             class="mt-4"
@@ -30,7 +36,8 @@
             color="primary"
             :disabled="!valid"
             :loading="loading"
-          >Próximo</v-btn>
+            >Próximo</v-btn
+          >
         </v-form>
       </v-card-text>
     </v-card>
@@ -39,13 +46,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Context } from '@nuxt/types';
 import rules from '~/rules';
 
 export default Vue.extend({
   layout: 'default',
-
-  components: {},
 
   data() {
     return {
@@ -62,16 +66,20 @@ export default Vue.extend({
       try {
         this.loading = true;
         this.errorMessage = '';
-        const res = await this.$axios.$post('/users/exists', {
+        await this.$axios.$post('/views/check-new-user', {
           email: this.email,
         });
-        if (res.exists) {
-          this.errorMessage = 'Usuário já existe em nosso banco de dados';
+
+        this.$router.push({
+          path: '/register/password',
+          query: { ...this.$route.query, email: this.email },
+        });
+      } catch (error) {
+        if (error.response.status === 409) {
+          this.errorMessage =
+            'Esse email já está em uso, talvez você queira fazer login?';
         } else {
-          this.$router.push({
-            path: '/register/password',
-            query: { ...this.$route.query, email: this.email },
-          });
+          this.errorMessage = error.response?.data?.message;
         }
       } finally {
         this.loading = false;
