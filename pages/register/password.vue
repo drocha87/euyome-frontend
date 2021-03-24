@@ -74,19 +74,17 @@ export default Vue.extend({
       try {
         this.loading = true;
         this.errorMessage = '';
-        const { email, username } = this.$route.query;
+        const { email } = this.$route.query;
 
-        await this.$axios.$post('/register', {
+        await this.$axios.$post('/views/register', {
           email,
-          username,
           password: this.password,
         });
 
-        /**
-         * change tho window.redirect ou href
-         */
-        window.location.href = 'https://app.euyo.me/login';
-        // this.$router.push('/dashboard');
+        this.$router.push({
+          path: '/register/verify-email',
+          query: { email },
+        });
       } catch (error) {
         if (error.response.status === 409) {
           this.errorMessage = 'Email já está em uso';

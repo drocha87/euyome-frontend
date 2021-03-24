@@ -26,11 +26,11 @@ const rules: Rules = {
       // iff v is undefined we should do nothing since we are not breaking maxLenght rule
       return true;
     }
-    return v.length < l || 'Tamanho máximo excedido';
+    return v.length <= l || 'Tamanho máximo excedido';
   },
 
   minLength: (l: number) => (v: string) =>
-    (v && v.length > l) || `Tamanho minímo requerido de ${l} caracteres`,
+    (v && v.length >= l) || `Tamanho minímo requerido de ${l} caracteres`,
 
   validate: (reg: RegExp, msg: string) => (v: string) => {
     if (!reg) return true;

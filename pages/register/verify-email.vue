@@ -1,20 +1,25 @@
 <template>
   <v-container class="main__container">
     <v-card width="100%" flat>
-      <v-card-title class="text-h2 justify-center"> Email </v-card-title>
+      <v-card-title class="text-h2 justify-center">
+        Verificar Email
+      </v-card-title>
       <v-card-subtitle class="mt-4 text-justify text-caption">
-        Agora que já escolhemos seu nome de usuário, vamos cadastrar seu email,
-        e ahh não esqueça de depois verificar sua caixa de mensagem tá.
+        Prontinho seu cadastro foi efetuado com sucesso, agora só precisamos
+        confirmar seu email e já te redirecionamos para a tela de login :).
+        Acesse a caixa de entrada (ou spam) do email cadastrado e coloque o
+        código de 6 dígitos no campo abaixo.
       </v-card-subtitle>
       <v-card-text>
         <v-form v-model="valid" @submit.prevent="next">
           <v-text-field
-            v-model="email"
-            type="email"
-            label="Email"
-            :rules="[rules.required, rules.email]"
+            v-model="code"
+            type="text"
+            label="Código"
+            hide-details
+            :rules="[rules.required, rules.maxLength(6), rules.minLength(6)]"
           ></v-text-field>
-          <div v-if="errorMessage" class="text-center red--text text-caption">
+          <div v-if="errorMessage" class="text-left red--text text-caption">
             {{ errorMessage }}
           </div>
           <v-btn
@@ -26,7 +31,7 @@
             :disabled="!valid"
             :loading="loading"
           >
-            Próximo
+            Verificar
           </v-btn>
         </v-form>
       </v-card-text>
@@ -47,7 +52,7 @@ export default Vue.extend({
       valid: false,
       loading: false,
       errorMessage: '',
-      email: '',
+      code: '',
       rules,
     };
   },
@@ -57,16 +62,23 @@ export default Vue.extend({
       try {
         this.loading = true;
         this.errorMessage = '';
-        await this.$axios.$post('/view/check-new-user', { email: this.email });
-        this.$router.push({
-          path: '/register/password',
-          query: { ...this.$route.query, email: this.email },
+        const { email } = this.$route.query;
+
+        await this.$axios.$post('/views/verify-email', {
+          email,
+          code: this.code,
         });
+
+        /**
+         * change tho window.redirect ou href
+         */
+        window.location.href = 'https://app.euyo.me/login';
       } catch (error) {
-        if (error.response.status === 409) {
-          this.errorMessage = 'Email já está em uso';
+        if (error.response.status === 400) {
+          this.errorMessage = 'Código de verificação inválido';
         } else {
-          this.errorMessage = error.response.data.message;
+          this.errorMessage =
+            error.response?.data?.message || 'Something went wrong';
         }
       } finally {
         this.loading = false;
