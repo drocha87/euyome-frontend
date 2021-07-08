@@ -33,11 +33,15 @@
         <!--         allowtransparency="true" allow="encrypted-media"></iframe> -->
       </client-only>
 
-      <UserCard v-if="card && !loading" class="my-3" :profile="profile" />
-      <ButtonIcon :profile="profile" />
+      <ProfileUserCard
+        v-if="card && !loading"
+        class="my-3"
+        :profile="profile"
+      />
+      <ProfileButtonIcon :profile="profile" />
 
       <!-- Starts forms here -->
-      <ButtonIconBase
+      <ProfileButtonIconBase
         v-if="profile.form && profile.form.visible"
         class="my-2"
         :theme="theme"
@@ -53,7 +57,7 @@
         @data="sendForm"
       ></Form>
 
-      <FooterLogo :color="theme.color" />
+      <ProfileFooterLogo :color="theme.color" />
     </v-container>
 
     <div v-if="shareable" class="shareable-icon">

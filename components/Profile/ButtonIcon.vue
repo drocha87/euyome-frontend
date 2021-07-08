@@ -1,9 +1,9 @@
 <template>
   <div>
-    <ButtonIconBase
-      class="my-2"
+    <ProfileButtonIconBase
       v-for="link in links"
       :key="link.id"
+      class="my-2"
       :icon="findIcon(link.media)"
       :theme="theme"
       :label="link.label"
