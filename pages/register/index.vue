@@ -18,7 +18,9 @@
             dense
             :rules="[rules.required, rules.email]"
           />
-          <div v-if="errorMessage" class="text-center red--text text-caption">{{ errorMessage }}</div>
+          <div v-if="errorMessage" class="text-center red--text text-caption">
+            {{ errorMessage }}
+          </div>
           <v-spacer></v-spacer>
           <v-btn
             class="mt-4"
@@ -30,7 +32,8 @@
             color="primary"
             :disabled="!valid"
             :loading="loading"
-          >Próximo</v-btn>
+            >Próximo</v-btn
+          >
         </v-form>
       </v-card-text>
     </v-card>
@@ -43,9 +46,8 @@ import { Context } from '@nuxt/types';
 import rules from '~/rules';
 
 export default Vue.extend({
-  layout: 'default',
-
   components: {},
+  layout: 'default',
 
   data() {
     return {

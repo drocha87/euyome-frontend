@@ -9,8 +9,8 @@
       <v-card-text class="text-right">
         <v-form v-model="valid" @submit.prevent="next">
           <v-text-field
-            class="mt-4"
             v-model="password"
+            class="mt-4"
             label="Senha"
             outlined
             dense
@@ -20,7 +20,9 @@
             @click:append="showPass = !showPass"
           ></v-text-field>
 
-          <div v-if="errorMessage" class="text-center red--text text-caption">{{ errorMessage }}</div>
+          <div v-if="errorMessage" class="text-center red--text text-caption">
+            {{ errorMessage }}
+          </div>
           <v-btn
             class="mt-4"
             rounded
@@ -31,11 +33,14 @@
             color="primary"
             :disabled="!valid"
             :loading="loading"
-          >Próximo</v-btn>
+            >Próximo</v-btn
+          >
 
           <div class="mt-6 text-caption text-left">
             Ao clicar em próximo você aceita os
-            <nuxt-link class="font-weight-bold" to="/termos">TERMOS E CONDIÇOES DE USO</nuxt-link>
+            <nuxt-link class="font-weight-bold" to="/termos"
+              >TERMOS E CONDIÇOES DE USO</nuxt-link
+            >
           </div>
         </v-form>
       </v-card-text>
@@ -50,9 +55,8 @@ import { Context } from '@nuxt/types';
 import rules from '~/rules';
 
 export default Vue.extend({
-  layout: 'default',
-
   components: {},
+  layout: 'default',
 
   data() {
     return {

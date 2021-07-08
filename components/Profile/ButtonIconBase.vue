@@ -12,7 +12,7 @@
     :tile="theme.buttonStyle === 'tile'"
     @click="() => $emit('click')"
   >
-    <font-awesome-icon :icon="icon" style="font-size: 18px; opacity: 0.8;" />
+    <font-awesome-icon :icon="icon" style="font-size: 18px; opacity: 0.8" />
     <span class="link__text ml-2">{{ label.substring(0, 35) }}</span>
   </v-btn>
 </template>

@@ -3,20 +3,28 @@
     <v-row>
       <v-col class="text-center">
         <ProfileHeader :profile="profile"></ProfileHeader>
-        <v-btn text small color="primary" :to="`/${profile.name}`">Ir para o perfil</v-btn>
+        <v-btn text small color="primary" :to="`/${profile.name}`"
+          >Ir para o perfil</v-btn
+        >
 
         <v-card class="mt-4">
           <v-card-title>Impressões Diárias</v-card-title>
           <v-card-text>
             <client-only>
-              <DailyViewsChart v-if="chartData.datasets" :data="chartData" style="width: 100%" />
+              <DailyViewsChart
+                v-if="chartData.datasets"
+                :data="chartData"
+                style="width: 100%"
+              />
             </client-only>
           </v-card-text>
         </v-card>
 
         <v-card class="mt-4">
           <v-card-title>Impressões por hora</v-card-title>
-          <v-card-subtitle class="text-left text-caption">Últimos 7 dias</v-card-subtitle>
+          <v-card-subtitle class="text-left text-caption"
+            >Últimos 7 dias</v-card-subtitle
+          >
           <v-card-text>
             <client-only>
               <ChartImpressionsPerHour
@@ -31,7 +39,9 @@
       <v-col>
         <v-card width="100%" class="mt-2">
           <v-card-title>Impressões</v-card-title>
-          <v-card-subtitle class="text-caption">Quantas vezes seu perfil foi acessado no total.</v-card-subtitle>
+          <v-card-subtitle class="text-caption"
+            >Quantas vezes seu perfil foi acessado no total.</v-card-subtitle
+          >
           <v-card-text>
             <div class="text-center pa-1">
               <span class="text__style">{{ stats.impressions || 0 }}</span>
@@ -95,78 +105,6 @@ export default Vue.extend({
     };
   },
 
-  mounted() {
-    const { dailyViews, impressionsLast24Hours } = this.stats as any;
-
-    if (impressionsLast24Hours?.length > 0) {
-      const now = new Date();
-      const timezoneOffsetInHours = now.getTimezoneOffset() / 60;
-
-      // Generate an 24 hours array
-      const adata = [...Array(24).keys()];
-      const data = adata.map((x: number) => {
-        const y = impressionsLast24Hours.find((val: any) => {
-          const hours = val._id - timezoneOffsetInHours;
-          return hours === x;
-        });
-        let impressions = y?.impressions || 0;
-        return { hour: `${x}h`, impressions };
-      });
-
-      this.chartImpressionsPerHourData = {
-        labels: data.map((stat: any) => {
-          return stat.hour.toString();
-        }),
-
-        datasets: [
-          {
-            backgroundColor: '#21c25e',
-            data: data.map((stat: any) => stat.impressions),
-          },
-        ],
-      };
-    }
-
-    if (dailyViews && dailyViews.length > 0) {
-      this.chartData = {
-        labels: dailyViews.map((stat: any) => {
-          const date = new Date(stat.date);
-          const month = date.getUTCMonth() + 1;
-          const day = date.getUTCDate();
-
-          return `${day}-${month}`;
-        }),
-        datasets: [
-          {
-            backgroundColor: '#41B38A33',
-            borderColor: '#21c25e',
-            data: dailyViews.map((stat: any) => stat.views),
-            fill: true,
-            pointRadius: 5,
-            pointHoverRadius: 10,
-          },
-        ],
-      };
-    }
-  },
-
-  computed: {
-    avatar(): string {
-      const img =
-        (this.profile as any).avatar || 'v1596315038/profile/euyome.jpg';
-      return `https://res.cloudinary.com/euyome/image/upload/${img}`;
-    },
-    code(): string {
-      return this.$store.state.profile.currentProfile.statsCode;
-    },
-  },
-
-  methods: {
-    async genStatsCode(): Promise<void> {
-      await this.$store.dispatch('profile/genStatsCode');
-    },
-  },
-
   head(this: any) {
     const title = this.profile.title;
     return {
@@ -219,6 +157,78 @@ export default Vue.extend({
         },
       ],
     };
+  },
+
+  computed: {
+    avatar(): string {
+      const img =
+        (this.profile as any).avatar || 'v1596315038/profile/euyome.jpg';
+      return `https://res.cloudinary.com/euyome/image/upload/${img}`;
+    },
+    code(): string {
+      return this.$store.state.profile.currentProfile.statsCode;
+    },
+  },
+
+  mounted() {
+    const { dailyViews, impressionsLast24Hours } = this.stats as any;
+
+    if (impressionsLast24Hours?.length > 0) {
+      const now = new Date();
+      const timezoneOffsetInHours = now.getTimezoneOffset() / 60;
+
+      // Generate an 24 hours array
+      const adata = [...Array(24).keys()];
+      const data = adata.map((x: number) => {
+        const y = impressionsLast24Hours.find((val: any) => {
+          const hours = val._id - timezoneOffsetInHours;
+          return hours === x;
+        });
+        const impressions = y?.impressions || 0;
+        return { hour: `${x}h`, impressions };
+      });
+
+      this.chartImpressionsPerHourData = {
+        labels: data.map((stat: any) => {
+          return stat.hour.toString();
+        }),
+
+        datasets: [
+          {
+            backgroundColor: '#21c25e',
+            data: data.map((stat: any) => stat.impressions),
+          },
+        ],
+      };
+    }
+
+    if (dailyViews && dailyViews.length > 0) {
+      this.chartData = {
+        labels: dailyViews.map((stat: any) => {
+          const date = new Date(stat.date);
+          const month = date.getUTCMonth() + 1;
+          const day = date.getUTCDate();
+
+          return `${day}-${month}`;
+        }),
+        datasets: [
+          {
+            backgroundColor: '#41B38A33',
+            borderColor: '#21c25e',
+            data: dailyViews.map((stat: any) => stat.views),
+            fill: true,
+            pointRadius: 5,
+            pointHoverRadius: 10,
+          },
+        ],
+      };
+    }
+  },
+
+  methods: {
+    async genStatsCode(): Promise<void> {
+      await this.$store.dispatch('profile/genStatsCode');
+    },
   },
 });
 </script>

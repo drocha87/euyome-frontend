@@ -41,9 +41,8 @@ import Vue from 'vue';
 import rules from '~/rules';
 
 export default Vue.extend({
-  layout: 'default',
-
   components: {},
+  layout: 'default',
 
   data() {
     return {

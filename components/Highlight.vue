@@ -1,6 +1,6 @@
 <template>
   <div class="highlight">
-    <slot/>
+    <slot />
   </div>
 </template>
 
@@ -11,5 +11,5 @@
   padding: 0.1rem 0.5rem;
   border-radius: 3px;
 }
-</style>>
-
+</style>
+>

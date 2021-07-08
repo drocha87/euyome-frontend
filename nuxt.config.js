@@ -44,13 +44,11 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;600;700&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;600;700&display=swap',
       },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap',
       },
     ],
   },

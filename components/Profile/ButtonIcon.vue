@@ -41,7 +41,7 @@ export default Vue.extend({
       if (this.profile.style) {
         return this.profile.style;
       }
-      return this.$store.getters['defaultStyle'];
+      return this.$store.getters.defaultStyle;
     },
   },
 

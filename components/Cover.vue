@@ -11,7 +11,9 @@
           </Paragraph>
           <div class="mt-8 d-flex flex-column align-center">
             <RegisterButton class="mb-3" label="Cadastre-se GRÁTIS" />
-            <a class="text__login" href="https://app.euyo.me/login">já tenho cadastro</a>
+            <a class="text__login" href="https://app.euyo.me/login">
+              já tenho cadastro
+            </a>
           </div>
         </v-container>
       </v-col>

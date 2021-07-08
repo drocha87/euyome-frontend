@@ -5,7 +5,7 @@
       persistent
       overlay-opacity="0.99"
       max-width="390"
-      >
+    >
       <v-card>
         <v-card-title class="headline justify-center">
           Perfil para 18+
@@ -16,24 +16,16 @@
         </v-card-text>
         <v-card-actions>
           <v-container>
+            <v-btn color="error" block depressed to="/" exact> Sair </v-btn>
             <v-btn
-              color="error"
-              block
+              class="mt-2"
+              color="primary"
               depressed
-              to="/"
-              exact
-              >
-              Sair
+              block
+              @click="dialog = false"
+            >
+              Sou maior de 18 anos
             </v-btn>
-              <v-btn
-                class="mt-2"
-                color="primary"
-                depressed
-                block
-                @click="dialog = false"
-                >
-                Sou maior de 18 anos
-              </v-btn>
           </v-container>
         </v-card-actions>
       </v-card>
@@ -42,12 +34,12 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 export default Vue.extend({
   data() {
     return {
       dialog: true,
-    }
+    };
   },
-})
+});
 </script>

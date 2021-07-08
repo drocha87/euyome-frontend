@@ -11,15 +11,31 @@
 
         <NavigationDrawer v-if="smallScreen" v-model="drawer" />
 
-        <v-row v-else class="ml-auto" align="end" justify="end" style="max-width: 720px">
+        <v-row
+          v-else
+          class="ml-auto"
+          align="end"
+          justify="end"
+          style="max-width: 720px"
+        >
           <v-col class="text-center">
-            <a class="topbar__link" href="https://instagram.com/euyo.me" target="_blank">Instagram</a>
+            <a
+              class="topbar__link"
+              href="https://instagram.com/euyo.me"
+              target="_blank"
+              >Instagram</a
+            >
           </v-col>
           <v-col class="text-center">
             <a class="topbar__link" href="/#prices">Preços</a>
           </v-col>
           <v-col class="text-center">
-            <a class="topbar__link" href="https://euyo.me/euyome" target="_blank">Contato</a>
+            <a
+              class="topbar__link"
+              href="https://euyo.me/euyome"
+              target="_blank"
+              >Contato</a
+            >
           </v-col>
           <v-col class="text-center">
             <nuxt-link class="topbar__link" to="/help">Ajuda</nuxt-link>
@@ -29,7 +45,11 @@
           </v-col>
         </v-row>
 
-        <v-app-bar-nav-icon v-if="smallScreen" class="ml-auto" @click="drawer = true" />
+        <v-app-bar-nav-icon
+          v-if="smallScreen"
+          class="ml-auto"
+          @click="drawer = true"
+        />
       </v-row>
     </v-app-bar>
 
@@ -40,13 +60,14 @@
     <v-footer class="mt-12 pb-6" color="#21c25e">
       <div class="mx-auto text-center white--text">
         <span class="text-caption">
-          <nuxt-link
-            to="/"
-            style="text-decoration: none; color: white"
-          >euyo.me &copy; {{ new Date().getFullYear() }}</nuxt-link>
+          <nuxt-link to="/" style="text-decoration: none; color: white"
+            >euyo.me &copy; {{ new Date().getFullYear() }}</nuxt-link
+          >
         </span>
         <p class="text-caption">Todos os direitos reservados a euyo.me.</p>
-        <nuxt-link class="text-caption terms_links" to="/termos">TERMOS E CONDIÇÕES</nuxt-link>
+        <nuxt-link class="text-caption terms_links" to="/termos"
+          >TERMOS E CONDIÇÕES</nuxt-link
+        >
       </div>
     </v-footer>
   </v-app>

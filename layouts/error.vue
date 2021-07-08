@@ -27,11 +27,10 @@ interface MyComponent {
 }
 
 export default Vue.extend({
-  layout: 'empty',
-
   components: {
     NotFound,
   },
+  layout: 'empty',
 
   props: {
     error: {

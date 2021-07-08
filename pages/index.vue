@@ -16,17 +16,13 @@ import Vue from 'vue';
 export default Vue.extend({
   layout: 'default',
 
-  created() {
-    this.$store.dispatch('fetchShowcasesUsers');
-  },
-
   head() {
     const title = 'euyo.me';
     const description =
       'Organize suas redes sociais criando um perfil virtual que tem a sua cara';
 
     return {
-      title: title,
+      title,
 
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
@@ -78,6 +74,10 @@ export default Vue.extend({
         },
       ],
     };
+  },
+
+  created() {
+    this.$store.dispatch('fetchShowcasesUsers');
   },
 });
 </script>

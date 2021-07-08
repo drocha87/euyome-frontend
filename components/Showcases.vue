@@ -4,11 +4,10 @@
     <v-row class="mt-6" align="center">
       <v-col cols="12" md="6">
         <Paragraph>
-          Euyo.me é para todo mundo, para todos os tipos de seguimento. Seja você
-          uma Banda famosa, Escola de Idiomas, DJ, confeiteiro, advogada, influenciadora
-          digital, etc...
-          Se seu negócio ou você precisa se apresentar, você precisa de um perfil
-          virtual.
+          Euyo.me é para todo mundo, para todos os tipos de seguimento. Seja
+          você uma Banda famosa, Escola de Idiomas, DJ, confeiteiro, advogada,
+          influenciadora digital, etc... Se seu negócio ou você precisa se
+          apresentar, você precisa de um perfil virtual.
         </Paragraph>
       </v-col>
       <v-col cols="12" md="6">
@@ -33,12 +32,18 @@
             <v-container>
               <v-list-item :href="`https://euyo.me/${user.name}`">
                 <v-list-item-avatar size="60px">
-                  <v-img :src="`https://res.cloudinary.com/euyome/image/upload/${user.avatar}`"></v-img>
+                  <v-img
+                    :src="`https://res.cloudinary.com/euyome/image/upload/${user.avatar}`"
+                  ></v-img>
                 </v-list-item-avatar>
 
                 <v-list-item-content>
-                  <v-list-item-title>{{ user.title || user.name }}</v-list-item-title>
-                  <v-list-item-subtitle class="text-caption">{{ user.subtitle }}</v-list-item-subtitle>
+                  <v-list-item-title>{{
+                    user.title || user.name
+                  }}</v-list-item-title>
+                  <v-list-item-subtitle class="text-caption">{{
+                    user.subtitle
+                  }}</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
             </v-container>

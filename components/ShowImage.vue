@@ -1,17 +1,20 @@
 <template>
   <v-row>
-    <v-img v-bind="$attrs" contain :src="image" @click.stop="dialog = true" style="cursor: pointer;"></v-img>
-    <v-dialog
-      v-model="dialog"
-      max-width="1024px"
-    >
-    <v-img contain :src="image"></v-img>
+    <v-img
+      v-bind="$attrs"
+      contain
+      :src="image"
+      style="cursor: pointer"
+      @click.stop="dialog = true"
+    ></v-img>
+    <v-dialog v-model="dialog" max-width="1024px">
+      <v-img contain :src="image"></v-img>
     </v-dialog>
   </v-row>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 export default Vue.extend({
   inheritAttrs: false,
 
@@ -22,7 +25,7 @@ export default Vue.extend({
   data() {
     return {
       dialog: false,
-    }
+    };
   },
-})
+});
 </script>

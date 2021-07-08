@@ -2,27 +2,35 @@
   <div class="mb-5 d-flex flex-column justify-center align-center mx-auto">
     <v-badge bottom color="transparent" overlap offset-x="0" offset-y="20">
       <template #badge>
-        <v-icon
-          @click="like()"
-          :color="theme.color"
-          size="18px"
-        >{{ liked ? 'mdi-thumb-up' : 'mdi-thumb-up-outline' }}</v-icon>
+        <v-icon :color="theme.color" size="18px" @click="like()">{{
+          liked ? 'mdi-thumb-up' : 'mdi-thumb-up-outline'
+        }}</v-icon>
       </template>
       <v-avatar
         :tile="theme.tileAvatar"
         size="115px"
         :style="`border: ${
-            theme.border ? `solid 2px ${theme.borderColor}` : 'none'
-            };`"
+          theme.border ? `solid 2px ${theme.borderColor}` : 'none'
+        };`"
       >
-        <v-img eager :lazy-src="require('~/assets/logo.png')" transition="true" :src="avatar" />
+        <v-img
+          eager
+          :lazy-src="require('~/assets/logo.png')"
+          transition="true"
+          :src="avatar"
+        />
       </v-avatar>
     </v-badge>
 
-    <div class="mt-2 text-h6 text-center font-weight-bold" :style="`color: ${theme.color};`">
+    <div
+      class="mt-2 text-h6 text-center font-weight-bold"
+      :style="`color: ${theme.color};`"
+    >
       <v-badge :value="likes > 499" color="transparent" overlap offset-x="0">
         <template #badge>
-          <v-icon :color="theme.color" size="12px">mdi-check-decagram-outline</v-icon>
+          <v-icon :color="theme.color" size="12px"
+            >mdi-check-decagram-outline</v-icon
+          >
         </template>
         {{ profile.title || profile.name }}
       </v-badge>
@@ -33,7 +41,9 @@
       class="text-caption text-center"
       style="margin-top: -4px"
       :style="`color: ${theme.color}`"
-    >{{ profile.subtitle }}</div>
+    >
+      {{ profile.subtitle }}
+    </div>
   </div>
 </template>
 
@@ -60,7 +70,7 @@ export default Vue.extend({
       if (this.profile.style) {
         return this.profile.style;
       }
-      return this.$store.getters['defaultStyle'];
+      return this.$store.getters.defaultStyle;
     },
 
     cname(): string {

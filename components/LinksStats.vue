@@ -3,8 +3,8 @@
     <v-card width="100%">
       <v-card-title> Análise de cliques </v-card-title>
       <v-card-subtitle class="text-caption">
-        Confira quantas vezes seus links foram clicados ou acessados através
-        do salto para o link
+        Confira quantas vezes seus links foram clicados ou acessados através do
+        salto para o link
       </v-card-subtitle>
       <v-card-text>
         <v-data-table
@@ -15,7 +15,7 @@
           mobile-breakpoint="300"
           no-data-text="Você ainda não tem nenhum link"
         >
-          <template v-slot:[`item.label`]="{ item }">
+          <template #[`item.label`]="{ item }">
             <div class="d-flex flex-row align-center">
               <font-awesome-icon
                 :icon="findIcon(item.media)"

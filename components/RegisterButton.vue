@@ -1,5 +1,7 @@
 <template>
-  <v-btn dark rounded height="48px" :width="width" to="/register">{{ label }}</v-btn>
+  <v-btn dark rounded height="48px" :width="width" to="/register">{{
+    label
+  }}</v-btn>
 </template>
 
 <script lang="ts">

@@ -27,7 +27,7 @@ export default Vue.extend({
       if (this.profile.style) {
         return this.profile.style;
       }
-      return this.$store.getters['defaultProfile'];
+      return this.$store.getters.defaultProfile;
     },
 
     card(): Card {
