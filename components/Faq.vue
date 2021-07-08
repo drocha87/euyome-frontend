@@ -40,14 +40,14 @@
           para a caixa de SPAM. Confere por favor se não foi para sua caixa de
           SPAM, caso não encontre o nosso email de ativação, acesse a sua conta
           da euyo.me e no canto superior irá aparecer uma aba para REENVIAR o
-          LINK de ativação.  Caso não consiga resolver esse problema,
+          LINK de ativação. Caso não consiga resolver esse problema,
           <a href="https://euyo.me/euyome">fale conosco</a>
         </FaqQuestion>
 
         <FaqQuestion question="Como funciona a Versão PRO?">
           A Versão PRO é um sonho!! Na verdade, nos permite deixar o nosso
           perfil a nossa cara, pois nela conseguimos mudar a aparência do nosso
-          link.  Podemos alterar a cor do botão, a cor da letra, estilo da foto,
+          link. Podemos alterar a cor do botão, a cor da letra, estilo da foto,
           Cor de fundo, podemos colocar uma imagem de fundo e para deixar ainda
           mais a sua cara, você pode colocar um vídeo de apresentação.
         </FaqQuestion>

@@ -233,7 +233,7 @@
       limitado a, quaisquer erros ou omissões em qualquer conteúdo, ou qualquer
       perda ou dano de qualquer tipo como resultado do uso do serviço ou
       qualquer conteúdo (ou produto) publicado, transmitido ou de outra forma
-      disponível através do serviço, mesmo se alertado ​​de tal possibilidade.
+      disponível através do serviço, mesmo se alertado de tal possibilidade.
       Como alguns estados ou jurisdições não permitem a exclusão ou a limitação
       de responsabilidade por danos consequentes ou incidentais, em tais estados
       ou jurisdições, a nossa responsabilidade será limitada à extensão máxima

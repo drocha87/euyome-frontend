@@ -73,7 +73,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Stats } from '~/types';
 
 export default Vue.extend({
   layout: 'profile',

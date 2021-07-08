@@ -2,9 +2,6 @@
   "name": "euyo.me",
   "version": "1.0.0",
   "private": true,
-  "engines": {
-    "node": "12.22.1"
-  },
   "scripts": {
     "postinstall": "npm run build",
     "dev": "nuxt-ts",
@@ -42,6 +39,7 @@
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-vue": "^7.1.0",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.4"
   }
 }
