@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: euyome-front-depl
+  labels:
+    app: euyome-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: euyome-front
+  template:
+    metadata:
+      labels:
+        app: euyome-front
+    spec:
+      containers:
+        - name: euyome-front
+          image: gcr.io/campusicb/euyome_front:1.0.1
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: euyome-front-service
+spec:
+  selector:
+    app: euyome-front
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
