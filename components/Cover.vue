@@ -5,15 +5,12 @@
         <v-container>
           <Header title="você a um clique" subtitle="sempre conectado" />
           <Paragraph class="mt-5">
-            Seu perfil virtual em forma de link, utilize na sua biografia das
-            redes sociais e conversa com clientes. Tudo sobre você de uma forma
-            super personalizada.
+            Seu cartão de vistas virtual, utilize na biografia das redes sociais
+            e conversa com clientes. Tudo sobre você de uma forma profissional e
+            personalizada.
           </Paragraph>
           <div class="mt-8 d-flex flex-column align-center">
-            <RegisterButton class="mb-3" label="Cadastre-se GRÁTIS" />
-            <a class="text__login" href="https://app.euyo.me/login">
-              já tenho cadastro
-            </a>
+            <RegisterButton class="mb-3" label="Fale com um Consultor" />
           </div>
         </v-container>
       </v-col>
@@ -21,7 +18,7 @@
         <v-container class="text-center">
           <video autoplay muted loop :height="videoHeight">
             <source
-              src="https://res.cloudinary.com/euyome/video/upload/v1611948727/frontend/Untitled_design_5_hojnmh.mp4"
+              src="https://res.cloudinary.com/euyome/video/upload/v1624716862/frontend/Untitled_design_l6bmdk.mp4"
               type="video/mp4"
             />
           </video>

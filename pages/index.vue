@@ -2,10 +2,10 @@
   <div>
     <Cover />
     <v-container>
-      <About class="top__margin" />
+      <About class="mt-12" />
       <Impressions class="top__margin" />
       <Showcases class="top__margin" />
-      <Prices id="prices" class="top__margin" />
+      <!-- <Prices id="prices" class="top__margin" /> -->
     </v-container>
   </div>
 </template>
@@ -92,7 +92,7 @@ html {
 }
 
 .top__margin {
-  margin-top: 4rem;
+  margin-top: 8rem;
   @media screen and (max-width: 600px) {
     margin-top: 3rem;
   }

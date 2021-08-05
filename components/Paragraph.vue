@@ -15,7 +15,7 @@
   text-align: left;
 
   @media screen and (max-width: 600px) {
-    text-align: center;
+    text-align: left;
   }
 }
 </style>

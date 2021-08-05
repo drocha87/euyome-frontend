@@ -5,28 +5,28 @@
       <InfoCard
         class="infocard"
         title="um"
-        subtitle="gratuito"
-        content="Faça seu cadastro gratuito e experimente o PRO por 14 dias"
+        subtitle="Orçamento"
+        content="Faça seu orçamento sem compromisso com um de nossos consultores"
       />
       <InfoCard
         class="infocard"
         title="dois"
-        subtitle="links"
-        content="Adicione links das suas redes sociais e crie botões de ação"
+        subtitle="Estratégia"
+        content="Fale sobre sua você e sua marca com nosso time de desenvolvimento"
       />
       <InfoCard
         class="infocard"
         title="três"
-        subtitle="customize"
-        content="Use a criatividade e personalize sua conta, com cores, imagens e card"
+        subtitle="Layout"
+        content="Receba um layout exclusivo e personalizado com a cara da sua marca"
+      />
+      <InfoCard
+        class="infocard"
+        title="quatro"
+        subtitle="Divulgue"
+        content="Pronto, seu cartão de visitas está online 24 horas por dia 7 dias da semana*"
       />
     </div>
-    <Paragraph class="text-center about__info">
-      Pronto! Após isto, seu perfil virtual já vai estar disponível e depois é
-      só compartilhar nas suas conversas e bio das suas redes socias. E ah,
-      usando seu perfil nas suas principais redes sociais você vai ter todas as
-      suas impressões em um único lugar, na nossa tela de impressões e cliques.
-    </Paragraph>
   </v-container>
 </template>
 
@@ -34,13 +34,13 @@
 import Vue from 'vue';
 import Header from '@/components/Header.vue';
 import InfoCard from '@/components/InfoCard.vue';
-import Paragraph from '@/components/Paragraph.vue';
+// import Paragraph from '@/components/Paragraph.vue';
 
 export default Vue.extend({
   components: {
     Header,
     InfoCard,
-    Paragraph,
+    // Paragraph,
   },
 });
 </script>

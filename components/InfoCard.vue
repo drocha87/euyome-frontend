@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="d-flex flex-column justify-space-between pa-4"
+    class="d-flex flex-column justify-space-around pa-4"
     color="white"
     elevation="4"
     max-width="220px"
@@ -28,7 +28,7 @@ export default Vue.extend({
   font-family: Rubik;
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 40px;
   line-height: 57px;
   /* identical to box height */
   text-transform: uppercase;
@@ -50,11 +50,13 @@ export default Vue.extend({
 .euyome__card__content {
   font-family: Rubik;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  text-align: center;
-  text-transform: uppercase;
+  text-align: left;
+  // text-transform: uppercase;
+  flex-grow: 1;
+  margin-top: 1rem;
 
   color: #495057;
 }

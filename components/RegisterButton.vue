@@ -1,7 +1,14 @@
 <template>
-  <v-btn dark rounded height="48px" :width="width" to="/register">{{
-    label
-  }}</v-btn>
+  <v-btn
+    dark
+    rounded
+    height="48px"
+    :width="width"
+    href="https://euyo.me/euyome"
+    target="blank"
+  >
+    {{ label }}
+  </v-btn>
 </template>
 
 <script lang="ts">

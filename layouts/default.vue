@@ -1,75 +1,46 @@
 <template>
   <v-app>
-    <v-app-bar color="white" flat fixed clipped-right app>
+    <v-app-bar color="white" flat>
       <v-row class="mx-auto" align="center" style="max-width: 1024px">
         <nuxt-link to="/" append style="display: block">
           <img
             src="https://res.cloudinary.com/euyome/image/upload/v1611950847/frontend/brand-logo_h_ctnkt6.svg"
-            height="32px"
+            height="38px"
           />
         </nuxt-link>
 
-        <NavigationDrawer v-if="smallScreen" v-model="drawer" />
+        <!-- <NavigationDrawer v-if="smallScreen" v-model="drawer" /> -->
+        <div v-if="!smallScreen" class="ml-auto">
+          <button class="button_login" @click="login()">Contato</button>
+        </div>
 
-        <v-row
-          v-else
-          class="ml-auto"
-          align="end"
-          justify="end"
-          style="max-width: 720px"
-        >
-          <v-col class="text-center">
-            <a
-              class="topbar__link"
-              href="https://instagram.com/euyo.me"
-              target="_blank"
-              >Instagram</a
-            >
-          </v-col>
-          <v-col class="text-center">
-            <a class="topbar__link" href="/#prices">Preços</a>
-          </v-col>
-          <v-col class="text-center">
-            <a
-              class="topbar__link"
-              href="https://euyo.me/euyome"
-              target="_blank"
-              >Contato</a
-            >
-          </v-col>
-          <v-col class="text-center">
-            <nuxt-link class="topbar__link" to="/help">Ajuda</nuxt-link>
-          </v-col>
-          <v-col>
-            <button class="button_login" @click="login()">Login</button>
-          </v-col>
-        </v-row>
-
-        <v-app-bar-nav-icon
+        <!-- <v-app-bar-nav-icon
           v-if="smallScreen"
           class="ml-auto"
           @click="drawer = true"
-        />
+        /> -->
       </v-row>
     </v-app-bar>
 
-    <v-main fill-height>
+    <v-main fill-height class="mx-auto" style="max-width: 1280px">
       <nuxt />
-    </v-main>
 
-    <v-footer class="mt-12 pb-6" color="#21c25e">
-      <div class="mx-auto text-center white--text">
-        <span class="text-caption">
-          <nuxt-link to="/" style="text-decoration: none; color: white"
-            >euyo.me &copy; {{ new Date().getFullYear() }}</nuxt-link
-          >
-        </span>
-        <p class="text-caption">Todos os direitos reservados a euyo.me.</p>
-        <nuxt-link class="text-caption terms_links" to="/termos"
-          >TERMOS E CONDIÇÕES</nuxt-link
-        >
-      </div>
-    </v-footer>
+      <footer class="mt-12 pb-6" width="auto">
+        <v-container>
+          <v-row justify="center">
+            <div class="mt-4 text-center primary--text">
+              <div>
+                Todos os direitos reservados a euyo.me &copy;
+                {{ new Date().getFullYear() }}
+              </div>
+              <nuxt-link class="font-weight-medium primary--text" to="/termos">
+                TERMOS E CONDIÇÕES
+              </nuxt-link>
+            </div>
+          </v-row>
+        </v-container>
+      </footer>
+    </v-main>
   </v-app>
 </template>
 
@@ -95,7 +66,7 @@ export default Vue.extend({
 
   methods: {
     login() {
-      window.location.href = 'https://app.euyo.me/login';
+      window.location.href = 'https://euyo.me/euyome';
     },
   },
 });

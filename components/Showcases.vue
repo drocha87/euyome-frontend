@@ -7,8 +7,14 @@
           Euyo.me é para todo mundo, para todos os tipos de seguimento. Seja
           você uma Banda famosa, Escola de Idiomas, DJ, confeiteiro, advogada,
           influenciadora digital, etc... Se seu negócio ou você precisa se
-          apresentar, você precisa de um perfil virtual.
+          apresentar, você precisa de um cartão de visitas virtual.
         </Paragraph>
+        <div
+          class="mt-12"
+          :class="{ 'text-center': $vuetify.breakpoint.smAndDown }"
+        >
+          <RegisterButton label="Saber Mais" />
+        </div>
       </v-col>
       <v-col cols="12" md="6">
         <v-carousel
@@ -51,10 +57,6 @@
         </v-carousel>
       </v-col>
     </v-row>
-
-    <div class="mt-8 text-center">
-      <RegisterButton label="Cadastre-se GRÁTIS" />
-    </div>
   </v-container>
 </template>
 

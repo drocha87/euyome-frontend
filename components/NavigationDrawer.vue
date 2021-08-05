@@ -19,26 +19,26 @@
             Instagram
           </v-list-item-content>
         </v-list-item>
-        <v-list-item to="#prices">
+        <!-- <v-list-item to="#prices">
           <v-list-item-content class="drawer__link">
             Preços
           </v-list-item-content>
-        </v-list-item>
+        </v-list-item> -->
         <v-list-item href="https://euyo.me/euyome">
           <v-list-item-content class="drawer__link">
             Contato
           </v-list-item-content>
         </v-list-item>
-        <v-list-item to="/help">
+        <!-- <v-list-item to="/help">
           <v-list-item-content class="drawer__link">
             Ajuda
           </v-list-item-content>
-        </v-list-item>
-        <v-list-item href="https://app.euyo.me/login">
+        </v-list-item> -->
+        <!-- <v-list-item href="https://app.euyo.me/login">
           <v-list-item-content class="drawer__link">
             Login
           </v-list-item-content>
-        </v-list-item>
+        </v-list-item> -->
       </v-list-item-group>
     </v-list>
   </v-navigation-drawer>

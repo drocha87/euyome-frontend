@@ -2,19 +2,30 @@
   <v-container>
     <v-row>
       <v-col cols="12" sm="5">
-        <v-img
-          class="mx-auto"
-          width="180px"
-          :src="require('~/assets/images/impressions.png')"
-        ></v-img>
+        <v-container class="text-center">
+          <video autoplay muted loop :height="350">
+            <source
+              src="https://res.cloudinary.com/euyome/video/upload/v1624726093/frontend/stats_large_x9yxtl.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </v-container>
       </v-col>
       <v-col cols="12" sm="7">
         <Header title="uma impressão" subtitle="um clique" />
         <Paragraph class="mt-4">
-          Tenha as estatísticas do acesso ao seu link, de uma forma fácil de
-          entender, até porque no final das contas o que importa é seu alcance e
-          sua conversão, simples assim.
+          Seu cartão de visitas irá te fornecer informações importantes sobre o
+          seu engajamento e quais são os meios preferidos que seus clientes ou
+          seguidores usam para entrar em contato com você, tudo isso em um
+          painel de estatísticas criado para ser fácil de entender, e aprimorar
+          suas estratégias de marketing.
         </Paragraph>
+        <div
+          class="mt-12"
+          :class="{ 'text-center': $vuetify.breakpoint.smAndDown }"
+        >
+          <RegisterButton label="Fale com um Consultor" />
+        </div>
       </v-col>
     </v-row>
   </v-container>
