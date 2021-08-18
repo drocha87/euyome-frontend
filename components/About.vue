@@ -1,4 +1,5 @@
 <template>
+
   <v-container>
     <Header center title="como funciona" subtitle="quer saber" />
     <div class="infocard__container">

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: euyome-front
-          image: gcr.io/campusicb/euyome_front:1.0.1
+          image: gcr.io/campusicb/euyome_front:latest
           ports:
             - containerPort: 3000
 ---
